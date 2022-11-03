@@ -563,13 +563,31 @@ section.services-items .service-item:nth-child(even) p{
     color: var(--white);
 }
 section.solutions-about{
-    background-color: #EEF8F2;
+    background-color: #1C1A1A;
     padding-bottom: 30px;
 }
 section.solutions-about .solutions-about-text{
-    padding: 75px 0 75px 40px;
+    padding: 60px 0;
+}
+section.solutions-about .solutions-about-img{
+    margin-top: 25px;
 }
 
+section.solutions-about h3{
+    color: #C31A2B;
+    font-weight: 600;
+    font-size: 20px;
+}
+section.solutions-about h2{
+    font-weight: 700;
+    font-size: 35px;
+    color: #DBDBDB;
+    margin-bottom: 40px;
+}
+section.solutions-about p{
+    font-weight: 400;
+    font-size: 15px;
+}
 section.solutions-about .img-top{
     margin-top: -24px;
     border-radius: 15px;
@@ -591,6 +609,26 @@ section.solutions-about .img-bottom-container::before{
 section.solutions-about .img-bottom{
     border-radius: 15px;
 }
+section.solutions-inner .solutions-inner-tabs{
+    background-color: #1E1E1E;
+}
+section.solutions-inner .solutions-inner-tabs .nav-tabs .nav-link{
+    color: var(--white) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 125px !important;
+    border: 1px solid transparent;
+    border-radius: 0;
+    width: 100%;
+}
+section.solutions-inner .solutions-inner-tabs .nav-link:hover,
+section.solutions-inner .solutions-inner-tabs .nav-link.active{
+    background-color: #C01522 !important;
+}
+section.solutions-inner .tab-pane{
+    padding: 35px 0 150px;
+}
 /* become-a-partner start */
 section.become-a-partner{
     background-image: url(../images/become-a-partner-bg.jpg);
@@ -608,6 +646,93 @@ section.become-a-partner p{
     font-size: 15px;
     opacity: 0.8;
 }
+/* become-a-partner end */
+section.contact{
+    background: linear-gradient(to right, #fff 30%, #2A2727 30%, #2A2727 100%);
+
+}
+section.contact>.container>.row{
+    background: linear-gradient(to right, #fff 5%, #2A2727 5%, #2A2727 100%);
+}
+section.contact .dark{
+    color: var(--white);
+}
+section.contact .contact-title{
+    padding: 40px 0 30px;
+}
+section.contact .contact-form{
+    background-color: #FFFFFF;
+    border: 1px solid #F2F2F2;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: -85px;
+}
+section.contact .contact-form .form-control{
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    line-height: 45px;
+    color: var(--black);
+}
+section.contact .contact-form .form-control:focus{
+    border-bottom: 1px solid #C41A2B;
+}
+section.contact .contact-form .form-control:focus,
+section.contact .contact-form .form-control:focus-visible,
+section.contact .contact-form .form-control:focus-visible{
+    box-shadow: none;
+}
+section.contact .contact-form .form-control::placeholder{
+    color: #7D7D7D;
+}
+.btn-contact,
+.btn-contact:hover{
+    width: 159px;
+    height: 56px;
+    border: 1px solid #C01522;
+    border-radius: 15px;
+    color: #211F1F;
+}
+.btn-contact svg{
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+}
+.btn-contact svg path{
+    stroke: #C01522;
+}
+section.contact .contact-item{
+    color: var(--white);
+    display: flex;
+    margin-bottom: 25px;
+}
+section.contact .contact-item .contact-img{
+    width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #C31A2B;
+    border-radius: 15px;
+    margin-right: 27px;
+}
+section.contact .contact-item .contact-info .title{
+    font-weight: 700;
+    font-size: 25px;
+}
+section.contact .contact-item .contact-info .text{
+    font-weight: 600;
+    font-size: 15px;
+}
+section.contact .contact-item .contact-info .text a{
+    color: var(--white);
+    text-decoration: none;
+}
+section.empty{
+    height: 170px;
+}
+/* become-a-partner start */
 /* become-a-partner end */
 /* become-a-partner start */
 section.partners-inner{
@@ -640,6 +765,94 @@ section.partners-inner .partner-item img{
 }
 /* become-a-partner end */
 
+/* industries inner start */
+section.industries-inner{
+    background: linear-gradient(to right, #2A2727 30%, #fff 30%, #fff 100%);
+
+}
+section.industries-inner>.container>.row{
+    background: linear-gradient(to right, #2A2727 33.3%, #fff 33.3%, #fff 100%);
+}
+section.industries-inner .dark{
+    padding: 50px 0;
+    color: var(--white);
+}
+section.industries-inner h2{
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+section.industries-inner .industry-img img{
+    border-radius: 15px;
+    margin-top: 75px;
+}
+section.industries-inner .industry-details{
+    margin-top: 100px;
+}
+section.industries-inner .nav-tabs button{
+    text-align: left !important;
+    color: var(--white);
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 16px;
+}
+section.industries-inner .nav-tabs button svg{
+    height: 18px;
+    margin-right: 20px;
+}
+section.industries-inner .nav-tabs button.active svg path,
+section.industries-inner .nav-tabs button:hover svg path{
+    stroke: #C01522;
+    fill: #C01522;
+}
+section.industries-inner .nav-tabs{
+    border-bottom: none;
+}
+section.industries-inner .nav-tabs button.active,
+section.industries-inner .nav-tabs button:hover{
+    color: #C01522;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+section.industries-inner .industry-details h3{
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+section.industries-inner .industry-details h2{
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+section.industries-inner .industry-details p{
+    font-weight: 400;
+    font-size: 15px;
+    color: #3A3C40;
+}
+
+section.solutions-inner .solutions-inner-carousel{
+    height: 125px !important;
+}
+section.solutions-inner .solutions-inner-carousel > .owl-nav button.disabled,
+section.solutions-inner .solutions-inner-carousel > .owl-nav button{
+    position: absolute;
+    top: 50% !important;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color:  rgba(21, 21, 21, 0.87) !important;
+    color: var(--white);
+
+}
+section.solutions-inner .solutions-inner-carousel > .owl-nav .owl-prev{
+    left: -65px;
+}
+section.solutions-inner .solutions-inner-carousel > .owl-nav .owl-next{
+    right: -65px;
+}
+/* industries inner end */
 
 
 footer{

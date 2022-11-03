@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section HeaderTitle{
+<div class="top-title">
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li>Contact us</li>
+    </ul>
+</div>
+}
+<div class="layout position-relative">
+    <section class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-11 offset-md-1 dark">
+                    <div class="contact-title">
+                        <h3>
+                            Contact us
+                        </h3>
+                        <h2>
+                            Get in touch anytime
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 contact-form">
+
+                    <form>
+                        <div class="mb-3">
+                            <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                placeholder="Full Name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Email">
+                        </div>
+                        <div class="mb-3">
+                            <input type="subject" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Subject">
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="message" id="message" cols="30" rows="5" placeholder="Message"
+                                class="form-control"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-contact">
+                                Inquire Now
+                                <img class="svg-inline" src="~/assets/images/launch-app.svg" alt="Inquire Now">
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-item">
+                        <div class="contact-img">
+                            <img src="~/assets/images/phone.svg" alt="Phone">
+                        </div>
+                        <div class="contact-info">
+                            <div class="title">
+                                Phone
+                            </div>
+                            <div class="text">
+                                +966 13 889 6664
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-img">
+                            <img src="~/assets/images/envelop.svg" alt="Fax">
+                        </div>
+                        <div class="contact-info">
+                            <div class="title">
+                                Fax
+                            </div>
+                            <div class="text">
+                                +966 13 899 8896
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-img">
+                            <img src="~/assets/images/envelop.svg" alt="Mail us">
+                        </div>
+                        <div class="contact-info">
+                            <div class="title">
+                                Mail us
+                            </div>
+                            <div class="text">
+                                <a href="mailto:sales@3s.sa">sales@3s.sa</a>
+                                |
+                                <a href="mailto:info@3s.sa">info@3s.sa</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-img">
+                            <img src="~/assets/images/envelop.svg" alt="Fax">
+                        </div>
+                        <div class="contact-info">
+                            <div class="title">
+                                P.O. Box
+                            </div>
+                            <div class="text">
+                                2807 | Al Khobar, Saudi Arabia 31952
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="empty"></section>
+</div>

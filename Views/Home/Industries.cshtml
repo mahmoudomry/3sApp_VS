@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section HeaderTitle{
+<div class="top-title">
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li>Industries</li>
+
+    </ul>
+</div>
+}
+
+<div class="layout position-relative">
+    <section class="industries-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 dark">
+                    <h2>
+                        We Provide Several Industries
+                    </h2>
+                    <nav>
+                        <div class="nav nav-tabs flex-column" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-ict-solutions-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-ict-solutions" type="button" role="tab"
+                                aria-controls="nav-ict-solutions" aria-selected="true">
+                                <img src="~/assets/images/health-care.svg" alt="Health Care" class="svg-inline">
+                                Health Care
+                            </button>
+                            <button class="nav-link" id="nav-elv-solutions-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-elv-solutions" type="button" role="tab"
+                                aria-controls="nav-elv-solutions" aria-selected="false">
+                                <img src="~/assets/images/education-icon.svg" alt="Education" class="svg-inline">
+                                Education
+                            </button>
+                            <button class="nav-link" id="nav-audiovisual-system-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-audiovisual-system" type="button" role="tab"
+                                aria-controls="nav-audiovisual-system" aria-selected="false">Audiovisual
+                                system</button>
+                            <button class="nav-link" id="nav-emerging-technologies-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-emerging-technologies" type="button" role="tab"
+                                aria-controls="nav-emerging-technologies" aria-selected="false">Emerging
+                                Technologies</button>
+                            <button class="nav-link" id="nav-architectural-and-recreational-lighting-tab"
+                                data-bs-toggle="tab" data-bs-target="#nav-architectural-and-recreational-lighting"
+                                type="button" role="tab" aria-controls="nav-architectural-and-recreational-lighting"
+                                aria-selected="false">
+                                Architectural and Recreational Lighting
+                            </button>
+                            <button class="nav-link" id="nav-industries-solutions-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-industries-solutions" type="button" role="tab"
+                                aria-controls="nav-industries-solutions" aria-selected="false">
+                                Industries Solutions
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-md-9">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-ict-solutions" role="tabpanel"
+                            aria-labelledby="nav-ict-solutions-tab" tabindex="0">
+                            <div class="row">
+                                <div class="col-md-4 industry-img">
+                                    <img src="~/assets/images/oil-gas-img.jpg" alt="">
+                                </div>
+                                <div class="col-md-8 industry-details">
+                                    <h3>
+                                        industries
+                                    </h3>
+                                    <h2>
+                                        Oil & Gas
+                                    </h2>
+                                    <p>
+                                        Technological and engineering breakthroughs have a lengthy history in the oil,
+                                        gas, and chemical industries. The oil, gas, and chemical sectors have been able
+                                        to produce more oil more rapidly and safely at a lesser cost thanks to
+                                        digitization. Embracing digital transformation in the oil, gas, and chemicals
+                                        industries can result in billions of dollars in improved organizational
+                                        performance and results
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-elv-solutions" role="tabpanel"
+                            aria-labelledby="nav-elv-solutions-tab" tabindex="0">
+                            <div class="col-md-3 industry-img">
+                                <img src="~/assets/images/oil-gas-img.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-audiovisual-system" role="tabpanel"
+                            aria-labelledby="nav-audiovisual-system-tab" tabindex="0">...</div>
+                        <div class="tab-pane fade" id="nav-emerging-technologies" role="tabpanel"
+                            aria-labelledby="nav-emerging-technologies-tab" tabindex="0">...</div>
+                        <div class="tab-pane fade" id="nav-architectural-and-recreational-lighting" role="tabpanel"
+                            aria-labelledby="nav-architectural-and-recreational-lighting-tab" tabindex="0">...</div>
+                        <div class="tab-pane fade" id="nav-industries-solutions" role="tabpanel"
+                            aria-labelledby="nav-industries-solutions-tab" tabindex="0">...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
