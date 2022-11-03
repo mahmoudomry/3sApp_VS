@@ -1,1439 +1,240 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<!doctype html>
-<html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>3S</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        crossorigin="anonymous">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="~/assets/css/style.css" />
-</head>
+@section HeaderTitle{
+<div class="top-title">
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li>Partners</li>
+    </ul>
+</div>
+}
 
-<body class="home">
-    <header>
+<div class="layout position-relative">
+    <section class="become-a-partner dark">
         <div class="container">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#"><img src="~/assets/images/logo.svg" alt="logo"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="nav-center">
-                        <div class="collapse navbar-collapse top-menu justify-content-center" id="navbarNavAltMarkup">
-                            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Services</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Solutions</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">About us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Projects</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Industries</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Partners</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Contact us</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div style="display: flex; align-items: fl;">
-                        <div class="search search_btn d-block">
-                            <a href="javascript:;" onClick="openSearch()">
-                                <img src="~/assets/images/search-icon.svg">
-                            </a>
-                        </div><!-- search -->
-                        <div class="lang">
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    En
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="index-ar.html">عربي</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+            <div class="row">
+                <div class="col-md-6 offset-md-3 text-center">
+
+                    <h2>
+                        Want to became a partners with us?
+                    </h2>
+                    <p>3S has worked with top cable and accessory manufacturers to provide our esteemed customers with
+                        reliable structured cabling solutions
+                    </p>
+                    <a href="#" class="btn btn-green">
+                        Contact us
+                        <img src="~/assets/images/envelop.svg" alt="Contact us">
+                    </a>
                 </div>
-            </nav>
+            </div>
         </div>
-    </header>
-    <div class="layout position-relative">
-        <section class="main-slider">
-            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
+    </section>
+    <section class="partners-inner">
+        <div class="container text-center">
+            <h2>
+                We bring the best of the security industry
+            </h2>
+            <p>
+                to our customers to solve the hardest challenges
+            </p>
+            <div class="partners-items">
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-01.svg" alt="partner-01">
+                    </a>
                 </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="10000"
-                        style="background-image: url('/assets/images/main-slider-01.jpg');">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <h2 class="white mb-3">
-                                    System
-                                    <br>
-                                    Security
-                                    <br>
-                                    Solutions 1
-                                </h2>
-                                <p class="white">
-                                    was founded in 2014 and is based in Al Khobar, Saudi Arabia. System Security
-                                    Solutions has expressed an interest in establishing a professional ICT systems
-                                    integrator.
-                                </p>
-                                <a href="#" class="btn btn-green">
-                                    Learn More
-                                    <img src="~/assets/images/launch-app.svg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2000"
-                        style="background-image: url('/assets/images/main-slider-01.jpg');">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <h2 class="white">
-                                    System
-                                    <br>
-                                    Security
-                                    <br>
-                                    Solutions 2
-                                </h2>
-                                <p class="white">
-                                    was founded in 2014 and is based in Al Khobar, Saudi Arabia. System Security
-                                    Solutions has expressed an interest in establishing a professional ICT systems
-                                    integrator.
-                                </p>
-                                <a href="#" class="btn btn-green">
-                                    Learn More
-                                    <img src="~/assets/images/launch-app.svg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item" style="background-image: url('/assets/images/main-slider-01.jpg');">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <h2 class="white">
-                                    System
-                                    <br>
-                                    Security
-                                    <br>
-                                    Solutions 3
-                                </h2>
-                                <p class="white">
-                                    was founded in 2014 and is based in Al Khobar, Saudi Arabia. System Security
-                                    Solutions has expressed an interest in establishing a professional ICT systems
-                                    integrator.
-                                </p>
-                                <a href="#" class="btn btn-green">
-                                    Learn More
-                                    <img src="~/assets/images/launch-app.svg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-02.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-03.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-04.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-05.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-06.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-01.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-02.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-03.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-04.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-05.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-06.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-01.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-02.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-03.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-04.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-05.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-06.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-01.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-02.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-03.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-04.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-05.svg" alt="partner-01">
+                    </a>
+                </div>
+                <div class="partner-item">
+                    <a href="#">
+                        <img src="~/assets/images/partner-06.svg" alt="partner-01">
+                    </a>
                 </div>
             </div>
-        </section>
-
-        @if (false)
-        {
-            <header class="home top-0 pt-5 ps-4 pe-4 w-100">
-                <div class="container">
-                    <nav class="ps-5 pe-5 me-auto d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <div class="logo">
-                                <a href="#">
-                                    <img src="~/assets/images/logo.svg" alt="Art top" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="nav_action d-flex align-items-center">
-                            <ul class="nav_bar list-unstyled d-flex align-items-center mt-auto mb-auto">
-                                <li>
-                                    <a href="#" class="nav_link active">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav_link">About us </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav_link">Services</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav_link">Solutions</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav_link">Projects</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav_link">Industries</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav_link">Partners</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav_link">Contact us</a>
-                                </li>
-                            </ul>
-                            <a href="" class="search_btn d-block">
-                                <img src="~/assets/images/search-icon.svg" alt="Search">
-                            </a>
-                        </div>
-                    </nav>
+        </div>
+    </section>
+    <section class="services-items">
+        <div class="container">
+            <div class="service-item row">
+                <div class="col-md-4">
+                    <div class="icon">
+                        <img src="~/assets/images/implementation-and-integration-icon.svg" alt="">
+                    </div>
+                    <h2>
+                        Implementation and Integration
+                    </h2>
                 </div>
-            </header>
-        }
-        <main>
-            <section class="about-us">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 offset-md-6">
-                            <h3>
-                                About us
-                            </h3>
-                            <h2>
-                                Was founded in 2014 and is based in Al Khobar
-                            </h2>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita numquam, quam earum
-                                culpa molestiae, consectetur soluta dicta deserunt
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, aperiam nisi non ad
-                                aliquam possimus animi vel beatae in accusantium odit hic explicabo eligendi error
-                                quaerat autem. Eos, perspiciatis adipisci.
-                            </p>
-                            <a href="#" class="btn btn-green">
-                                Learn More
-                                <img src="~/assets/images/launch-app.svg" alt="">
-                            </a>
-                        </div>
-                    </div>
+                <div class="col-md-8">
+                    <P>
+                        Most IT departments nowadays lack the resources to commit to new projects. Implementing
+                        Information
+                        Access initiatives necessitates skilled employees, professionals capable of providing detailed
+                        design, a full integration plan, and rapid installation and testing. Our Implementation and
+                        Integration service consultants can assist IT departments.
+                    </P>
+                    <a href="#" class="btn btn-green">
+                        Learn More
+                        <img src="~/assets/images/launch-app.svg" alt="">
+                    </a>
                 </div>
-            </section>
-
-            <section class="services">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 offset-md-3 text-center">
-                            <h3>
-                                Services
-                            </h3>
-                            <h2>
-                                Working together for sustainability
-                            </h2>
-                            <p>
-                                We develop cost effective, reliable security solutions for all your needs
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="services-details">
-                <div class="container">
-                    <div class="row">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="service-card">
-                                    <div class="icon">
-                                        <img src="~/assets/images/implementation-and-integration-icon.svg" alt="">
-                                    </div>
-                                    <h2>
-                                        Implementation and Integration
-                                    </h2>
-                                    <p>
-                                        Most IT departments nowadays lack the resources to commit to new projects
-                                    </p>
-                                    <a href="#">
-                                        Learn More
-                                        <img src="~/assets/images/launch-app-green.svg" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="service-card">
-                                    <div class="icon">
-                                        <img src="~/assets/images/implementation-and-integration-icon.svg" alt="">
-                                    </div>
-                                    <h2>
-                                        Implementation and Integration
-                                    </h2>
-                                    <p>
-                                        Most IT departments nowadays lack the resources to commit to new projects
-                                    </p>
-                                    <a href="#">
-                                        Learn More
-                                        <img src="~/assets/images/launch-app-green.svg" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="service-card">
-                                    <div class="icon">
-                                        <img src="~/assets/images/implementation-and-integration-icon.svg" alt="">
-                                    </div>
-                                    <h2>
-                                        Implementation and Integration
-                                    </h2>
-                                    <p>
-                                        Most IT departments nowadays lack the resources to commit to new projects
-                                    </p>
-                                    <a href="#">
-                                        Learn More
-                                        <img src="~/assets/images/launch-app-green.svg" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="solutions">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 offset-md-3 text-center">
-                            <h3>
-                                Solutions
-                            </h3>
-                            <h2>
-                                We design, integrate, install and maintain
-                            </h2>
-                            <p>
-                                comprehensive solutions to meet a wide range of security challenges and ensure peak
-                                performance
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <nav>
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <button class="nav-link active" id="nav-ict-solutions-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-ict-solutions" type="button" role="tab"
-                                    aria-controls="nav-ict-solutions" aria-selected="true">ICT solutions</button>
-                                <button class="nav-link" id="nav-elv-solutions-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-elv-solutions" type="button" role="tab"
-                                    aria-controls="nav-elv-solutions" aria-selected="false">ELV Solutions</button>
-                                <button class="nav-link" id="nav-audiovisual-system-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-audiovisual-system" type="button" role="tab"
-                                    aria-controls="nav-audiovisual-system" aria-selected="false">Audiovisual
-                                    system</button>
-                                <button class="nav-link" id="nav-emerging-technologies-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-emerging-technologies" type="button" role="tab"
-                                    aria-controls="nav-emerging-technologies" aria-selected="false">Emerging
-                                    Technologies</button>
-                                <button class="nav-link" id="nav-architectural-and-recreational-lighting-tab"
-                                    data-bs-toggle="tab" data-bs-target="#nav-architectural-and-recreational-lighting"
-                                    type="button" role="tab" aria-controls="nav-architectural-and-recreational-lighting"
-                                    aria-selected="false">
-                                    Architectural and Recreational Lighting
-                                </button>
-                                <button class="nav-link" id="nav-industries-solutions-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-industries-solutions" type="button" role="tab"
-                                    aria-controls="nav-industries-solutions" aria-selected="false">
-                                    Industries Solutions
-                                </button>
-                            </div>
-                        </nav>
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-ict-solutions" role="tabpanel"
-                                aria-labelledby="nav-ict-solutions-tab" tabindex="0">
-                                <div class="row">
-
-                                    <div class="col-md-6">
-                                        <h3>
-                                            ICT Solutions
-                                        </h3>
-                                        <p>
-                                            ICT stands for Information and Communication Technology. This term is in
-                                            addition to just IT with communication added. This term has revolutionized
-                                            the
-                                            world with its positive impacts and has changed everyone’s perspective on
-                                            how we
-                                            see things. World has turned into a small village with the advent of ICT.
-                                            System
-                                            Security Solution is not far behind or besides this revolution over the past
-                                            years. 3S has been along with this term and has rendered several solutions
-                                            to
-                                            our various customers across industries and areas. Our range of services and
-                                            solutions cover IP communications, IP telephony,
-                                        </p>
-                                        <button class="btn btn-green">
-                                            Learn More
-                                            <img src="~/assets/images/launch-app.svg" alt="">
-                                        </button>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <ul class="list-unstyled">
-                                            <li>
-                                                <a href="#">
-                                                    <img src="~/assets/images/advanced-wireless-solutions.svg"
-                                                        alt="Advanced Wireless Solutions">
-                                                    Advanced Wireless Solutions
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img src="~/assets/images/advanced-wireless-solutions.svg"
-                                                        alt="Data center setup">
-                                                    Data center setup
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img src="~/assets/images/advanced-wireless-solutions.svg"
-                                                        alt="Data networks">
-                                                    Data networks
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="nav-elv-solutions" role="tabpanel"
-                                aria-labelledby="nav-elv-solutions-tab" tabindex="0">...</div>
-                            <div class="tab-pane fade" id="nav-audiovisual-system" role="tabpanel"
-                                aria-labelledby="nav-audiovisual-system-tab" tabindex="0">...</div>
-                            <div class="tab-pane fade" id="nav-emerging-technologies" role="tabpanel"
-                                aria-labelledby="nav-emerging-technologies-tab" tabindex="0">...</div>
-                            <div class="tab-pane fade" id="nav-architectural-and-recreational-lighting" role="tabpanel"
-                                aria-labelledby="nav-architectural-and-recreational-lighting-tab" tabindex="0">...</div>
-                            <div class="tab-pane fade" id="nav-industries-solutions" role="tabpanel"
-                                aria-labelledby="nav-industries-solutions-tab" tabindex="0">...</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="projects dark">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 offset-md-3 text-center">
-                            <h3>
-                                Projects
-                            </h3>
-                            <h2>
-                                Building solutions for a better life
-                            </h2>
-                            <p>
-                                Discover our security, safety and communications Projects at a glance
-                            </p>
-                        </div>
-                    </div>
-                    <div class="owl-carousel owl-theme project-carousel">
-                        <div class="item">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="owl-carousel owl-theme project-inner-carousel">
-
-                                            <div class="item"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                <a href="#" class="btn btn-green">
-                                                    Learn More
-                                                    <img src="~/assets/images/launch-app.svg" alt="">
-                                                </a>
-
-                                            </div>
-                                            <div class="item"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                <a href="#" class="btn btn-green">
-                                                    Learn More
-                                                    <img src="~/assets/images/launch-app.svg" alt="">
-                                                </a>
-
-                                            </div>
-                                            <div class="item"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                <a href="#" class="btn btn-green">
-                                                    Learn More
-                                                    <img src="~/assets/images/launch-app.svg" alt="">
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <div class="row">
-                                            <ul class="project-details-items">
-                                                <li>
-                                                    <div class="label">
-                                                        Project
-                                                    </div>
-                                                    <div class="text">
-                                                        Sabic Housing Almutrafia
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="label">
-                                                        Client
-                                                    </div>
-                                                    <div class="text">
-                                                        SABIC
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="label">
-                                                        Scope
-                                                    </div>
-                                                    <div class="text">
-                                                        ICT, ELV, ISP, Security System
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="label">
-                                                        Industrial Solution
-                                                    </div>
-                                                    <div class="text">
-                                                        Residential
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="owl-carousel owl-theme project-inner-carousel">
-
-                                            <div class="item"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                <a href="#" class="btn btn-green">
-                                                    Learn More
-                                                    <img src="~/assets/images/launch-app.svg" alt="">
-                                                </a>
-
-                                            </div>
-                                            <div class="item"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                <a href="#" class="btn btn-green">
-                                                    Learn More
-                                                    <img src="~/assets/images/launch-app.svg" alt="">
-                                                </a>
-
-                                            </div>
-                                            <div class="item"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                <a href="#" class="btn btn-green">
-                                                    Learn More
-                                                    <img src="~/assets/images/launch-app.svg" alt="">
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <div class="row">
-                                            <ul class="project-details-items">
-                                                <li>
-                                                    <div class="label">
-                                                        Project
-                                                    </div>
-                                                    <div class="text">
-                                                        Sabic Housing Almutrafia
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="label">
-                                                        Client
-                                                    </div>
-                                                    <div class="text">
-                                                        SABIC
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="label">
-                                                        Scope
-                                                    </div>
-                                                    <div class="text">
-                                                        ICT, ELV, ISP, Security System
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="label">
-                                                        Industrial Solution
-                                                    </div>
-                                                    <div class="text">
-                                                        Residential
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="owl-carousel owl-theme project-inner-carousel">
-
-                                            <div class="item"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                <a href="#" class="btn btn-green">
-                                                    Learn More
-                                                    <img src="~/assets/images/launch-app.svg" alt="">
-                                                </a>
-
-                                            </div>
-                                            <div class="item"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                <a href="#" class="btn btn-green">
-                                                    Learn More
-                                                    <img src="~/assets/images/launch-app.svg" alt="">
-                                                </a>
-
-                                            </div>
-                                            <div class="item"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                <a href="#" class="btn btn-green">
-                                                    Learn More
-                                                    <img src="~/assets/images/launch-app.svg" alt="">
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <div class="row">
-                                            <ul class="project-details-items">
-                                                <li>
-                                                    <div class="label">
-                                                        Project
-                                                    </div>
-                                                    <div class="text">
-                                                        Sabic Housing Almutrafia
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="label">
-                                                        Client
-                                                    </div>
-                                                    <div class="text">
-                                                        SABIC
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="label">
-                                                        Scope
-                                                    </div>
-                                                    <div class="text">
-                                                        ICT, ELV, ISP, Security System
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="label">
-                                                        Industrial Solution
-                                                    </div>
-                                                    <div class="text">
-                                                        Residential
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @if (false)
-                    {
-
-                        <div id="Projectsarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#Projectsarousel" data-bs-slide-to="0" class="active"
-                                aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#Projectsarousel" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#Projectsarousel" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-                            </div>
-                            <button class="carousel-control-next" type="button" data-bs-target="#Projectsarousel"
-                            data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active" data-bs-interval="10000">
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            @* <div id="Innercarousel1" class="carousel carousel-dark slide inner-slider"
-                                                data-bs-ride="carousel">
-                                                <div class="carousel-indicators">
-                                                <button type="button" data-bs-target="#Innercarousel1"
-                                                data-bs-slide-to="0" class="active" aria-current="true"
-                                                aria-label="Slide 1"></button>
-                                                <button type="button" data-bs-target="#Innercarousel1"
-                                                data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                                <button type="button" data-bs-target="#Innercarousel1"
-                                                data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                                </div>
-                                                <div class="carousel-inner">
-                                                <div class="carousel-item active" data-bs-interval="10000"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                </div>
-                                                <div class="carousel-item" data-bs-interval="2000"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                </div>
-                                                <div class="carousel-item"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                </div>
-                                                </div>
-                                                </div> *@
-                                        </div>
-                                        <div class="col-md-7">
-                                            <div class="row">
-                                                <ul class="project-details-items">
-                                                    <li>
-                                                        <div class="label">
-                                                            Project
-                                                        </div>
-                                                        <div class="text">
-                                                            Sabic Housing Almutrafia
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="label">
-                                                            Client
-                                                        </div>
-                                                        <div class="text">
-                                                            SABIC
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="label">
-                                                            Scope
-                                                        </div>
-                                                        <div class="text">
-                                                            ICT, ELV, ISP, Security System
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="label">
-                                                            Industrial Solution
-                                                        </div>
-                                                        <div class="text">
-                                                            Residential
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            @* <div id="Innercarousel2" class="carousel carousel-dark slide inner-slider"
-                                                data-bs-ride="carousel">
-                                                <div class="carousel-indicators">
-                                                <button type="button" data-bs-target="#Innercarousel2"
-                                                data-bs-slide-to="0" class="active" aria-current="true"
-                                                aria-label="Slide 1"></button>
-                                                <button type="button" data-bs-target="#Innercarousel2"
-                                                data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                                <button type="button" data-bs-target="#Innercarousel2"
-                                                data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                                </div>
-                                                <div class="carousel-inner">
-                                                <div class="carousel-item active" data-bs-interval="10000"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                </div>
-                                                <div class="carousel-item" data-bs-interval="2000"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                </div>
-                                                <div class="carousel-item"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                </div>
-                                                </div>
-                                                </div> *@
-                                        </div>
-                                        <div class="col-md-7">
-                                            <div class="row">
-                                                <ul class="project-details-items">
-                                                    <li>
-                                                        <div class="label">
-                                                            Project
-                                                        </div>
-                                                        <div class="text">
-                                                            Sabic Housing Almutrafia
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="label">
-                                                            Client
-                                                        </div>
-                                                        <div class="text">
-                                                            SABIC
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="label">
-                                                            Scope
-                                                        </div>
-                                                        <div class="text">
-                                                            ICT, ELV, ISP, Security System
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="label">
-                                                            Industrial Solution
-                                                        </div>
-                                                        <div class="text">
-                                                            Residential
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            @* <div id="Innercarousel3" class="carousel carousel-dark slide inner-slider"
-                                                data-bs-ride="carousel">
-                                                <div class="carousel-indicators">
-                                                <button type="button" data-bs-target="#Innercarousel3"
-                                                data-bs-slide-to="0" class="active" aria-current="true"
-                                                aria-label="Slide 1"></button>
-                                                <button type="button" data-bs-target="#Innercarousel3"
-                                                data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                                <button type="button" data-bs-target="#Innercarousel3"
-                                                data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                                </div>
-                                                <div class="carousel-inner">
-                                                <div class="carousel-item active" data-bs-interval="10000"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                </div>
-                                                <div class="carousel-item" data-bs-interval="2000"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                </div>
-                                                <div class="carousel-item"
-                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
-                                                </div>
-                                                </div>
-                                                </div> *@
-                                        </div>
-                                        <div class="col-md-7">
-                                            <div class="row">
-                                                <ul class="project-details-items">
-                                                    <li>
-                                                        <div class="label">
-                                                            Project
-                                                        </div>
-                                                        <div class="text">
-                                                            Sabic Housing Almutrafia
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="label">
-                                                            Client
-                                                        </div>
-                                                        <div class="text">
-                                                            SABIC
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="label">
-                                                            Scope
-                                                        </div>
-                                                        <div class="text">
-                                                            ICT, ELV, ISP, Security System
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="label">
-                                                            Industrial Solution
-                                                        </div>
-                                                        <div class="text">
-                                                            Residential
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                </div>
-            </section>
-            <section class="industries">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 offset-md-3 text-center">
-                            <h3>
-                                Industries
-                            </h3>
-                            <h2>
-                                Specialized industry experience
-                            </h2>
-                            <p>
-                                We understand your compliance needs and can integrate them into a comprehensive
-                                solution.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="industry-items">
-                        <div class="industry-item-card">
-                            <h2>
-                                <span class="icon">
-                                    <img src="~/assets/images/oil-and-gas.svg" alt="">
-                                </span>
-                                Oil and Gas
-                            </h2>
-                            <p>
-                                Most IT departments nowadays lack the resources to commit to new projects
-                            </p>
-                            <a href="#">
-                                Learn More
-                                <img src="~/assets/images/launch-app-green.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="industry-item-card">
-                            <h2>
-                                <span class="icon">
-                                    <img src="~/assets/images/oil-and-gas.svg" alt="">
-                                </span>
-                                Governmental
-                                Services
-                            </h2>
-                            <p>
-                                The public sector is confronted with a slew of issues, ranging from globalization to
-                                increased citizen
-                            </p>
-                            <a href="#">
-                                Learn More
-                                <img src="~/assets/images/launch-app-green.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="industry-item-card">
-                            <h2>
-                                <span class="icon">
-                                    <img src="~/assets/images/oil-and-gas.svg" alt="">
-                                </span>
-                                Oil and Gas
-                            </h2>
-                            <p>
-                                Most IT departments nowadays lack the resources to commit to new projects
-                            </p>
-                            <a href="#">
-                                Learn More
-                                <img src="~/assets/images/launch-app-green.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="industry-item-card">
-                            <h2>
-                                <span class="icon">
-                                    <img src="~/assets/images/oil-and-gas.svg" alt="">
-                                </span>
-                                Oil and Gas
-                            </h2>
-                            <p>
-                                Most IT departments nowadays lack the resources to commit to new projects
-                            </p>
-                            <a href="#">
-                                Learn More
-                                <img src="~/assets/images/launch-app-green.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="industry-item-card">
-                            <h2>
-                                <span class="icon">
-                                    <img src="~/assets/images/oil-and-gas.svg" alt="">
-                                </span>
-                                Oil and Gas
-                            </h2>
-                            <p>
-                                Most IT departments nowadays lack the resources to commit to new projects
-                            </p>
-                            <a href="#">
-                                Learn More
-                                <img src="~/assets/images/launch-app-green.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="industry-item-card">
-                            <h2>
-                                <span class="icon">
-                                    <img src="~/assets/images/oil-and-gas.svg" alt="">
-                                </span>
-                                Oil and Gas
-                            </h2>
-                            <p>
-                                Most IT departments nowadays lack the resources to commit to new projects
-                            </p>
-                            <a href="#">
-                                Learn More
-                                <img src="~/assets/images/launch-app-green.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="industry-item-card">
-                            <h2>
-                                <span class="icon">
-                                    <img src="~/assets/images/oil-and-gas.svg" alt="">
-                                </span>
-                                Oil and Gas
-                            </h2>
-                            <p>
-                                Most IT departments nowadays lack the resources to commit to new projects
-                            </p>
-                            <a href="#">
-                                Learn More
-                                <img src="~/assets/images/launch-app-green.svg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="partners dark">
-                <div class="container">
-                    <div class="row text-center">
-                        <h3>
-                            Partners
-                        </h3>
-                        <h2>
-                            We bring the best of the security industry
-                        </h2>
-                        <p>
-                            to our customers to solve the hardest challenges.
-                        </p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <!-- Set up your HTML -->
-                            <div
-                                class="owl-carousel-line animation-dramatic-content animate-dramatic ani_fadeIn aniUtil_dramatic aniUtil_active animate__animated animate__fadeIn">
-                                <div class="owl-carousel partners-carousel">
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-01.svg" alt="partner-01">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-02.svg" alt="partner-02">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-03.svg" alt="partner-03">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-04.svg" alt="partner-04">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-05.svg" alt="partner-05">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-06.svg" alt="partner-06">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-06.svg" alt="partner-06">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-06.svg" alt="partner-06">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-06.svg" alt="partner-06">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div><!-- owl-carousel-line -->
-                        </div><!-- col-md-12 -->
-                    </div><!-- row -->
-                </div> <!-- container -->
-            </section><!-- partners -->
-            <section class="clients dark">
-                <div class="container">
-                    <div class="row text-center">
-                        <h3>
-                            Clients
-                        </h3>
-                        <h2>
-                            We bring the best of the security industry
-                        </h2>
-                        <p>
-                            to our customers to solve the hardest challenges.
-                        </p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <!-- Set up your HTML -->
-                            <div
-                                class="owl-carousel-line animation-dramatic-content animate-dramatic ani_fadeIn aniUtil_dramatic aniUtil_active animate__animated animate__fadeIn">
-                                <div class="owl-carousel">
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-01.svg" alt="partner-01">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-02.svg" alt="partner-02">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-03.svg" alt="partner-03">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-04.svg" alt="partner-04">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-05.svg" alt="partner-05">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-06.svg" alt="partner-06">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-06.svg" alt="partner-06">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-06.svg" alt="partner-06">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-06.svg" alt="partner-06">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-06.svg" alt="partner-06">
-                                        </a>
-                                    </div>
-                                    <div class="owl-carousel-item">
-                                        <a href="#">
-                                            <img src="~/assets/images/partner-06.svg" alt="partner-06">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div><!-- owl-carousel-line -->
-                        </div><!-- col-md-12 -->
-                    </div><!-- row -->
-                </div> <!-- container -->
-            </section><!-- clients -->
-
-        </main>
-        <footer>
-            <section class="footer-newsletter">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-5 newsletter-label-container">
-                            <h4>
-                                subscribe to our newsletter
-                            </h4>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="subscribe">
-                                <input type="text" placeholder="Enter Your Email">
-                                <button type="button" class="subscribe-btn">Subscribe</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="footer-bottom">
-                <div class="container">
-                    <div class="row ">
-                        <div class="col-md-4">
-                            <div class="logo">
-                                <img src="~/assets/images/logo-white.svg" alt="logo 1">
-                            </div>
-                            <p class="description">
-                                We at 3S have a team of devoted resources who work solely to meet the needs of our
-                                customers. The staff is highly qualified and has extensive experience in this field,
-                                having completed various projects involving the full implementation of IP communication
-                                systems. Providing IP communication entails dealing with exceptionally high complexity
-                                and, as a result, offering technological solutions, engineering services and
-                                consultation in a highly demanding environment.
-                            </p>
-                            <div class="social-links ">
-                                <ul class="list-unstyled list-group list-group-horizontal ">
-                                    <li>
-                                        <a href="#" class="facebook">
-                                            <i class="fa-brands fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="twitter">
-                                            <i class="fa-brands fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="linkedin">
-                                            <i class="fa-brands fa-linkedin"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="youtube">
-                                            <i class="fa-brands fa-youtube"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="instagram">
-                                            <i class="fa-brands fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="copyright">
-                                ©2020 3S System Security Solutions Co.
-                            </div>
-                        </div>
-                        <div class="col-md-4 fast-links">
-                            <h2>
-                                Fast Link
-                            </h2>
-                            <div class="row">
-                                <div class="col-md-6">
-
-                                    <ul class="list-unstyled list-group">
-                                        <li>
-                                            <a href="#">
-                                                Home Page
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                About us
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Services
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6">
-
-                                    <ul class="list-unstyled list-group">
-                                        <li>
-                                            <a href="#">
-                                                Industries
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Projects
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Solutions
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 contact-info">
-                            <h2>
-                                Contact us
-                            </h2>
-                            <div>
-                                <div class="d-flex contact-info-item">
-                                    <div class="icon">
-                                        <img src="~/assets/images/marker.svg" alt="address">
-                                    </div>
-                                    <div class="text">
-                                        Fourth Floor, Office No. 406, Jarir Bookstore Building, Prince Majed St, Al
-                                        Khobar 31952, Saudi Arabia
-                                    </div>
-                                </div>
-                                <div class="d-flex contact-info-item">
-                                    <div class="icon">
-                                        <img src="~/assets/images/tablet.svg" alt="phone">
-                                    </div>
-                                    <div class="text">
-                                        +966 13 889 6664
-                                    </div>
-                                </div>
-                                <div class="d-flex contact-info-item">
-                                    <div class="icon">
-                                        <img src="~/assets/images/mobile.svg" alt="mobile">
-                                    </div>
-                                    <div class="text">
-                                        +966 13 889 6664
-                                    </div>
-                                </div>
-                                <div class="d-flex contact-info-item">
-                                    <div class="icon">
-                                        <img src="~/assets/images/address.svg" alt="address">
-                                    </div>
-                                    <div class="text">
-                                        2807 | Al Khobar, Saudi Arabia 31952
-                                    </div>
-                                </div>
-                                <div class="d-flex contact-info-item">
-                                    <div class="icon">
-                                        <img src="~/assets/images/mail.svg" alt="mail">
-                                    </div>
-                                    <div class="text">
-                                        <a href="mailto:sales@3s.sa">sales@3s.sa</a>
-                                    </div>
-                                </div>
-                                <div class="d-flex contact-info-item">
-                                    <div class="icon">
-                                        <img src="~/assets/images/mail.svg" alt="mail">
-                                    </div>
-                                    <div class="text">
-                                        <a href="mailto:sales@3s.sa">info@3s.sa</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex contact-info-item">
-                                <div class="icon">
-                                    <img src="~/assets/images/marker2.svg" alt="mail">
-                                </div>
-                                <div class="text">
-                                    Riyadh Address
-                                    6137 Office No: 127, 6137 Northern Ring Rd, 2930, Riyadh 13313
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </footer>
-        @* <footer class="border-top footer text-muted">
-            <div class="container">
-            &copy; 2022 - ArtTop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </div>
-            </footer> *@
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
-    <script src="~/assets/js/inlineSVG.min.js"></script>
-    <script src="~/assets/js/main.js"></script>
-    <script>
-        $(document).ready(function () {
-            /* Client */
-            $('.partners-carousel').owlCarousel({
-                loop: true,
-                margin: 20,
-                responsiveClass: true,
-                nav: true,
-                navText: ['<i class="fa-sharp fa-solid fa-arrow-left"></i>', '<i class="fa-sharp fa-solid fa-arrow-right"></i>'],
-                responsive: {
-                    0: {
-                        items: 3,
-                        nav: true
-                    },
-                    600: {
-                        items: 3,
-                        nav: false
-                    },
-                    1000: {
-                        items: 6,
-                        nav: true,
-                        loop: false
-                    }
-                }
-            });
-            $('.project-carousel').owlCarousel({
-
-                nav: true, // Show next and prev buttons
-                navText: ['<i class="fa-sharp fa-solid fa-arrow-left"></i>', '<i class="fa-sharp fa-solid fa-arrow-right"></i>'],
-
-                slideSpeed: 300,
-                dots: false,
-
-                items: 1,
-                itemsDesktop: false,
-                itemsDesktopSmall: false,
-                itemsTablet: false,
-                itemsMobile: false
-            });
-            $('.project-inner-carousel').owlCarousel({
-
-                nav: true, // Show next and prev buttons
-                navText: ['<i class="fa-sharp fa-solid fa-arrow-left"></i>', '<i class="fa-sharp fa-solid fa-arrow-right"></i>'],
-
-                slideSpeed: 300,
-                dots: false,
-
-                items: 1,
-                itemsDesktop: false,
-                itemsDesktopSmall: false,
-                itemsTablet: false,
-                itemsMobile: false
-            });
-        });
-    </script>
-</body>
-
-</html>
+            <div class="service-item row">
+                <div class="col-md-4">
+                    <div class="icon">
+                        <img src="~/assets/images/implementation-and-integration-icon.svg" alt="">
+                    </div>
+                    <h2>
+                        Implementation and Integration
+                    </h2>
+                </div>
+                <div class="col-md-8">
+                    <P>
+                        Most IT departments nowadays lack the resources to commit to new projects. Implementing
+                        Information
+                        Access initiatives necessitates skilled employees, professionals capable of providing detailed
+                        design, a full integration plan, and rapid installation and testing. Our Implementation and
+                        Integration service consultants can assist IT departments.
+                    </P>
+                    <a href="#" class="btn btn-green">
+                        Learn More
+                        <img src="~/assets/images/launch-app.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="service-item row">
+                <div class="col-md-4">
+                    <div class="icon">
+                        <img src="~/assets/images/implementation-and-integration-icon.svg" alt="">
+                    </div>
+                    <h2>
+                        Implementation and Integration
+                    </h2>
+                </div>
+                <div class="col-md-8">
+                    <P>
+                        Most IT departments nowadays lack the resources to commit to new projects. Implementing
+                        Information
+                        Access initiatives necessitates skilled employees, professionals capable of providing detailed
+                        design, a full integration plan, and rapid installation and testing. Our Implementation and
+                        Integration service consultants can assist IT departments.
+                    </P>
+                    <a href="#" class="btn btn-green">
+                        Learn More
+                        <img src="~/assets/images/launch-app.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

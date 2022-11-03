@@ -6,7 +6,8 @@
 .white{
     color: var(--white);
 }
-.btn-green{
+.btn-green,
+.btn-green:hover{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,6 +16,7 @@
     color: var(--white);
     background-color: #008E41;
     border-radius: 15px;
+    border-color: transparent;
 }
 .btn-green img{
     margin-left: 10px;
@@ -589,7 +591,54 @@ section.solutions-about .img-bottom-container::before{
 section.solutions-about .img-bottom{
     border-radius: 15px;
 }
-
+/* become-a-partner start */
+section.become-a-partner{
+    background-image: url(../images/become-a-partner-bg.jpg);
+    background-size: cover;
+    height: 370px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section.become-a-partner .btn-green{
+    margin: auto;
+}
+section.become-a-partner p{
+    font-weight: 400;
+    font-size: 15px;
+    opacity: 0.8;
+}
+/* become-a-partner end */
+/* become-a-partner start */
+section.partners-inner{
+    padding: 70px 0;
+}
+section.partners-inner h2{
+    font-weight: 700;
+}
+section.partners-inner p{
+    margin-bottom: 50px;
+}
+section.partners-inner .partners-items{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+section.partners-inner .partner-item{
+    flex: 0 0 calc(16.66% - 16.66px);    
+    background-color: #FCFCFC;
+    border: 1px solid #DBDBDB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;;
+    border-radius: 15px;
+}
+section.partners-inner .partner-item img{
+    max-width: 130px;
+}
+/* become-a-partner end */
 
 
 
