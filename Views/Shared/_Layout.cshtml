@@ -1,51 +1,289 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - _3sApp</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/_3sApp.styles.css" asp-append-version="true" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3S</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="~/assets/css/style.css" />
 </head>
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">_3sApp</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <partial name="_loginPartial" />
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - _3sApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img src="~/assets/images/logo.svg" alt="logo"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="nav-center">
+                        <div class="collapse navbar-collapse top-menu justify-content-center" id="navbarNavAltMarkup">
+                            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">Solutions</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">About us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">Projects</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">Industries</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">Partners</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">Contact us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: fl;">
+                        <div class="search search_btn d-block">
+                            <a href="javascript:;" onClick="openSearch()">
+                                <img src="~/assets/images/search-icon.svg">
+                            </a>
+                        </div><!-- search -->
+                        <div class="lang">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    En
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="index-ar.html">عربي</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
+    </header>
+    @RenderSection("HeaderTitle", false)
+    <main role="main">
+        @RenderBody()
+    </main>
+    <footer>
+        <section class="footer-newsletter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 newsletter-label-container">
+                        <h4>
+                            subscribe to our newsletter
+                        </h4>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="subscribe">
+                            <input type="text" placeholder="Enter Your Email">
+                            <button type="button" class="subscribe-btn">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="footer-bottom">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-4">
+                        <div class="logo">
+                            <img src="~/assets/images/logo-white.svg" alt="logo 1">
+                        </div>
+                        <p class="description">
+                            We at 3S have a team of devoted resources who work solely to meet the needs of our
+                            customers. The staff is highly qualified and has extensive experience in this field,
+                            having completed various projects involving the full implementation of IP communication
+                            systems. Providing IP communication entails dealing with exceptionally high complexity
+                            and, as a result, offering technological solutions, engineering services and
+                            consultation in a highly demanding environment.
+                        </p>
+                        <div class="social-links ">
+                            <ul class="list-unstyled list-group list-group-horizontal ">
+                                <li>
+                                    <a href="#" class="facebook">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="twitter">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="linkedin">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="youtube">
+                                        <i class="fa-brands fa-youtube"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="instagram">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="copyright">
+                            ©2020 3S System Security Solutions Co.
+                        </div>
+                    </div>
+                    <div class="col-md-4 fast-links">
+                        <h2>
+                            Fast Link
+                        </h2>
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <ul class="list-unstyled list-group">
+                                    <li>
+                                        <a href="#">
+                                            Home Page
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            About us
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Services
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+
+                                <ul class="list-unstyled list-group">
+                                    <li>
+                                        <a href="#">
+                                            Industries
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Projects
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Solutions
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 contact-info">
+                        <h2>
+                            Contact us
+                        </h2>
+                        <div>
+                            <div class="d-flex contact-info-item">
+                                <div class="icon">
+                                    <img src="~/assets/images/marker.svg" alt="address">
+                                </div>
+                                <div class="text">
+                                    Fourth Floor, Office No. 406, Jarir Bookstore Building, Prince Majed St, Al
+                                    Khobar 31952, Saudi Arabia
+                                </div>
+                            </div>
+                            <div class="d-flex contact-info-item">
+                                <div class="icon">
+                                    <img src="~/assets/images/tablet.svg" alt="phone">
+                                </div>
+                                <div class="text">
+                                    +966 13 889 6664
+                                </div>
+                            </div>
+                            <div class="d-flex contact-info-item">
+                                <div class="icon">
+                                    <img src="~/assets/images/mobile.svg" alt="mobile">
+                                </div>
+                                <div class="text">
+                                    +966 13 889 6664
+                                </div>
+                            </div>
+                            <div class="d-flex contact-info-item">
+                                <div class="icon">
+                                    <img src="~/assets/images/address.svg" alt="address">
+                                </div>
+                                <div class="text">
+                                    2807 | Al Khobar, Saudi Arabia 31952
+                                </div>
+                            </div>
+                            <div class="d-flex contact-info-item">
+                                <div class="icon">
+                                    <img src="~/assets/images/mail.svg" alt="mail">
+                                </div>
+                                <div class="text">
+                                    <a href="mailto:sales@3s.sa">sales@3s.sa</a>
+                                </div>
+                            </div>
+                            <div class="d-flex contact-info-item">
+                                <div class="icon">
+                                    <img src="~/assets/images/mail.svg" alt="mail">
+                                </div>
+                                <div class="text">
+                                    <a href="mailto:sales@3s.sa">info@3s.sa</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex contact-info-item">
+                            <div class="icon">
+                                <img src="~/assets/images/marker2.svg" alt="mail">
+                            </div>
+                            <div class="text">
+                                Riyadh Address
+                                6137 Office No: 127, 6137 Northern Ring Rd, 2930, Riyadh 13313
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="~/assets/js/inlineSVG.min.js"></script>
+    <script src="~/assets/js/main.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
