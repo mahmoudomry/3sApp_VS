@@ -12,7 +12,6 @@ namespace _3sApp.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
             return View();
@@ -31,6 +30,10 @@ namespace _3sApp.Controllers
             return View();
         }
         public IActionResult Contact()
+        {
+            return View();
+        }
+        public IActionResult About()
         {
             return View();
         }
