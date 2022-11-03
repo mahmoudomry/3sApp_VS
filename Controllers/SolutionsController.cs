@@ -4,11 +4,11 @@ using System.Diagnostics;
 
 namespace _3sApp.Controllers
 {
-    public class HomeController : Controller
+    public class SolutionsController : Controller
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public SolutionsController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
@@ -18,11 +18,7 @@ namespace _3sApp.Controllers
             return View();
         }
 
-        public IActionResult Solutions()
-        {
-            return View();
-        }
-        public IActionResult Partners()
+        public IActionResult Privacy()
         {
             return View();
         }
