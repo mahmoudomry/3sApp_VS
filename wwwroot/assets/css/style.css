@@ -1106,3 +1106,45 @@ section.projects.page h2, section.projects.page p {
 .Project-item {
 margin-top:30px
 }
+.team-carousel .owl-carousel-item{
+    background: #FCFCFC;
+    border: 1px solid #DBDBDB;
+    border-radius: 15px;
+    padding: 14px 17px 30px;
+}
+.team-carousel .owl-carousel-item a{
+    text-decoration: none;
+}
+.team-carousel .owl-carousel-item .image{
+    background-size: cover;
+    border: 1px solid #DBDBDB;
+    border-radius: 15px;
+    height: 190px;
+    
+}
+.team-carousel .owl-carousel-item h4{
+    color: #000000;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+.team-carousel .owl-carousel-item h6{
+    color: #3A3C40;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+}
+.team-carousel .owl-nav.disabled{
+    display: flex;
+}
+.team-carousel .owl-nav button{
+    width: 45px;
+    height: 45px;
+    background-color: #007133 !important;
+    color: var(--white) !important;
+}
+.team-carousel .owl-nav button:hover{
+    background-color: #DBDBDB !important;
+    color: #3A3C40 !important;
+}

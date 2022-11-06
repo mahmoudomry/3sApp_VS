@@ -14,6 +14,27 @@
     </ul>
 </div>
 }
+@section Scripts{
+<script>
+
+    $('.team-carousel').owlCarousel({
+        margin: 20,
+        responsiveClass: true,
+        nav: true,
+        navText: ['<i class="fa-sharp fa-solid fa-arrow-left"></i>', '<i class="fa-sharp fa-solid fa-arrow-right"></i>'],
+        responsive: {
+            0: {
+                items: 3,
+                nav: true
+            },
+            600: {
+                items: 4,
+                nav: false
+            }
+        }
+    });
+</script>
+}
 
 <div class="layout position-relative">
     <section class="about-inner">
@@ -21,10 +42,10 @@
             <div class="row">
                 <div class="col-md-5 dark about-title">
                     <h3>
-                       @About.HomeTitle
+                        @About.HomeTitle
                     </h3>
                     <p>
-                      @About.SecondTitle
+                        @About.SecondTitle
                     </p>
                     <img src="~/assets/images/@About.PageImage" alt="About">
                 </div>
@@ -39,10 +60,10 @@
             <div class="row">
                 <div class="col-md-6 security-solutions-text">
                     <h3>
-                      Security Systems
+                        Security Systems
                     </h3>
                     <h6>
-                       @About.SecurityTitle
+                        @About.SecurityTitle
                     </h6>
                     <p>
                         @About.SecurityDesc
@@ -77,13 +98,13 @@
             <div class="row">
                 <div class="col-md-6 offset-md-3 text-center">
                     <h3>
-                       @About.OurValues
+                        @About.OurValues
                     </h3>
                     <h2>
                         @About.OurValuesH1
                     </h2>
                     <p>
-                       @About.OurValuesH2
+                        @About.OurValuesH2
                     </p>
                 </div>
             </div>
@@ -93,36 +114,36 @@
         <div class="container">
             <div class="row">
                 <div class="row">
-                    @foreach(var item in OurValues)
+                    @foreach (var item in OurValues)
                     {
-                    <div class="col-md-4">
-                        <div class="value-card">
-                            <div class="icon">
-                                <img src="~/assets/images/@item.Icon" alt="">
+                        <div class="col-md-4">
+                            <div class="value-card">
+                                <div class="icon">
+                                    <img src="~/assets/images/@item.Icon" alt="">
+                                </div>
+                                <p>
+                                    @item.Desc
+                                </p>
                             </div>
-                            <p>
-                               @item.Desc
-                            </p>
                         </div>
-                    </div>
                     }
-                
+
                 </div>
             </div>
         </div>
     </section>
 
-        <section class="our-team">
+    <section class="our-team">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3 text-center">
                     <h3>
-                       OUr team
+                        OUr team
                     </h3>
                     <h2>
-                     The best Way to Reach your Goal
+                        The best Way to Reach your Goal
                     </h2>
-                   
+
                 </div>
             </div>
         </div>
@@ -130,26 +151,48 @@
     <section class="our-team-details">
         <div class="container">
             <div class="row">
-              
-                    @foreach(var item in Members)
-                    {
-                    <div class="col-md-3">
-                        <div class="value-card">
-                            <div class="icon">
-                                <img src="~/assets/images/@item.Image" alt="" >
-                            </div>
-                            <h2>
-                                @item.Name
-                            </h2>
-                            <p>
-                               @item.JobTitle
-                            </p>
+
+                <div class="col-md-12">
+                    <!-- Set up your HTML -->
+                    <div
+                        class="owl-carousel-line animation-dramatic-content animate-dramatic ani_fadeIn aniUtil_dramatic aniUtil_active animate__animated animate__fadeIn">
+                        <div class="owl-carousel team-carousel">
+                            @foreach (var item in Members)
+                            {
+                                <div class="owl-carousel-item">
+                                    <a href="#">
+                                        <div class="image" style="background-image: url('/assets/images/@item.Image');">
+                                        </div>
+                                        <h4>
+                                            @item.Name
+                                        </h4>
+                                        <h6>
+                                            @item.JobTitle
+                                        </h6>
+                                    </a>
+                                </div>
+                            }
                         </div>
                     </div>
-                    }
-                
-          
+                </div>
             </div>
+            @* @foreach (var item in Members)
+                {
+                <div class="col-md-3">
+                <div class="value-card">
+                <div class="icon">
+                <img src="~/assets/images/@item.Image" alt="">
+                </div>
+                <h2>
+                @item.Name
+                </h2>
+                <p>
+                @item.JobTitle
+                </p>
+                </div>
+                </div>
+                } *@
         </div>
-    </section>
+</div>
+</section>
 </div>
