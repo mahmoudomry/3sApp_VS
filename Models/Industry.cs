@@ -15,10 +15,10 @@ namespace _3sApp.Models
         public string Describtion { get; set; }
 
 
-        [Required, Display(Name = "Image")]
-        public string CoverImage { get; set; }
-        [Required, Display(Name = "Icon")]
-        public string Icon { get; set; }
+        [ Display(Name = "Image")]
+        public string? CoverImage { get; set; }
+        [ Display(Name = "Icon")]
+        public string? Icon { get; set; }
 
     }
 }

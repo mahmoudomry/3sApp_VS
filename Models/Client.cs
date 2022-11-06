@@ -10,11 +10,11 @@ namespace _3sApp.Models
         [Required, Display(Name = "Title")]
         public string Title { get; set; }
         [Display(Name = "Link")]
-        public string Link { get; set; }
+        public string? Link { get; set; }
 
 
 
-        [Required, Display(Name = "Image")]
-        public string Image { get; set; }
+        [Display(Name = "Image")]
+        public string? Image { get; set; }
     }
 }

@@ -15,10 +15,10 @@ namespace _3sApp.Models
         public string Describtion { get; set; }
 
 
-        [Required, Display(Name = "Image")]
-        public string CoverImage { get; set; }
+        [ Display(Name = "Image")]
+        public string? CoverImage { get; set; }
         [ Display(Name = "Sub")]
-        public List<SubSolution> SubSolution { get; set; }
+        public List<SubSolution>? SubSolution { get; set; }
 
     }
 }

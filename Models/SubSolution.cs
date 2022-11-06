@@ -15,11 +15,11 @@ namespace _3sApp.Models
         public string Describtion { get; set; }
 
 
-        [Required, Display(Name = "Image")]
-        public string CoverImage { get; set;}
+        [ Display(Name = "Image")]
+        public string? CoverImage { get; set; }="";
 
-        [Required, Display(Name = "Icon")]
-        public string Icon { get; set; }
+        [Display(Name = "Icon")]
+        public string? Icon { get; set; } = "";
 
         [Required, Display(Name = "Order")]
         public int Order { get; set; }
@@ -27,8 +27,8 @@ namespace _3sApp.Models
         [Required, Display(Name = "Solution") ]
         
         public int SolutionId { get; set; }
-        [Required, Display(Name = "Solution")]
+        [ Display(Name = "Solution")]
         [ForeignKey("SolutionId")]
-        public Solution Solution { get; set; }
+        public Solution? Solution { get; set; }
     }
 }

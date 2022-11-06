@@ -1,6 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var Contactitems = ViewBag.Contactitems as List<Contactitem>;
+      var ContactitemsPage = ViewBag.ContactitemsPage as List<Contactitem>;
+    
+    var SiteSettings = ViewBag.SiteSettings as SiteSetting;
 }
 
 @section HeaderTitle{
@@ -18,10 +22,10 @@
                 <div class="col-md-11 offset-md-1 dark">
                     <div class="contact-title">
                         <h3>
-                            Contact us
+                            @SiteSettings.ContactTitle
                         </h3>
                         <h2>
-                            Get in touch anytime
+                           @SiteSettings.ContactTitle2
                         </h2>
                     </div>
                 </div>
@@ -55,60 +59,22 @@
                     </form>
                 </div>
                 <div class="col-md-6">
+                    @foreach(var itm in ContactitemsPage)
+                    {
                     <div class="contact-item">
                         <div class="contact-img">
-                            <img src="~/assets/images/phone.svg" alt="Phone">
+                            <img src="~/assets/images/@itm.Icon" alt="Phone">
                         </div>
                         <div class="contact-info">
                             <div class="title">
-                                Phone
+                                @itm.Title
                             </div>
                             <div class="text">
-                                +966 13 889 6664
+                                @itm.Value
                             </div>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-img">
-                            <img src="~/assets/images/envelop.svg" alt="Fax">
-                        </div>
-                        <div class="contact-info">
-                            <div class="title">
-                                Fax
-                            </div>
-                            <div class="text">
-                                +966 13 899 8896
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-img">
-                            <img src="~/assets/images/envelop.svg" alt="Mail us">
-                        </div>
-                        <div class="contact-info">
-                            <div class="title">
-                                Mail us
-                            </div>
-                            <div class="text">
-                                <a href="mailto:sales@3s.sa">sales@3s.sa</a>
-                                |
-                                <a href="mailto:info@3s.sa">info@3s.sa</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-img">
-                            <img src="~/assets/images/envelop.svg" alt="Fax">
-                        </div>
-                        <div class="contact-info">
-                            <div class="title">
-                                P.O. Box
-                            </div>
-                            <div class="text">
-                                2807 | Al Khobar, Saudi Arabia 31952
-                            </div>
-                        </div>
-                    </div>
+                }
                 </div>
             </div>
         </div>

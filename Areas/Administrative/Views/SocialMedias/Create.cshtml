@@ -1,0 +1,90 @@
+﻿@model _3sApp.Models.SocialMedia
+
+@{
+    ViewData["Title"] = "SocialMedias";
+      ViewData["ActionTitle"] = @Model==null? "Create":"Edit";
+    Layout = "_AdminLayout";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        	<div class="kt-portlet">
+										<div class="kt-portlet__head">
+											<div class="kt-portlet__head-label">
+												<h3 class="kt-portlet__head-title">
+													@ViewData["ActionTitle"]
+												</h3>
+											</div>
+										</div>
+        <form asp-action="@ViewData["ActionTitle"]" enctype="multipart/form-data" method="post" asp-area="Administrative" asp-controller="SocialMedias" class="kt-form">
+             @Html.AntiForgeryToken()	
+            <div class="kt-portlet__body">
+          @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+              <input type="hidden" name="Id" value="@(Model is null?0:Model.Id)" />
+          
+            <div class="form-group">
+                  @Html.LabelFor(m => m.Title, new { @class = "col-md-2 control-label" })
+               @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
+                 
+              
+            </div>
+            <div class="form-group">
+                            @Html.LabelFor(m => m.Link, new { @class = "col-md-2 control-label" })
+               @Html.TextBoxFor(m => m.Link, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Link, "", new { @class = "text-danger" })
+               
+            </div>
+                 <div class="form-group">
+
+               
+                        @Html.LabelFor(m => m.Icon, new { @class = "col-md-2 control-label" })
+             <select name="Icon" id=Iconselect" class="form-control">
+
+                 <option value"facebook" @(Model!=null&&Model.Icon!=null&&Model.Icon=="facebook"?"selected":"")>  facebook        </option>
+
+                                        <option value"twitter" @(Model!=null&&Model.Icon!=null&&Model.Icon=="twitter"?"selected":"")> twitter
+                                        </option>
+
+                                        <option value"linkedin" @(Model!=null&&Model.Icon!=null&&Model.Icon=="linkedin"?"selected":"")>  linkedin
+                                        </option>
+
+                                        <option value"youtube" @(Model!=null&&Model.Icon!=null&&Model.Icon=="youtube"?"selected":"")>  youtube
+                                        </option>
+
+                                        <option value"instagram" @(Model!=null&&Model.Icon!=null&&Model.Icon=="instagram"?"selected":"")> instagram
+                                        </option>
+
+             </select>
+                        @Html.ValidationMessageFor(m => m.Icon, "", new { @class = "text-danger" })
+              
+            </div>
+   <div class="form-group">
+                            @Html.LabelFor(m => m.Order, new { @class = "col-md-2 control-label" })
+               @Html.TextBoxFor(m => m.Order, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Order, "", new { @class = "text-danger" })
+               
+            </div>
+           
+
+            <div class="form-group">
+                <input type="submit" value="@ViewData["ActionTitle"]" class="btn btn-primary" />
+            </div>
+
+            </div>
+        </form>
+       
+    <div>
+    <a href="@Url.Action("Index","Icons",new{area="Administrative"})">Back to List</a>
+
+</div> 
+
+</div>
+</div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

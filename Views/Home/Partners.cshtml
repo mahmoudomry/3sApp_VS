@@ -1,6 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var Partners = ViewBag.Partners as List<Partner>;
+    var SiteSettings = ViewBag.SiteSettings as SiteSetting;
 }
 
 @section HeaderTitle{
@@ -19,10 +21,10 @@
                 <div class="col-md-6 offset-md-3 text-center">
 
                     <h2>
-                        Want to became a partners with us?
+                       @SiteSettings.PartnerPageTitle
                     </h2>
-                    <p>3S has worked with top cable and accessory manufacturers to provide our esteemed customers with
-                        reliable structured cabling solutions
+                    <p>
+                        @SiteSettings.PartnerPageDesc
                     </p>
                     <a href="#" class="btn btn-green">
                         Contact us
@@ -35,132 +37,21 @@
     <section class="partners-inner">
         <div class="container text-center">
             <h2>
-                We bring the best of the security industry
+               @SiteSettings.PartnersTitle
             </h2>
             <p>
-                to our customers to solve the hardest challenges
+               @SiteSettings.PartnersDesc
             </p>
             <div class="partners-items">
+                @foreach(var itm in Partners)
+                {
                 <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-01.svg" alt="partner-01">
+                    <a href="@itm.Link">
+                        <img src="~/assets/images/@itm.Image" alt="@itm.Title">
                     </a>
                 </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-02.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-03.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-04.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-05.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-06.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-01.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-02.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-03.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-04.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-05.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-06.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-01.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-02.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-03.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-04.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-05.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-06.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-01.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-02.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-03.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-04.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-05.svg" alt="partner-01">
-                    </a>
-                </div>
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="~/assets/images/partner-06.svg" alt="partner-01">
-                    </a>
-                </div>
+                }
+            
             </div>
         </div>
     </section>

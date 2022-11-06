@@ -1,6 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
+        var Solutions = ViewBag.Solutions as Solution;
+         var SolutionsIndex = 0;
+    var SolutionsIndex_tab= 0;
 }
 
 @section HeaderTitle{
@@ -22,20 +25,14 @@
                         Solutions
                     </h3>
                     <h2>
-                        ICT Solutions
+                      @Solutions.Title
                     </h2>
                     <p>
-                        ICT stands for Information and Communication Technology. This term is in addition to just IT
-                        with communication added. This term has revolutionized the world with its positive impacts and
-                        has changed everyone’s perspective on how we see things. World has turned into a small village
-                        with the advent of ICT. System Security Solution is not far behind or besides this revolution
-                        over the past years. 3S has been along with this term and has rendered several solutions to our
-                        various customers across industries and areas. Our range of services and solutions cover IP
-                        communications, IP telephony
+                       @Html.Raw(Solutions.Describtion)
                     </p>
                 </div>
                 <div class="col-md-6 text-center solutions-about-img">
-                    <img src="~/assets/images/solutions-details-img.png" alt="Solutions">
+                    <img src="~/assets/images/@Solutions.CoverImage" alt="Solutions">
                 </div>
             </div>
         </div>
@@ -47,46 +44,23 @@
                     <nav>
                         <div class="nav nav-tabs solutions-inner-carousel owl-carousel owl-theme" id="nav-tab"
                             role="tablist">
-                            <button class="nav-link active" id="nav-ict-solutions-tab" data-bs-toggle="tab"
+
+                              @foreach (var item in Solutions.SubSolution)
+                                {
+                                    <button class="nav-link @(SolutionsIndex==0?"active":"")" id="@("nav-"+SolutionsIndex+"-solutions-tab")" data-bs-toggle="tab"
+                                        data-bs-target="@("#nav-"+SolutionsIndex+"-solutions")" type="button" role="tab"
+                                        aria-controls="nav-@SolutionsIndex-solutions" aria-selected="true">
+                                        @item.Title
+                                </button>
+
+                                { SolutionsIndex = SolutionsIndex + 1; }
+
+                               
+                                }
+                           @* <button class="nav-link active" id="nav-ict-solutions-tab" data-bs-toggle="tab"
                                 data-bs-target="#nav-ict-solutions" type="button" role="tab"
-                                aria-controls="nav-ict-solutions" aria-selected="true">ICT solutions</button>
-                            <button class="nav-link" id="nav-elv-solutions-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-elv-solutions" type="button" role="tab"
-                                aria-controls="nav-elv-solutions" aria-selected="false">ELV Solutions</button>
-                            <button class="nav-link" id="nav-audiovisual-system-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-audiovisual-system" type="button" role="tab"
-                                aria-controls="nav-audiovisual-system" aria-selected="false">Audiovisual
-                                system</button>
-                            <button class="nav-link" id="nav-emerging-technologies-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-emerging-technologies" type="button" role="tab"
-                                aria-controls="nav-emerging-technologies" aria-selected="false">Emerging
-                                Technologies</button>
-                            <button class="nav-link" id="nav-architectural-and-recreational-lighting-tab"
-                                data-bs-toggle="tab" data-bs-target="#nav-architectural-and-recreational-lighting"
-                                type="button" role="tab" aria-controls="nav-architectural-and-recreational-lighting"
-                                aria-selected="false">
-                                Architectural and Recreational Lighting
-                            </button>
-                            <button class="nav-link" id="nav-industries-solutions-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-industries-solutions" type="button" role="tab"
-                                aria-controls="nav-industries-solutions" aria-selected="false">
-                                Industries Solutions
-                            </button>
-                            <button class="nav-link" id="nav-industries-solutions-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-industries-solutions" type="button" role="tab"
-                                aria-controls="nav-industries-solutions" aria-selected="false">
-                                Industries Solutions
-                            </button>
-                            <button class="nav-link" id="nav-industries-solutions-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-industries-solutions" type="button" role="tab"
-                                aria-controls="nav-industries-solutions" aria-selected="false">
-                                Industries Solutions
-                            </button>
-                            <button class="nav-link" id="nav-industries-solutions-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-industries-solutions" type="button" role="tab"
-                                aria-controls="nav-industries-solutions" aria-selected="false">
-                                Industries Solutions
-                            </button>
+                                aria-controls="nav-ict-solutions" aria-selected="true">ICT solutions</button>*@
+                      
                         </div>
                     </nav>
                 </div>
@@ -95,46 +69,35 @@
         <div class="container">
             <div class="row">
                 <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-ict-solutions" role="tabpanel"
+                   @* <div class="tab-pane fade show active" id="nav-ict-solutions" role="tabpanel"
                         aria-labelledby="nav-ict-solutions-tab" tabindex="0">
                         <div class="row">
-
+*@
+  @foreach (var item in Solutions.SubSolution)
+                            {
+                                <div class="tab-pane fade   @(SolutionsIndex_tab==0?"show active":"")" id="@("nav-"+SolutionsIndex_tab+"-solutions")" role="tabpanel"
+                                 aria-labelledby="@("nav-"+SolutionsIndex_tab+"-solutions-tab")" tabindex="@SolutionsIndex_tab">
+                                    <div class="row">
                             <div class="col-md-4">
                                 <div class="solution-img">
-                                    <img src="~/assets/images/srtuctured-cables.svg" alt="">
+                                    <img src="~/assets/images/@item.Icon" alt="">
                                 </div>
                                 <h2>
-                                    Structured Cables
+                                  @item.Title
                                 </h2>
                             </div>
                             <div class="col-md-6">
                                 <p>
-                                    ICT stands for Information and Communication Technology. This term is in
-                                    addition to just IT with communication added. This term has revolutionized
-                                    the
-                                    world with its positive impacts and has changed everyone’s perspective on
-                                    how we
-                                    see things. World has turned into a small village with the advent of ICT.
-                                    System
-                                    Security Solution is not far behind or besides this revolution over the past
-                                    years. 3S has been along with this term and has rendered several solutions
-                                    to
-                                    our various customers across industries and areas. Our range of services and
-                                    solutions cover IP communications, IP telephony,
+                                   @Html.Raw(item.Describtion)
                                 </p>
                             </div>
+                             
+                                    
+                                    
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="nav-elv-solutions" role="tabpanel"
-                        aria-labelledby="nav-elv-solutions-tab" tabindex="0">...</div>
-                    <div class="tab-pane fade" id="nav-audiovisual-system" role="tabpanel"
-                        aria-labelledby="nav-audiovisual-system-tab" tabindex="0">...</div>
-                    <div class="tab-pane fade" id="nav-emerging-technologies" role="tabpanel"
-                        aria-labelledby="nav-emerging-technologies-tab" tabindex="0">...</div>
-                    <div class="tab-pane fade" id="nav-architectural-and-recreational-lighting" role="tabpanel"
-                        aria-labelledby="nav-architectural-and-recreational-lighting-tab" tabindex="0">...</div>
-                    <div class="tab-pane fade" id="nav-industries-solutions" role="tabpanel"
-                        aria-labelledby="nav-industries-solutions-tab" tabindex="0">...</div>
+                    </div>  
+                    {SolutionsIndex_tab = SolutionsIndex_tab + 1;}
+                   }
                 </div>
             </div>
         </div>

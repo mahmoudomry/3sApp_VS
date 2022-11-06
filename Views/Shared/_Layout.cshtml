@@ -1,4 +1,13 @@
-﻿<!doctype html>
+﻿
+@{
+    var About = ViewBag.About as About;
+    var SiteSettings = ViewBag.SiteSettings as SiteSetting;
+    var Contactitems = ViewBag.Contactitems as List<Contactitem>;
+    var SocialMedias = ViewBag.SocialMedias as List<SocialMedia>;
+    var current_controller=ViewContext.RouteData.Values["Controller"];
+    var current_action = ViewContext.RouteData.Values["Action"];
+
+}<!doctype html>
 <html lang="en">
 
 <head>
@@ -20,6 +29,85 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
     <link rel="stylesheet" href="~/assets/css/style.css" />
+        <style>
+        section.projects ul.project-details-items li .text{
+        color: #000;
+    border: 1px solid #DBDBDB40;
+        }
+          section.projects ul.project-details-items li:first-child .text{
+   border-top-right-radius:15px;
+        }    section.projects ul.project-details-items li:last-child .text{
+   border-bottom-right-radius:15px;
+        }
+              section.projects ul.project-details-items li .label{
+
+    border: 1px solid #DBDBDB40;
+        }
+        section.solutions .tab-content .tab-pane p{
+           line-height: 30px;
+    padding-right: 30px;
+        }
+        .owl-carousel .owl-stage-outer{    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;}
+    footer .social-links a
+    {
+        color: #fff;
+    margin-right: 10px;
+    }
+      footer .social-links a:hover
+    {
+        color: #c31a2b;
+
+    }
+
+  section.our-team{
+    padding: 40px 0 120px;
+
+}
+section.our-team-details{
+    margin-bottom: 70px;
+}
+section.our-team-details .value-card{
+      margin-bottom: 20px;
+    height: 330px;
+    padding: 15px;
+   /* margin-top: -80px;*/
+    background-color: #FCFCFC;
+    background-size: cover;
+    border: 1px solid #DBDBDB;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align:center;
+}
+section.our-team-details .value-card .icon img{
+    height: 190px;
+   /* width:100%;*/
+    margin-bottom: 15px;
+}
+section.our-team-details .value-card h2{
+    text-align:center;
+    font-weight: 500;
+    font-size: 25px;
+    margin: 10px 0;
+}
+section.our-team-details .value-card p{
+       text-align:center;
+    font-weight: 500;
+    font-size: 15px;
+    color: #3A3C40;
+}
+section.our-team-details .value-card a{
+    font-weight: 400;
+    font-size: 15px;
+    color: #007133;
+    text-decoration: none;
+}
+section.our-team-details .value-card a img{
+    margin-left: 10px;
+}
+    </style>
 </head>
 
 <body>
@@ -27,7 +115,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#"><img src="~/assets/images/logo.svg" alt="logo"></a>
+                    <a class="navbar-brand" href="~/Home/Index"><img src="~/assets/images/@SiteSettings.HeaderLogo" alt="logo"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -36,29 +124,29 @@
                     <div class="nav-center">
                         <div class="collapse navbar-collapse top-menu justify-content-center" id="navbarNavAltMarkup">
                             <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                    <li class="nav-item">
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"Active":"")" aria-current="page" href="@Url.Action("Index","Home")">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Services</a>
+                                    <a class="nav-link @(current_controller=="Services"&&current_action=="Index"?"Active":"")" aria-current="page" href="@Url.Action("Index","Services")">Services</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Solutions</a>
+                                    <a class="nav-link @(current_controller=="Solutions"&&current_action=="Index"?"Active":"")" aria-current="page" href="@Url.Action("Index","Solutions")">Solutions</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">About us</a>
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"About":"")" aria-current="page" href="@Url.Action("About","Home")">About us</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Projects</a>
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"Active":"")" aria-current="page" href="#">Projects</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Industries</a>
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Industries"?"Active":"")" aria-current="page" href="@Url.Action("Industries","Home")">Industries</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Partners</a>
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Partners"?"Active":"")" aria-current="page" href="@Url.Action("Partners","Home")">Partners</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Contact us</a>
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Contact"?"Active":"")" aria-current="page" href="@Url.Action("Contact","Home")">Contact us</a>
                                 </li>
                             </ul>
                         </div>
@@ -90,189 +178,123 @@
         @RenderBody()
     </main>
     <footer>
-        <section class="footer-newsletter">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5 newsletter-label-container">
-                        <h4>
-                            subscribe to our newsletter
-                        </h4>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="subscribe">
-                            <input type="text" placeholder="Enter Your Email">
-                            <button type="button" class="subscribe-btn">Subscribe</button>
+            <section class="footer-newsletter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 newsletter-label-container">
+                            <h4>
+                               @SiteSettings.SubscribeTitle
+                            </h4>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="footer-bottom">
-            <div class="container">
-                <div class="row ">
-                    <div class="col-md-4">
-                        <div class="logo">
-                            <img src="~/assets/images/logo-white.svg" alt="logo 1">
-                        </div>
-                        <p class="description">
-                            We at 3S have a team of devoted resources who work solely to meet the needs of our
-                            customers. The staff is highly qualified and has extensive experience in this field,
-                            having completed various projects involving the full implementation of IP communication
-                            systems. Providing IP communication entails dealing with exceptionally high complexity
-                            and, as a result, offering technological solutions, engineering services and
-                            consultation in a highly demanding environment.
-                        </p>
-                        <div class="social-links ">
-                            <ul class="list-unstyled list-group list-group-horizontal ">
-                                <li>
-                                    <a href="#" class="facebook">
-                                        <i class="fa-brands fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="twitter">
-                                        <i class="fa-brands fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="linkedin">
-                                        <i class="fa-brands fa-linkedin"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="youtube">
-                                        <i class="fa-brands fa-youtube"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="instagram">
-                                        <i class="fa-brands fa-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="copyright">
-                            ©2020 3S System Security Solutions Co.
-                        </div>
-                    </div>
-                    <div class="col-md-4 fast-links">
-                        <h2>
-                            Fast Link
-                        </h2>
-                        <div class="row">
-                            <div class="col-md-6">
-
-                                <ul class="list-unstyled list-group">
-                                    <li>
-                                        <a href="#">
-                                            Home Page
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            About us
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            Services
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-
-                                <ul class="list-unstyled list-group">
-                                    <li>
-                                        <a href="#">
-                                            Industries
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            Projects
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            Solutions
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 contact-info">
-                        <h2>
-                            Contact us
-                        </h2>
-                        <div>
-                            <div class="d-flex contact-info-item">
-                                <div class="icon">
-                                    <img src="~/assets/images/marker.svg" alt="address">
-                                </div>
-                                <div class="text">
-                                    Fourth Floor, Office No. 406, Jarir Bookstore Building, Prince Majed St, Al
-                                    Khobar 31952, Saudi Arabia
-                                </div>
-                            </div>
-                            <div class="d-flex contact-info-item">
-                                <div class="icon">
-                                    <img src="~/assets/images/tablet.svg" alt="phone">
-                                </div>
-                                <div class="text">
-                                    +966 13 889 6664
-                                </div>
-                            </div>
-                            <div class="d-flex contact-info-item">
-                                <div class="icon">
-                                    <img src="~/assets/images/mobile.svg" alt="mobile">
-                                </div>
-                                <div class="text">
-                                    +966 13 889 6664
-                                </div>
-                            </div>
-                            <div class="d-flex contact-info-item">
-                                <div class="icon">
-                                    <img src="~/assets/images/address.svg" alt="address">
-                                </div>
-                                <div class="text">
-                                    2807 | Al Khobar, Saudi Arabia 31952
-                                </div>
-                            </div>
-                            <div class="d-flex contact-info-item">
-                                <div class="icon">
-                                    <img src="~/assets/images/mail.svg" alt="mail">
-                                </div>
-                                <div class="text">
-                                    <a href="mailto:sales@3s.sa">sales@3s.sa</a>
-                                </div>
-                            </div>
-                            <div class="d-flex contact-info-item">
-                                <div class="icon">
-                                    <img src="~/assets/images/mail.svg" alt="mail">
-                                </div>
-                                <div class="text">
-                                    <a href="mailto:sales@3s.sa">info@3s.sa</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex contact-info-item">
-                            <div class="icon">
-                                <img src="~/assets/images/marker2.svg" alt="mail">
-                            </div>
-                            <div class="text">
-                                Riyadh Address
-                                6137 Office No: 127, 6137 Northern Ring Rd, 2930, Riyadh 13313
+                        <div class="col-md-7">
+                            <div class="subscribe">
+                                <input type="text" placeholder="Enter Your Email">
+                                <button type="button" class="subscribe-btn">Subscribe</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </footer>
-    </div>
+            </section>
+            <section class="footer-bottom">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <div class="logo">
+                                <img src="~/assets/images/@SiteSettings.FooterLogo" alt="logo 1">
+                            </div>
+                            <p class="description">
+                                @SiteSettings.FooterDesc
+                            </p>
+                            <div class="social-links ">
+                                <ul class="list-unstyled list-group list-group-horizontal ">
+                                     @foreach(var item in SocialMedias)
+                                    {
+                                    <li>
+                                        <a href="@item.Link" class="@item.Icon">
+                                            <i class="fa-brands fa-@item.Icon"></i>
+                                        </a>
+                                    </li>
+                                    }
+                             
+                                </ul>
+                            </div>
+
+                            <div class="copyright">
+                                 @SiteSettings.CopyRight
+                            </div>
+                        </div>
+                        <div class="col-md-4 fast-links">
+                            <h2>
+                               Our Link
+                            </h2>
+                            <div class="row">
+                                   <div class="col-md-6">
+
+                                    <ul class="list-unstyled list-group">
+                                        <li>
+                                            <a href="@Url.Action("Index","Home")">
+                                                Home Page
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("About","Home")">
+                                                About us
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index","Services")">
+                                                Services
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+
+                                    <ul class="list-unstyled list-group">
+                                        <li>
+                                            <a href="@Url.Action("Industries","Home")">
+                                                Industries
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Projects
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index","Solutions") ">
+                                                Solutions
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 contact-info">
+                            <h2>
+                              Our Address
+                            </h2>
+                            <div>
+                                  @foreach(var item in Contactitems)
+                                    {
+                                <div class="d-flex contact-info-item">
+                                    <div class="icon">
+                                        <img src="~/assets/images/@item.Icon" alt="@item.Title">
+                                    </div>
+                                    <div class="text">
+                                       @item.Value
+                                    </div>
+                                </div>
+                                }
+               
+                            </div>
+             
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>

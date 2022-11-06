@@ -23,8 +23,10 @@ namespace _3sApp.Models
         public string Describtion { get; set; }
 
 
-        [Required, Display(Name = "Image")]
+        [ Display(Name = "Image")]
         public string CoverImage { get; set; }
+        [ForeignKey("PostId")]
+        public List<Media>? Images { get; set; }
 
     }
 }

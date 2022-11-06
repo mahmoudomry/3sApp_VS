@@ -1,0 +1,64 @@
+﻿@model IEnumerable<_3sApp.Models.OurValue>
+
+@{
+    ViewData["Title"] = "OurValues";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 ">
+        	<div class="kt-portlet">
+										<div class="kt-portlet__head">
+											<div class="kt-portlet__head-label">
+												<h3 class="kt-portlet__head-title pull-left">
+													@ViewData["ActionTitle"]
+												</h3>
+                                             
+											</div>
+
+                                               <a  class="btn btn-primary pull-right create-btn" href="@Url.Action("EditValues","Home",new{area="Administrative"})" >Create New</a>
+                                                
+										</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Icon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desc)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+           
+                                <img src="~/assets/images/@item.Icon"  width="100px" alt="" /> 
+                            
+           
+         </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desc)
+            </td>
+           <td width="20%">
+                <a  class="btn btn-outline-success"  href="@Url.Action("EditValues","Home",new{area="Administrative",Id=item.Id})" ><i class="fa fa-edit  "></i> Edit </a> 
+               
+                <a class="btn btn-outline-danger"  href="@Url.Action("DeleteValues","Home",new{area="Administrative",Id=item.Id})"   asp-route-id="@item.Id" onclick="return confirm('Are you sure From Deleted?')" > <i class="fa fa-trash "></i> Delete</a>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+</div>
+</div>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<_3sApp.Models.Member>
+
+
+@{
+   ViewData["Title"] = "Members";
+    	ViewData["ActionTitle"]="List";
+    Layout = "_AdminLayout";
+}
+
+<div class="row">
+    <div class="col-md-12 ">
+        	<div class="kt-portlet">
+										<div class="kt-portlet__head">
+											<div class="kt-portlet__head-label">
+												<h3 class="kt-portlet__head-title pull-left">
+													@ViewData["ActionTitle"]
+												</h3>
+                                             
+											</div>
+
+                                               <a  class="btn btn-primary pull-right create-btn" href="@Url.Action("Create","Members",new{area="Administrative"})" >Create New</a>
+                                                
+										</div>
+                                        <table class="table">
+    <thead>
+        <tr>
+            <th width="20%">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th >
+                @Html.DisplayNameFor(model => model.JobTitle)
+            </th>
+         <th >
+                @Html.DisplayNameFor(model => model.Order)
+            </th>
+            <th width="10%">
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+        
+            <th width="20%">Events</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+               
+              @Html.DisplayFor(modelItem => item.JobTitle)
+            </td>
+              <td>
+               
+              @Html.DisplayFor(modelItem => item.Order)
+            </td>
+          <td>
+                <img src="~/assets/images/@item.Image" class="img-thumbnail" width="100px" alt="">
+       
+            </td>
+           
+          
+               <td>
+                <a  class="btn btn-outline-success"  href="@Url.Action("Edit","Members",new{area="Administrative",Id=item.Id})" ><i class="fa fa-edit  "></i> Edit </a> 
+               
+                <a class="btn btn-outline-danger"  href="@Url.Action("Delete","Members",new{area="Administrative",Id=item.Id})"   asp-route-id="@item.Id" onclick="return confirm('Are you sure From Deleted?')" > <i class="fa fa-trash "></i> Delete</a>
+
+            </td>
+          
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+</div>
+</div>

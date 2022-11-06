@@ -37,7 +37,7 @@ namespace _3sApp.Models
         [Required, Display(Name = "Order")]
         public int Order { get; set; }
 
-        [Required, Display(Name = "IsActive")]
+        [ Display(Name = "IsActive")]
         public bool IsActive { get; set; }
 
 

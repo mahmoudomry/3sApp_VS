@@ -32,7 +32,6 @@
     <Folder Include="Areas\Administrative\Data\" />
     <Folder Include="Areas\Administrative\Models\" />
     <Folder Include="Areas\Administrative\Views\Shared\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Data\" />
     <Folder Include="wwwroot\Admin\assets\plugins\general\ion-rangeslider\img\" />
     <Folder Include="wwwroot\css\" />

@@ -28,6 +28,9 @@ namespace _3sApp.Models
         [Display(Name = "Order")]
         [Required]
         public int? Order { get; set; }
+
+        [Display(Name = "Link")]
+        public string Link { get; set; }
         [Display(Name = "AddBy")]
         public string? UserId { get; set; }
         [ForeignKey("UserId")]

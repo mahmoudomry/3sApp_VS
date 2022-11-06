@@ -1,20 +1,26 @@
-﻿using _3sApp.Models;
+﻿using _3sApp.Areas.Identity.Data;
+using _3sApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace _3sApp.Controllers
 {
-    public class ServicesController : Controller
+    public class ServicesController : BaseController
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public ServicesController(ILogger<HomeController> logger)
+      
+        private readonly ApplicationDBContext _context;
+        public ServicesController( ApplicationDBContext context):base( context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
+            ViewBag.About = _context.Abouts.FirstOrDefault();
+            ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();
+            ViewBag.Contactitems = _context.Contactitems.ToList();
+            ViewBag.SocialMedias = _context.SocialMedias.ToList();
+            ViewBag.Services = _context.Services.ToList();
             return View();
         }
 

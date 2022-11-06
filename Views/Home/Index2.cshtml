@@ -1,0 +1,1040 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var Sliders = ViewBag.Sliders as List<Slider>;
+    var About = ViewBag.About as About;
+    var SiteSettings = ViewBag.SiteSettings as SiteSetting;
+    var Contactitems = ViewBag.Contactitems as List<Contactitem>;
+    var SocialMedias = ViewBag.SocialMedias as List<SocialMedia>;
+    var Services = ViewBag.Services as List<Service>;
+    var Solutions = ViewBag.Solutions as List<Solution>;
+    var Projects = ViewBag.Projects as List<Project>;
+    var Industries = ViewBag.Industries as List<Industry>;
+    var Partners = ViewBag.Partners as List<Partner>;
+    var Clients = ViewBag.Clients as List<Client>;
+    var sliderIndex = 0;
+    var sliderIndex_pointer = 0;
+        var SolutionsIndex = 0;
+    var SolutionsIndex_tab= 0;
+            var ProjectIndex = 0;
+    var ProjectIndex_img= 0;
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@SiteSettings.SiteTitle</title>
+       <meta name="description" content="@SiteSettings.SiteDesc">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="~/assets/css/style.css" />
+</head>
+
+<body class="home">
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img src="~/assets/images/logo.svg" alt="logo"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="nav-center">
+                        <div class="collapse navbar-collapse top-menu justify-content-center" id="navbarNavAltMarkup">
+                            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">Solutions</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">About us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">Projects</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">Industries</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">Partners</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">Contact us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: fl;">
+                        <div class="search search_btn d-block">
+                            <a href="javascript:;" onClick="openSearch()">
+                                <img src="~/assets/images/search-icon.svg">
+                            </a>
+                        </div><!-- search -->
+                        <div class="lang">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    En
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="index-ar.html">عربي</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="layout position-relative">
+        <section class="main-slider">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+
+                    @foreach(var item in Sliders)
+                    {
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="@sliderIndex_pointer" class="@(sliderIndex_pointer==0?"active":"")"
+                        aria-current="@(sliderIndex_pointer==0?"true":"")" aria-label="Slide @sliderIndex_pointer"></button>
+
+                        @(sliderIndex_pointer=sliderIndex_pointer+1)
+                    }
+                    @*<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>*@
+                </div>
+                <div class="carousel-inner">
+                     @foreach(var item in Sliders)
+                    {
+                    <div class="carousel-item @(sliderIndex==0?"active":"")" data-bs-interval="10000"
+                        style="background-image: url('/assets/images/@item.CoverImage');">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h2 class="white mb-3">
+                                   @item.Title
+                                </h2>
+                                <p class="white">
+                                  @item.Description
+                                </p>
+                                <a href="@item.Link" class="btn btn-green">
+                                    Learn More
+                                    <img src="~/assets/images/launch-app.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                  @*  <div class="carousel-item" data-bs-interval="2000"
+                        style="background-image: url('/assets/images/main-slider-01.jpg');">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h2 class="white">
+                                    System
+                                    <br>
+                                    Security
+                                    <br>
+                                    Solutions 2
+                                </h2>
+                                <p class="white">
+                                    was founded in 2014 and is based in Al Khobar, Saudi Arabia. System Security
+                                    Solutions has expressed an interest in establishing a professional ICT systems
+                                    integrator.
+                                </p>
+                                <a href="#" class="btn btn-green">
+                                    Learn More
+                                    <img src="~/assets/images/launch-app.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="background-image: url('/assets/images/main-slider-01.jpg');">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h2 class="white">
+                                    System
+                                    <br>
+                                    Security
+                                    <br>
+                                    Solutions 3
+                                </h2>
+                                <p class="white">
+                                    was founded in 2014 and is based in Al Khobar, Saudi Arabia. System Security
+                                    Solutions has expressed an interest in establishing a professional ICT systems
+                                    integrator.
+                                </p>
+                                <a href="#" class="btn btn-green">
+                                    Learn More
+                                    <img src="~/assets/images/launch-app.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>*@
+                </div>
+            </div>
+        </section>
+
+        @if (false)
+        {
+            <header class="home top-0 pt-5 ps-4 pe-4 w-100">
+                <div class="container">
+                    <nav class="ps-5 pe-5 me-auto d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <div class="logo">
+                                <a href="#">
+                                    <img src="~/assets/images/logo.svg" alt="Art top" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="nav_action d-flex align-items-center">
+                            <ul class="nav_bar list-unstyled d-flex align-items-center mt-auto mb-auto">
+                                <li>
+                                    <a href="#" class="nav_link active">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav_link">About us </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav_link">Services</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav_link">Solutions</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav_link">Projects</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav_link">Industries</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav_link">Partners</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav_link">Contact us</a>
+                                </li>
+                            </ul>
+                            <a href="" class="search_btn d-block">
+                                <img src="~/assets/images/search-icon.svg" alt="Search">
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+        }
+        <main>
+            <section class="about-us">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-6">
+                            <h3>
+                                About us
+                               
+                            </h3>
+                            <h2>
+                                 @About.HomeTitle
+                                
+                            </h2>
+                            <p>
+                               @About.HomeDesc
+                            </p>
+                         
+                            <a href="~/Home/About" class="btn btn-green">
+                                Learn More
+                                <img src="~/assets/images/launch-app.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="services">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3 text-center">
+                            <h3>
+                                Services
+                            </h3>
+                            <h2>
+                                @SiteSettings.ServiceTitle
+                            </h2>
+                            <p>
+                               @SiteSettings.ServiceDesc
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="services-details">
+                <div class="container">
+                    <div class="row">
+                        <div class="row">
+                            @foreach(var item in Services)
+                            {
+                            <div class="col-md-4">
+                                <div class="service-card">
+                                    <div class="icon">
+                                        <img src="~/assets/images/@item.Icon" alt="">
+                                    </div>
+                                    <h2>
+                                       @item.Name
+                                    </h2>
+                                    <p>
+                                        @item.Describtion
+                                    </p>
+                                    <a href="~/Services/Index">
+                                        Learn More
+                                        <img src="~/assets/images/launch-app-green.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            }
+                          @*  <div class="col-md-4">
+                                <div class="service-card">
+                                    <div class="icon">
+                                        <img src="~/assets/images/implementation-and-integration-icon.svg" alt="">
+                                    </div>
+                                    <h2>
+                                        Implementation and Integration
+                                    </h2>
+                                    <p>
+                                        Most IT departments nowadays lack the resources to commit to new projects
+                                    </p>
+                                    <a href="#">
+                                        Learn More
+                                        <img src="~/assets/images/launch-app-green.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service-card">
+                                    <div class="icon">
+                                        <img src="~/assets/images/implementation-and-integration-icon.svg" alt="">
+                                    </div>
+                                    <h2>
+                                        Implementation and Integration
+                                    </h2>
+                                    <p>
+                                        Most IT departments nowadays lack the resources to commit to new projects
+                                    </p>
+                                    <a href="#">
+                                        Learn More
+                                        <img src="~/assets/images/launch-app-green.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>*@
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="solutions">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3 text-center">
+                            <h3>
+                                Solutions
+                            </h3>
+                            <h2>
+                               @SiteSettings.SolutionsTitle
+                            </h2>
+                            <p>
+                               @SiteSettings.SolutionsDesc
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                 @foreach(var item in Solutions)
+                            {
+                                <button class="nav-link @(SolutionsIndex==0?"active":"")" id="nav-@SolutionsIndex-solutions-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-@SolutionsIndex-solutions" type="button" role="tab"
+                                    aria-controls="nav-@SolutionsIndex-solutions" aria-selected="true">@item.Title</button>
+                                    {SolutionsIndex=SolutionsIndex+1;}
+                                }
+                               @* <button class="nav-link" id="nav-elv-solutions-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-elv-solutions" type="button" role="tab"
+                                    aria-controls="nav-elv-solutions" aria-selected="false">ELV Solutions</button>
+                                <button class="nav-link" id="nav-audiovisual-system-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-audiovisual-system" type="button" role="tab"
+                                    aria-controls="nav-audiovisual-system" aria-selected="false">Audiovisual
+                                    system</button>
+                                <button class="nav-link" id="nav-emerging-technologies-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-emerging-technologies" type="button" role="tab"
+                                    aria-controls="nav-emerging-technologies" aria-selected="false">Emerging
+                                    Technologies</button>
+                                <button class="nav-link" id="nav-architectural-and-recreational-lighting-tab"
+                                    data-bs-toggle="tab" data-bs-target="#nav-architectural-and-recreational-lighting"
+                                    type="button" role="tab" aria-controls="nav-architectural-and-recreational-lighting"
+                                    aria-selected="false">
+                                    Architectural and Recreational Lighting
+                                </button>
+                                <button class="nav-link" id="nav-industries-solutions-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-industries-solutions" type="button" role="tab"
+                                    aria-controls="nav-industries-solutions" aria-selected="false">
+                                    Industries Solutions
+                                </button>*@
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                                     @foreach(var item in Solutions)
+                            {
+                            <div class="tab-pane fade   @(SolutionsIndex_tab==0?"show active":"")" id="nav-@SolutionsIndex_tab-solutions" role="tabpanel"
+                                aria-labelledby="nav-@SolutionsIndex_tab-solutions-tab" tabindex="@SolutionsIndex_tab">
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <h3>
+                                         @item.Title
+                                        </h3>
+                                        <p>
+                                           @item.Describtion
+                                        </p>
+                                        <a href="~/Solutions/Index/@item.Id" class="btn btn-green">
+                                            Learn More
+                                            <img src="~/assets/images/launch-app.svg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <ul class="list-unstyled">
+
+                                                        @foreach(var item_sub in item.SubSolution)
+                            {
+                                            <li>
+                                                <a href="#">
+                                                    <img src="~/assets/images/@item_sub.Icon"
+                                                        alt="@item_sub.Title">
+                                                  @item_sub.Title
+                                                </a>
+                                            </li>
+                                            {SolutionsIndex_tab=SolutionsIndex_tab+1;}  }
+                                          
+                                           @* <li>
+                                                <a href="#">
+                                                    <img src="~/assets/images/advanced-wireless-solutions.svg"
+                                                        alt="Data center setup">
+                                                    Data center setup
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img src="~/assets/images/advanced-wireless-solutions.svg"
+                                                        alt="Data networks">
+                                                    Data networks
+                                                </a>
+                                            </li>*@
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                         @*    <div class="tab-pane fade" id="nav-elv-solutions" role="tabpanel"
+                                aria-labelledby="nav-elv-solutions-tab" tabindex="0">...</div>
+                           <div class="tab-pane fade" id="nav-audiovisual-system" role="tabpanel"
+                                aria-labelledby="nav-audiovisual-system-tab" tabindex="0">...</div>
+                            <div class="tab-pane fade" id="nav-emerging-technologies" role="tabpanel"
+                                aria-labelledby="nav-emerging-technologies-tab" tabindex="0">...</div>
+                            <div class="tab-pane fade" id="nav-architectural-and-recreational-lighting" role="tabpanel"
+                                aria-labelledby="nav-architectural-and-recreational-lighting-tab" tabindex="0">...</div>
+                            <div class="tab-pane fade" id="nav-industries-solutions" role="tabpanel"
+                                aria-labelledby="nav-industries-solutions-tab" tabindex="0">...</div>*@
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="projects dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3 text-center">
+                            <h3>
+                                Projects
+                            </h3>
+                            <h2>
+                               @SiteSettings.ProjectsTitle
+                            </h2>
+                            <p>
+                                @SiteSettings.ProjectsDesc
+                            </p>
+                        </div>
+                    </div>
+                    <div class="owl-carousel owl-theme project-carousel">
+
+                        @foreach(var item in Projects)
+                        {
+                        <div class="item">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="owl-carousel owl-theme project-inner-carousel">
+                                            @foreach(var images in item.Images)
+                                            {
+                                            <div class="item"
+                                                style="background-image: url('~/assets/images/@images.FileName');">
+                                                <a href="#" class="btn btn-green">
+                                                    Learn More
+                                                    <img src="~/assets/images/launch-app.svg" alt="">
+                                                </a>
+
+                                            </div>
+                                            }
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="row">
+                                            <ul class="project-details-items">
+                                                <li>
+                                                    <div class="label">
+                                                        Project
+                                                    </div>
+                                                    <div class="text">
+                                                       @item.Title
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="label">
+                                                        Client
+                                                    </div>
+                                                    <div class="text">
+                                                        @item.Client
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="label">
+                                                        Scope
+                                                    </div>
+                                                    <div class="text">
+                                                        @item.ClientLogo
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="label">
+                                                        Industrial Solution
+                                                    </div>
+                                                    <div class="text">
+                                                       @item.IndustrialSolution
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                  @*      <div class="item">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="owl-carousel owl-theme project-inner-carousel">
+
+                                            <div class="item"
+                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
+                                                <a href="#" class="btn btn-green">
+                                                    Learn More
+                                                    <img src="~/assets/images/launch-app.svg" alt="">
+                                                </a>
+
+                                            </div>
+                                            <div class="item"
+                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
+                                                <a href="#" class="btn btn-green">
+                                                    Learn More
+                                                    <img src="~/assets/images/launch-app.svg" alt="">
+                                                </a>
+
+                                            </div>
+                                            <div class="item"
+                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
+                                                <a href="#" class="btn btn-green">
+                                                    Learn More
+                                                    <img src="~/assets/images/launch-app.svg" alt="">
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="row">
+                                            <ul class="project-details-items">
+                                                <li>
+                                                    <div class="label">
+                                                        Project
+                                                    </div>
+                                                    <div class="text">
+                                                        Sabic Housing Almutrafia
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="label">
+                                                        Client
+                                                    </div>
+                                                    <div class="text">
+                                                        SABIC
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="label">
+                                                        Scope
+                                                    </div>
+                                                    <div class="text">
+                                                        ICT, ELV, ISP, Security System
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="label">
+                                                        Industrial Solution
+                                                    </div>
+                                                    <div class="text">
+                                                        Residential
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="owl-carousel owl-theme project-inner-carousel">
+
+                                            <div class="item"
+                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
+                                                <a href="#" class="btn btn-green">
+                                                    Learn More
+                                                    <img src="~/assets/images/launch-app.svg" alt="">
+                                                </a>
+
+                                            </div>
+                                            <div class="item"
+                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
+                                                <a href="#" class="btn btn-green">
+                                                    Learn More
+                                                    <img src="~/assets/images/launch-app.svg" alt="">
+                                                </a>
+
+                                            </div>
+                                            <div class="item"
+                                                style="background-image: url('/assets/images/main-slider-01.jpg');">
+                                                <a href="#" class="btn btn-green">
+                                                    Learn More
+                                                    <img src="~/assets/images/launch-app.svg" alt="">
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="row">
+                                            <ul class="project-details-items">
+                                                <li>
+                                                    <div class="label">
+                                                        Project
+                                                    </div>
+                                                    <div class="text">
+                                                        Sabic Housing Almutrafia
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="label">
+                                                        Client
+                                                    </div>
+                                                    <div class="text">
+                                                        SABIC
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="label">
+                                                        Scope
+                                                    </div>
+                                                    <div class="text">
+                                                        ICT, ELV, ISP, Security System
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="label">
+                                                        Industrial Solution
+                                                    </div>
+                                                    <div class="text">
+                                                        Residential
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                    </div>
+                   
+            </section>
+            <section class="industries">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3 text-center">
+                            <h3>
+                                Industries
+                            </h3>
+                            <h2>
+                               @SiteSettings.IndustriesTitle
+                            </h2>
+                            <p>
+                          @SiteSettings.IndustriesDesc
+                            </p>
+                        </div>
+                    </div>
+                    <div class="industry-items">
+                        @foreach(var item in Industries)
+                        {
+                        <div class="industry-item-card">
+                            <h2>
+                                <span class="icon">
+                                    <img src="~/assets/images/@item.Icon" alt="">
+                                </span>
+                               @item.Title
+                            </h2>
+                            <p>
+                               @item.Describtion
+                            </p>
+                            <a href="#">
+                                Learn More
+                                <img src="~/assets/images/launch-app-green.svg" alt="">
+                            </a>
+                        </div>
+                        }
+               
+                    </div>
+                </div>
+            </section>
+
+            <section class="partners dark">
+                <div class="container">
+                    <div class="row text-center">
+                        <h3>
+                            Partners
+                        </h3>
+                        <h2>
+                           @SiteSettings.PartnersTitle
+                        </h2>
+                        <p>
+                          @SiteSettings.PartnersDesc
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Set up your HTML -->
+                            <div
+                                class="owl-carousel-line animation-dramatic-content animate-dramatic ani_fadeIn aniUtil_dramatic aniUtil_active animate__animated animate__fadeIn">
+                                <div class="owl-carousel partners-carousel">
+                                   
+                                    @foreach(var item in Partners)
+                                    {
+                                    <div class="owl-carousel-item">
+                                        <a href="@item.Link">
+                                            <img src="~/assets/images/@item.Image" alt="@item.Title">
+                                        </a>
+                                    </div>
+                                    }
+                                </div>
+                            </div><!-- owl-carousel-line -->
+                        </div><!-- col-md-12 -->
+                    </div><!-- row -->
+                </div> <!-- container -->
+            </section><!-- partners -->
+            <section class="clients dark">
+                <div class="container">
+                    <div class="row text-center">
+                        <h3>
+                            Clients
+                        </h3>
+                        <h2>
+                           @SiteSettings.ClientTitle
+                        </h2>
+                        <p>
+                            @SiteSettings.ClientDesc
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Set up your HTML -->
+                            <div
+                                class="owl-carousel-line animation-dramatic-content animate-dramatic ani_fadeIn aniUtil_dramatic aniUtil_active animate__animated animate__fadeIn">
+                                <div class="owl-carousel">
+
+                                 @foreach(var item in Clients)
+                                    {
+                                    <div class="owl-carousel-item">
+                                        <a href="@item.Link">
+                                            <img src="~/assets/images/@item.Image" alt="@item.Title">
+                                        </a>
+                                    </div>
+                                    }
+                           
+                                </div>
+                            </div><!-- owl-carousel-line -->
+                        </div><!-- col-md-12 -->
+                    </div><!-- row -->
+                </div> <!-- container -->
+            </section><!-- clients -->
+
+        </main>
+        <footer>
+            <section class="footer-newsletter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 newsletter-label-container">
+                            <h4>
+                               @SiteSettings.SubscribeTitle
+                            </h4>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="subscribe">
+                                <input type="text" placeholder="Enter Your Email">
+                                <button type="button" class="subscribe-btn">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="footer-bottom">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <div class="logo">
+                                <img src="~/assets/images/@SiteSettings.FooterLogo" alt="logo 1">
+                            </div>
+                            <p class="description">
+                                @SiteSettings.FooterDesc
+                            </p>
+                            <div class="social-links ">
+                                <ul class="list-unstyled list-group list-group-horizontal ">
+                                     @foreach(var item in SocialMedias)
+                                    {
+                                    <li>
+                                        <a href="@item.Link" class="@item.Icon">
+                                            <i class="fa-brands fa-@item.Icon"></i>
+                                        </a>
+                                    </li>
+                                    }
+                             
+                                </ul>
+                            </div>
+
+                            <div class="copyright">
+                                 @SiteSettings.CopyRight
+                            </div>
+                        </div>
+                        <div class="col-md-4 fast-links">
+                            <h2>
+                               Our Link
+                            </h2>
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <ul class="list-unstyled list-group">
+                                        <li>
+                                            <a href="#">
+                                                Home Page
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                About us
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Services
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+
+                                    <ul class="list-unstyled list-group">
+                                        <li>
+                                            <a href="#">
+                                                Industries
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Projects
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Solutions
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 contact-info">
+                            <h2>
+                              Our Address
+                            </h2>
+                            <div>
+                                  @foreach(var item in Contactitems)
+                                    {
+                                <div class="d-flex contact-info-item">
+                                    <div class="icon">
+                                        <img src="~/assets/images/@item.Icon" alt="@item.Title">
+                                    </div>
+                                    <div class="text">
+                                       @item.Value
+                                    </div>
+                                </div>
+                                }
+                               @* <div class="d-flex contact-info-item">
+                                    <div class="icon">
+                                        <img src="~/assets/images/tablet.svg" alt="phone">
+                                    </div>
+                                    <div class="text">
+                                        +966 13 889 6664
+                                    </div>
+                                </div>
+                                <div class="d-flex contact-info-item">
+                                    <div class="icon">
+                                        <img src="~/assets/images/mobile.svg" alt="mobile">
+                                    </div>
+                                    <div class="text">
+                                        +966 13 889 6664
+                                    </div>
+                                </div>
+                                <div class="d-flex contact-info-item">
+                                    <div class="icon">
+                                        <img src="~/assets/images/address.svg" alt="address">
+                                    </div>
+                                    <div class="text">
+                                        2807 | Al Khobar, Saudi Arabia 31952
+                                    </div>
+                                </div>
+                                <div class="d-flex contact-info-item">
+                                    <div class="icon">
+                                        <img src="~/assets/images/mail.svg" alt="mail">
+                                    </div>
+                                    <div class="text">
+                                        <a href="mailto:sales@3s.sa">sales@3s.sa</a>
+                                    </div>
+                                </div>
+                                <div class="d-flex contact-info-item">
+                                    <div class="icon">
+                                        <img src="~/assets/images/mail.svg" alt="mail">
+                                    </div>
+                                    <div class="text">
+                                        <a href="mailto:sales@3s.sa">info@3s.sa</a>
+                                    </div>
+                                </div>*@
+                            </div>
+                        @*    <div class="d-flex contact-info-item">
+                                <div class="icon">
+                                    <img src="~/assets/images/marker2.svg" alt="mail">
+                                </div>
+                                <div class="text">
+                                    Riyadh Address
+                                    6137 Office No: 127, 6137 Northern Ring Rd, 2930, Riyadh 13313
+                                </div>
+                            </div>*@
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+        @* <footer class="border-top footer text-muted">
+            <div class="container">
+            &copy; 2022 - ArtTop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+            </footer> *@
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="~/assets/js/inlineSVG.min.js"></script>
+    <script src="~/assets/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            /* Client */
+            $('.partners-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                responsiveClass: true,
+                nav: true,
+                navText: ['<i class="fa-sharp fa-solid fa-arrow-left"></i>', '<i class="fa-sharp fa-solid fa-arrow-right"></i>'],
+                responsive: {
+                    0: {
+                        items: 3,
+                        nav: true
+                    },
+                    600: {
+                        items: 3,
+                        nav: false
+                    },
+                    1000: {
+                        items: 6,
+                        nav: true,
+                        loop: false
+                    }
+                }
+            });
+            $('.project-carousel').owlCarousel({
+
+                nav: true, // Show next and prev buttons
+                navText: ['<i class="fa-sharp fa-solid fa-arrow-left"></i>', '<i class="fa-sharp fa-solid fa-arrow-right"></i>'],
+
+                slideSpeed: 300,
+                dots: false,
+
+                items: 1,
+                itemsDesktop: false,
+                itemsDesktopSmall: false,
+                itemsTablet: false,
+                itemsMobile: false
+            });
+            $('.project-inner-carousel').owlCarousel({
+
+                nav: true, // Show next and prev buttons
+                navText: ['<i class="fa-sharp fa-solid fa-arrow-left"></i>', '<i class="fa-sharp fa-solid fa-arrow-right"></i>'],
+
+                slideSpeed: 300,
+                dots: false,
+
+                items: 1,
+                itemsDesktop: false,
+                itemsDesktopSmall: false,
+                itemsTablet: false,
+                itemsMobile: false
+            });
+        });
+    </script>
+</body>
+
+</html>

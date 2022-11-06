@@ -5,7 +5,7 @@ namespace _3sApp.Models
     [Table("OurValue")]
     public class OurValue
     {
-        [Required]
+       
         [Key]
         public int Id { get; set; }
         [Required, Display(Name = "Icon")]

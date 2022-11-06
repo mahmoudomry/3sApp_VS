@@ -1,20 +1,32 @@
-﻿using _3sApp.Models;
+﻿using _3sApp.Areas.Identity.Data;
+using _3sApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace _3sApp.Controllers
 {
-    public class SolutionsController : Controller
+    public class SolutionsController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
 
-        public SolutionsController(ILogger<HomeController> logger)
+        private readonly ApplicationDBContext _context;
+        public SolutionsController(ILogger<HomeController> logger,ApplicationDBContext context):base(context)
         {
             _logger = logger;
+            _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int?id)
         {
+            ViewBag.About = _context.Abouts.FirstOrDefault();
+            ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();
+            ViewBag.Contactitems = _context.Contactitems.ToList();
+            ViewBag.SocialMedias = _context.SocialMedias.ToList();
+            if (id != null)
+                ViewBag.Solutions = _context.Solutions.Where(x=>x.Id==id.Value).Include(x => x.SubSolution).FirstOrDefault();
+            else
+                ViewBag.Solutions = _context.Solutions.Include(x => x.SubSolution).FirstOrDefault(); 
             return View();
         }
 

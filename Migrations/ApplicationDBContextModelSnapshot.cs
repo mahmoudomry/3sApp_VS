@@ -174,11 +174,9 @@ namespace _3sApp.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Link")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Title")
@@ -190,99 +188,30 @@ namespace _3sApp.Migrations
                     b.ToTable("Client", (string)null);
                 });
 
-            modelBuilder.Entity("_3sApp.Models.ContactInfo", b =>
+            modelBuilder.Entity("_3sApp.Models.Contactitem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Address")
+                    b.Property<string>("Icon")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("AddressIcon")
+                    b.Property<int>("Order")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("AddressText")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Box")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("BoxIcon")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("BoxText")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("ContactTitle")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("ContactTitle2")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Fax")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("FaxIcon")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("FaxText")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("LocationIcon")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("LocationText")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Mail")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Mail2")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("MailIcon")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("MailText")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("PhoneIcon")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("PhoneText")
+                    b.Property<string>("Value")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ContactInfo", (string)null);
+                    b.ToTable("Contactitem", (string)null);
                 });
 
             modelBuilder.Entity("_3sApp.Models.ContactUsMessage", b =>
@@ -319,7 +248,6 @@ namespace _3sApp.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("CoverImage")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Describtion")
@@ -327,7 +255,6 @@ namespace _3sApp.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Icon")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Title")
@@ -378,7 +305,33 @@ namespace _3sApp.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PostId");
+
                     b.ToTable("Media", (string)null);
+                });
+
+            modelBuilder.Entity("_3sApp.Models.Member", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("JobTitle")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Order")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Member", (string)null);
                 });
 
             modelBuilder.Entity("_3sApp.Models.OurValue", b =>
@@ -411,11 +364,9 @@ namespace _3sApp.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Link")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Title")
@@ -477,11 +428,9 @@ namespace _3sApp.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Icon")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
@@ -507,6 +456,14 @@ namespace _3sApp.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("ContactTitle")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ContactTitle2")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("CopyRight")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -523,11 +480,23 @@ namespace _3sApp.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("HomeHeaderLogo")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("IndustriesDesc")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("IndustriesTitle")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("MemberDesc")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("MemberTitle")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -595,7 +564,6 @@ namespace _3sApp.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("CoverImage")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Description")
@@ -603,10 +571,15 @@ namespace _3sApp.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("varchar(500)");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool?>("IsActive")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<int>("Order")
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("Order")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -614,7 +587,6 @@ namespace _3sApp.Migrations
                         .HasColumnType("varchar(500)");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
@@ -624,6 +596,32 @@ namespace _3sApp.Migrations
                     b.ToTable("Slider", (string)null);
                 });
 
+            modelBuilder.Entity("_3sApp.Models.SocialMedia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Icon")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Order")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SocialMedia", (string)null);
+                });
+
             modelBuilder.Entity("_3sApp.Models.Solution", b =>
                 {
                     b.Property<int>("Id")
@@ -631,7 +629,6 @@ namespace _3sApp.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("CoverImage")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Describtion")
@@ -654,7 +651,6 @@ namespace _3sApp.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("CoverImage")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Describtion")
@@ -662,7 +658,6 @@ namespace _3sApp.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Icon")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("Order")
@@ -814,13 +809,20 @@ namespace _3sApp.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("_3sApp.Models.Media", b =>
+                {
+                    b.HasOne("_3sApp.Models.Project", null)
+                        .WithMany("Images")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("_3sApp.Models.Slider", b =>
                 {
                     b.HasOne("_3sApp.Areas.Identity.Data.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("ApplicationUser");
                 });
@@ -885,6 +887,11 @@ namespace _3sApp.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("_3sApp.Models.Project", b =>
+                {
+                    b.Navigation("Images");
                 });
 
             modelBuilder.Entity("_3sApp.Models.Solution", b =>

@@ -1,4 +1,4 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -12,20 +12,20 @@
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
-          "ASPNETCORE_ENVIRONMENT": "Development",
-          "Key": "Value"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Key": "Value"
       },
       "applicationUrl": "https://localhost:5003;http://localhost:5002",
       "hotReloadProfile": "aspnetcore"
-  },
+    },
     "_3sApp": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7244;http://localhost:5244",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "applicationUrl": "https://localhost:7244;http://localhost:5244",
+      "dotnetRunMessages": true
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -33,6 +33,17 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "launchBrowser": true,
+      "launchUrl": "https://localhost:5003",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Key": "Value",
+        "ASPNETCORE_URLS": "https://localhost:5003;http://localhost:5002"
+      },
+      "distributionName": ""
     }
   }
 }

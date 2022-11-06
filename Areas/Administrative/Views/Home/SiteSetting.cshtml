@@ -1,0 +1,203 @@
+﻿@model _3sApp.Models.SiteSetting
+
+@{
+    ViewData["Title"] = "SiteSetting";
+     ViewData["ActionTitle"] = @Model == null ? "Create" : "Edit";
+    Layout = "_AdminLayout";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <div class="kt-portlet">
+            <div class="kt-portlet__head">
+                <div class="kt-portlet__head-label">
+                    <h3 class="kt-portlet__head-title">
+                        @ViewData["ActionTitle"]
+                    </h3>
+                </div>
+            </div>  
+            <div class="kt-portlet__body">
+            <form asp-action="SiteSetting" enctype="multipart/form-data" method="post" asp-area="Administrative" asp-controller="Home" class="kt-form">
+                @Html.AntiForgeryToken()
+             
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+          
+              <input type="hidden" name="Id" value="@(Model is null?0:Model.Id)" />
+                    <input type="hidden" name="HeaderLogo" value="@(Model is null?"main-slider-01.jpg":Model.HeaderLogo)" />
+                    <input type="hidden" name="FooterLogo" value="@(Model is null?"main-slider-01.jpg":Model.FooterLogo)" />
+                      <input type="hidden" name="HomeHeaderLogo" value="@(Model is null?"main-slider-01.jpg":Model.HomeHeaderLogo)" />
+          <div class="form-group">
+                  @if (Model != null && Model.HomeHeaderLogo != null)
+                        {
+                            <img src="~/assets/images/@Model.HomeHeaderLogo" width="100px" />
+                        }
+                        @Html.LabelFor(m => m.HomeHeaderLogo, new { @class = "col-md-2 control-label" })
+                        <input name="HomeHeaderLogo" type="file" class="form-control" />
+                        @Html.ValidationMessageFor(m => m.HomeHeaderLogo, "", new { @class = "text-danger" })
+             
+
+            </div>
+                      <div class="form-group">
+                  @if (Model != null && Model.HeaderLogo != null)
+                        {
+                            <img src="~/assets/images/@Model.HeaderLogo" width="100px" />
+                        }
+                        @Html.LabelFor(m => m.HeaderLogo, new { @class = "col-md-2 control-label" })
+                        <input name="HeaderLogo" type="file" class="form-control" />
+                        @Html.ValidationMessageFor(m => m.HeaderLogo, "", new { @class = "text-danger" })
+             
+
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.SiteTitle, new { @class = "col-md-2 control-label" })
+                        @Html.TextBoxFor(m => m.SiteTitle, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.SiteTitle, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.SiteDesc, new { @class = "col-md-2 control-label" })
+                        @Html.TextAreaFor(m => m.SiteDesc, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.SiteDesc, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.ServiceTitle, new { @class = "col-md-2 control-label" })
+                        @Html.TextBoxFor(m => m.ServiceTitle, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ServiceTitle, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.ServiceDesc, new { @class = "col-md-2 control-label" })
+                        @Html.TextAreaFor(m => m.ServiceDesc, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ServiceDesc, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.SolutionsTitle, new { @class = "col-md-2 control-label" })
+                        @Html.TextBoxFor(m => m.SolutionsTitle, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.SolutionsTitle, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.SolutionsDesc, new { @class = "col-md-2 control-label" })
+                        @Html.TextAreaFor(m => m.SolutionsDesc, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.SolutionsDesc, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.ProjectsTitle, new { @class = "col-md-2 control-label" })
+                        @Html.TextBoxFor(m => m.ProjectsTitle, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ProjectsTitle, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.ProjectsDesc, new { @class = "col-md-2 control-label" })
+                        @Html.TextAreaFor(m => m.ProjectsDesc, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ProjectsDesc, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.IndustriesTitle, new { @class = "col-md-2 control-label" })
+                        @Html.TextBoxFor(m => m.IndustriesTitle, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.IndustriesTitle, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.IndustriesDesc, new { @class = "col-md-2 control-label" })
+                        @Html.TextAreaFor(m => m.IndustriesDesc, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.IndustriesDesc, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.PartnersTitle, new { @class = "col-md-2 control-label" })
+                        @Html.TextBoxFor(m => m.PartnersTitle, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.PartnersTitle, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.PartnersDesc, new { @class = "col-md-2 control-label" })
+                        @Html.TextAreaFor(m => m.PartnersDesc, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.PartnersDesc, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.ClientTitle, new { @class = "col-md-2 control-label" })
+                        @Html.TextBoxFor(m => m.ClientTitle, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ClientTitle, "", new { @class = "text-danger" })
+             
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.ClientDesc, new { @class = "col-md-2 control-label" })
+                        @Html.TextAreaFor(m => m.ClientDesc, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ClientDesc, "", new { @class = "text-danger" })
+   
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.SubscribeTitle, new { @class = "col-md-2 control-label" })
+                        @Html.TextBoxFor(m => m.SubscribeTitle, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.SubscribeTitle, "", new { @class = "text-danger" })
+            
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.FooterDesc, new { @class = "col-md-2 control-label" })
+                        @Html.TextAreaFor(m => m.FooterDesc, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.FooterDesc, "", new { @class = "text-danger" })
+ 
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.CopyRight, new { @class = "col-md-2 control-label" })
+                        @Html.TextBoxFor(m => m.CopyRight, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CopyRight, "", new { @class = "text-danger" })
+   
+            </div>
+            <div class="form-group">
+                 @if (Model != null && Model.FooterLogo != null)
+                        {
+                            <img src="~/assets/images/@Model.FooterLogo" width="100px" />
+                        }
+                        @Html.LabelFor(m => m.FooterLogo, new { @class = "col-md-2 control-label" })
+                        <input name="FooterLogo" type="file" class="form-control" />
+                        @Html.ValidationMessageFor(m => m.FooterLogo, "", new { @class = "text-danger" })
+                
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.PartnerPageTitle, new { @class = "col-md-2 control-label" })
+                        @Html.TextBoxFor(m => m.PartnerPageTitle, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.PartnerPageTitle, "", new { @class = "text-danger" })
+              </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.PartnerPageDesc, new { @class = "col-md-2 control-label" })
+                        @Html.TextAreaFor(m => m.PartnerPageDesc, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.PartnerPageDesc, "", new { @class = "text-danger" })
+                
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.ContactTitle, new { @class = "col-md-2 control-label" })
+                        @Html.TextBoxFor(m => m.ContactTitle, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ContactTitle, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.ContactTitle2, new { @class = "col-md-2 control-label" })
+                        @Html.TextBoxFor(m => m.ContactTitle2, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ContactTitle2, "", new { @class = "text-danger" })
+            
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+        <div>
+    <a asp-action="Index">Back to List</a>
+</div>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

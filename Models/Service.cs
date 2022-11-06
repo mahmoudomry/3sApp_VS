@@ -13,9 +13,9 @@ namespace _3sApp.Models
 
         [Required, Display(Name = "Describtion")]
         public string Describtion { get; set; }
-        [Required, Display(Name = "Image")]
-        public string Image { get; set; }
-        [Required, Display(Name = "Icon")]
-        public string Icon { get; set; }
+        [ Display(Name = "Image")]
+        public string? Image { get; set; }
+        [ Display(Name = "Icon")]
+        public string ?Icon { get; set; }
     }
 }

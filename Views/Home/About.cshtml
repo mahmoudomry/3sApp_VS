@@ -1,6 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var About = ViewBag.About as About;
+    var SiteSettings = ViewBag.SiteSettings as SiteSetting;
+    var OurValues = ViewBag.OurValues as List<OurValue>;
+    var Members = ViewBag.Members as List<Member>;
 }
 @section HeaderTitle{
 <div class="top-title">
@@ -17,37 +21,15 @@
             <div class="row">
                 <div class="col-md-5 dark about-title">
                     <h3>
-                        about us
+                       @About.HomeTitle
                     </h3>
                     <p>
-                        System Security Solutions has expressed an interest in establishing a professional ICT systems
-                        integrator.
+                      @About.SecondTitle
                     </p>
-                    <img src="~/assets/images/about-camera-2.png" alt="About">
+                    <img src="~/assets/images/@About.PageImage" alt="About">
                 </div>
                 <div class="col-md-6 offset-md-1 about-summary">
-                    <p>
-                        System Security Solutions Company (3S) was founded in 2014 and is based in Al Khobar, Saudi
-                        Arabia. System Security Solutions has expressed an interest in establishing a professional ICT
-                        systems integrator
-                    </p>
-                    <p>
-                        System Security Solutions has a tendency to expand throughout the GCC and the Middle East.
-                        Today, the company is regarded as one of the top providers of professional systems integration,
-                        offering customers turnkey solutions to their problems, from initial design to system
-                        installation and testing, and even commissioning and after-sales servicing
-                    </p>
-                    <p>
-                        Our elite team comprises the most skilled, talented, and experienced engineers and professionals
-                        in the industry. For its clients, the firm plans, creates, delivers, and manages primary ICT and
-                        low-current solutions
-                    </p>
-                    <p>
-                        Through an ecologically responsible method and a safe working environment, 3S is continually
-                        devoted to supplying products and offering high-quality services worthy of customer pleasure and
-                        victory. Furthermore, we have effectively developed an integrated management system in every
-                        part of our business to ensure the greatest possible approach for operating our business.
-                    </p>
+                    @About.PageDesc
                 </div>
             </div>
         </div>
@@ -57,22 +39,17 @@
             <div class="row">
                 <div class="col-md-6 security-solutions-text">
                     <h3>
-                        Security Solutions
+                      Security Systems
                     </h3>
                     <h6>
-                        The most skilled, talented, and experienced engineers and professionals in the industry
+                       @About.SecurityTitle
                     </h6>
                     <p>
-                        For its clients, the firm plans, creates, delivers, and manages primary ICT and low-current
-                        solutions.
-                        Through an ecologically responsible method and a safe working environment, 3S is continually
-                        devoted to supplying products and offering high-quality services worthy of customer pleasure and
-                        victory. Furthermore, we have effectively developed an integrated management system in every
-                        part of our business to ensure the greatest possible approach for operating our business.
+                        @About.SecurityDesc
                     </p>
                 </div>
                 <div class="col-md-6">
-                    <img src="~/assets/images/security-solutions.jpg" alt="security-solutions">
+                    <img src="~/assets/images/@About.SecurityImage" alt="security-solutions">
                 </div>
             </div>
         </div>
@@ -82,22 +59,15 @@
             <div class="row">
                 <div class="col-md-6">
                     <h2>
-                        CEO Message
+                        @About.CEOTitle
                     </h2>
-                    <img src="~/assets/images/ceo.png" alt="security-solutions">
+                    <img src="~/assets/images/@About.CEOImage" alt="security-solutions">
                 </div>
                 <div class="col-md-6 security-solutions-text">
                     <p>
-                        System Security Solutions functions as a unified and seamless team, and as such, each member of
-                        our organization is highly skilled and critical to the projects of our customers. We believe in
-                        investing in these individuals, each of whom contributes significantly to the reputation that
-                        System Security Solutions has established. After all, our team is our most significant asset and
-                        a clear competitive advantage to persuade clients to choose System Security Solutions over other
-                        companies. System Security Solutions is happy to be on a growth trajectory with sustained
-                        profitability in this highly competitive business in Saudi Arabia and the Middle East.
-                        Stagnation is not a priority for us; leading the industry is
+                        @About.CEODesc
                     </p>
-                    <img src="~/assets/images/ceo-signature.png" alt="Abdulaziz M. Aljabr">
+                    <img src="~/assets/images/@About.SignImage" alt="Abdulaziz M. Aljabr">
                 </div>
             </div>
         </div>
@@ -107,13 +77,13 @@
             <div class="row">
                 <div class="col-md-6 offset-md-3 text-center">
                     <h3>
-                        Our Values
+                       @About.OurValues
                     </h3>
                     <h2>
-                        In System Security Solutions
+                        @About.OurValuesH1
                     </h2>
                     <p>
-                        we are dedicated to global quality standards for best practices
+                       @About.OurValuesH2
                     </p>
                 </div>
             </div>
@@ -123,42 +93,62 @@
         <div class="container">
             <div class="row">
                 <div class="row">
+                    @foreach(var item in OurValues)
+                    {
                     <div class="col-md-4">
                         <div class="value-card">
                             <div class="icon">
-                                <img src="~/assets/images/globe.svg" alt="">
+                                <img src="~/assets/images/@item.Icon" alt="">
                             </div>
                             <p>
-                                In System Security Solutions, we are dedicated to global quality standards for best
-                                practices and competent service delivery
+                               @item.Desc
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="value-card">
-                            <div class="icon">
-                                <img src="~/assets/images/chat.svg" alt="">
-                            </div>
-                            <p>
-                                We think beyond the box and consistently develop unique concepts for each of our
-                                clients. We bring new ideas to the table every time we work hard to understand each
-                                customer's demands
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="value-card">
-                            <div class="icon">
-                                <img src="~/assets/images/check.svg" alt="">
-                            </div>
-                            <p>
-                                Quality service and a skilled approach to any assignment are guaranteed. We take care
-                                of our customers and can spend hours perfecting it! Our highly trained team of
-                                developers, designers, and team leaders will make every attempt to exceed expectations
-                            </p>
-                        </div>
-                    </div>
+                    }
+                
                 </div>
+            </div>
+        </div>
+    </section>
+
+        <section class="our-team">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 text-center">
+                    <h3>
+                       OUr team
+                    </h3>
+                    <h2>
+                     The best Way to Reach your Goal
+                    </h2>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="our-team-details">
+        <div class="container">
+            <div class="row">
+              
+                    @foreach(var item in Members)
+                    {
+                    <div class="col-md-3">
+                        <div class="value-card">
+                            <div class="icon">
+                                <img src="~/assets/images/@item.Image" alt="" >
+                            </div>
+                            <h2>
+                                @item.Name
+                            </h2>
+                            <p>
+                               @item.JobTitle
+                            </p>
+                        </div>
+                    </div>
+                    }
+                
+          
             </div>
         </div>
     </section>

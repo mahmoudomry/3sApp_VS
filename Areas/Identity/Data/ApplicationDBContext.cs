@@ -23,7 +23,7 @@ public class ApplicationDBContext : IdentityDbContext<ApplicationUser>
         builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
         builder.Entity<About>().ToTable("About");
         builder.Entity<Client>().ToTable("Client");
-        builder.Entity<ContactInfo>().ToTable("ContactInfo");
+       // builder.Entity<ContactInfo>().ToTable("ContactInfo");
         builder.Entity<ContactUsMessage>().ToTable("ContactUsMessage");
         builder.Entity<Industry>().ToTable("Industry");
         builder.Entity<Media>().ToTable("Media");
@@ -35,10 +35,13 @@ public class ApplicationDBContext : IdentityDbContext<ApplicationUser>
         builder.Entity<Slider>().ToTable("Slider");
         builder.Entity<Solution>().ToTable("Solution");
         builder.Entity<SubSolution>().ToTable("SubSolution");
+        builder.Entity<Contactitem>().ToTable("Contactitem");
+        builder.Entity<Member>().ToTable("Member");
+        builder.Entity<SocialMedia>().ToTable("SocialMedia");
     }
     public DbSet<About> Abouts { get; set; }
     public DbSet<Client> Clients { get; set; }
-    public DbSet<ContactInfo> ContactInfos { get; set; }
+   // public DbSet<ContactInfo> ContactInfos { get; set; }
     public DbSet<ContactUsMessage> ContactUsMessages { get; set; }
     public DbSet<Industry> Industries { get; set; }
     public DbSet<Media> Medias { get; set; }
@@ -49,7 +52,10 @@ public class ApplicationDBContext : IdentityDbContext<ApplicationUser>
     public DbSet<SiteSetting> SiteSettings { get; set; }
     public DbSet<Slider> Sliders { get; set; }
     public DbSet<Solution> Solutions { get; set; }
-    public DbSet<SubSolution> SubSolutions { get; set; }  
+    public DbSet<SubSolution> SubSolutions { get; set; }
+    public DbSet<_3sApp.Models.Contactitem> Contactitems { get; set; }
+    public DbSet<_3sApp.Models.Member> Members { get; set; }
+    public DbSet<_3sApp.Models.SocialMedia> SocialMedias { get; set; }
 }
 
 internal class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<ApplicationUser>

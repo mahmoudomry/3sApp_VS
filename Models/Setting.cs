@@ -9,6 +9,9 @@ namespace _3sApp.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [Required, Display(Name = "Home Header Logo")]
+        public string HomeHeaderLogo { get; set; }
         [Required, Display(Name = "Header Logo")]
         public string HeaderLogo { get; set; }
         [Required, Display(Name = "Site Title meta")]
@@ -66,5 +69,16 @@ namespace _3sApp.Models
         public string PartnerPageTitle { get; set; }
         [Required, Display(Name = "Partner Page Desc")]
         public string PartnerPageDesc { get; set; }
+
+        [Required, Display(Name = "Contact Title ")]
+        public string ContactTitle { get; set; }
+
+        [Required, Display(Name = "Contact Title2")]
+        public string ContactTitle2 { get; set; }
+        [Required, Display(Name = "Members Title")]
+        public string MemberTitle { get; set; }
+        [Required, Display(Name = "Member Desc")]
+        public string MemberDesc { get; set; }
+
     }
 }

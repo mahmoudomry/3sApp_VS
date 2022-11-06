@@ -1,0 +1,65 @@
+﻿@model _3sApp.Models.OurValue
+
+@{
+    ViewData["Title"] = "Our Values";
+    ViewData["ActionTitle"] = Model == null ? "Create" : "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <div class="kt-portlet">
+            <div class="kt-portlet__head">
+                <div class="kt-portlet__head-label">
+                    <h3 class="kt-portlet__head-title">
+                        @ViewData["ActionTitle"]
+                    </h3>
+                </div>
+            </div>  
+            <div class="kt-portlet__body">
+            <form asp-action="EditValues" enctype="multipart/form-data" method="post" asp-area="Administrative" asp-controller="Home" class="kt-form">
+                @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+       
+            <input type="hidden" name="Id" value="@(Model is null?0:Model.Id)" />
+            <div class="form-group">
+                @if (Model != null && Model.Icon != null)
+                        {
+                  
+                                <img src="~/assets/images/@Model.Icon" width="100px" alt="" /> 
+                            
+                        }
+                          <input type="hidden" name="Icon" value="@(Model is null?"Icon":Model.Icon)" />
+                  @Html.LabelFor(m => m.Icon, new { @class = "col-md-2 control-label" })
+    <input name="Iconfile" type="file" class="form-control" />
+                        @Html.ValidationMessageFor(m => m.Icon, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.Title, new { @class = "col-md-2 control-label" })
+                        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.Desc, new { @class = "col-md-2 control-label" })
+                        @Html.TextAreaFor(m => m.Desc, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Desc, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+        <div>
+    <a asp-action="Index">Back to List</a>
+</div>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
