@@ -1,0 +1,116 @@
+﻿@{
+    ViewData["Title"] = "Projects";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var Projects = ViewBag.Projects as List<Project>;
+    var SiteSettings = ViewBag.SiteSettings as SiteSetting;
+    var SolutionsIndex = 0;
+    var SolutionsIndex_tab = 0;
+}
+
+@section HeaderTitle{
+    <div class="top-title">
+        <ul class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li>Projects</li>
+
+        </ul>
+
+       
+    </div>
+}
+
+    <div class="layout position-relative project">
+        <section class="projects dark page" style="text-align:center">
+            <h2>
+                @SiteSettings.ProjectsTitle
+            </h2>
+            <p>
+                @SiteSettings.ProjectsDesc
+            </p>
+            <div class="container">
+                <div class="row">
+                @foreach (var item in Projects)
+                {
+                    <div class="item Project-item">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="owl-carousel owl-theme project-inner-carousel">
+                                        @foreach (var images in item.Images)
+                                        {
+                                            <div class="item"
+                                         style="background-image: url('/assets/images/@images.FileName');">
+                                               @* <a href="#" class="btn btn-green">
+                                                    Learn More
+                                                    <img src="~/assets/images/launch-app.svg" alt="">
+                                                </a>*@
+
+                                            </div>
+                                        }
+
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="row">
+                                        <ul class="project-details-items">
+                                            <li>
+                                                <div class="label">
+                                                    Project
+                                                </div>
+                                                <div class="text">
+                                                    @item.Title
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="label">
+                                                    Client
+                                                </div>
+                                                <div class="text">
+                                                    @item.Client
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="label">
+                                                    Scope
+                                                </div>
+                                                <div class="text">
+                                                    @item.Scope
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="label">
+                                                    Industrial Solution
+                                                </div>
+                                                <div class="text">
+                                                    @item.IndustrialSolution
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+</div>
+
+                                                @section Scripts{
+                                                    <script>
+                                                    $('.project-inner-carousel').owlCarousel({
+
+                    nav: true, // Show next and prev buttons
+                    navText: ['<i class="fa-sharp fa-solid fa-arrow-left"></i>', '<i class="fa-sharp fa-solid fa-arrow-right"></i>'],
+
+                slideSpeed: 300,
+                dots: false,
+
+                items: 1,
+                itemsDesktop: false,
+                itemsDesktopSmall: false,
+                itemsTablet: false,
+                itemsMobile: false
+        });</script>
+                                                }

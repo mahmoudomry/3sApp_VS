@@ -39,37 +39,7 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
     <link rel="stylesheet" href="~/assets/css/style.css" />
-    <style>
-        section.projects ul.project-details-items li .text{
-        color: #000;
-    border: 1px solid #DBDBDB40;
-        }
-          section.projects ul.project-details-items li:first-child .text{
-   border-top-right-radius:15px;
-        }    section.projects ul.project-details-items li:last-child .text{
-   border-bottom-right-radius:15px;
-        }
-              section.projects ul.project-details-items li .label{
-
-    border: 1px solid #DBDBDB40;
-        }
-        section.solutions .tab-content .tab-pane p{
-           line-height: 30px;
-    padding-right: 30px;
-        }
-        .owl-carousel .owl-stage-outer{    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;}
-    footer .social-links a
-    {
-        color: #fff;
-    margin-right: 10px;
-    }
-      footer .social-links a:hover
-    {
-        color: #c31a2b;
-
-    }
-    </style>
+    
 </head>
 
 <body class="home">
@@ -89,17 +59,19 @@
                                      <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"Active":"")" aria-current="page" href="@Url.Action("Index","Home")">Home</a>
                                 </li>
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"About":"")" aria-current="page" href="@Url.Action("About","Home")">About us</a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Services"&&current_action=="Index"?"Active":"")" aria-current="page" href="@Url.Action("Index","Services")">Services</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Solutions"&&current_action=="Index"?"Active":"")" aria-current="page" href="@Url.Action("Index","Solutions")">Solutions</a>
                                 </li>
+                               
                                 <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"About":"")" aria-current="page" href="@Url.Action("About","Home")">About us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"Active":"")" aria-current="page" href="#">Projects</a>
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Projects"?"Active":"")" aria-current="page" href="@Url.Action("Projects","Home")">Projects</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Home"&&current_action=="Industries"?"Active":"")" aria-current="page" href="@Url.Action("Industries","Home")">Industries</a>
@@ -192,16 +164,17 @@
                                     <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"Active":"")" aria-current="page" href="@Url.Action("Index","Home")">Home</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"About":"")" aria-current="page" href="@Url.Action("About","Home")">About us</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Services"&&current_action=="Index"?"Active":"")" aria-current="page" href="@Url.Action("Index","Services")">Services</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Solutions"&&current_action=="Index"?"Active":"")" aria-current="page" href="@Url.Action("Index","Solutions")">Solutions</a>
                                 </li>
+                               
                                 <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"About":"")" aria-current="page" href="@Url.Action("About","Home")">About us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"Active":"")" aria-current="page" href="#">Projects</a>
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Projects"?"Active":"")" aria-current="page" href="@Url.Action("Projects","Home")">Projects</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Home"&&current_action=="Industries"?"Active":"")" aria-current="page" href="@Url.Action("Industries","Home")">Industries</a>
@@ -632,7 +605,13 @@
                                                 Services
                                             </a>
                                         </li>
+                                          <li>
+                                            <a href="#">
+                                                Career
+                                            </a>
+                                        </li>
                                     </ul>
+
                                 </div>
                                 <div class="col-md-6">
 
@@ -643,13 +622,18 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="@Url.Action("Projects","Home")">
                                                 Projects
                                             </a>
                                         </li>
                                         <li>
                                             <a href="@Url.Action("Index","Solutions") ">
                                                 Solutions
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                News
                                             </a>
                                         </li>
                                     </ul>

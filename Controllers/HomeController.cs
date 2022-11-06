@@ -95,6 +95,16 @@ namespace _3sApp.Controllers
             ViewBag.Members = _context.Members.OrderByDescending(x=>x.Order).ToList();
             return View();
         }
+        public IActionResult Projects()
+        {
+            ViewBag.Projects = _context.Projects.Include(x => x.Images.Where(x => x.CategoryId == 1)).ToList();
+            ViewBag.About = _context.Abouts.FirstOrDefault();
+            ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();
+            ViewBag.Contactitems = _context.Contactitems.ToList();
+            ViewBag.SocialMedias = _context.SocialMedias.ToList();
+
+            return View();
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
