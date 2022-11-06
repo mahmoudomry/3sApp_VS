@@ -29,85 +29,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
     <link rel="stylesheet" href="~/assets/css/style.css" />
-        <style>
-        section.projects ul.project-details-items li .text{
-        color: #000;
-    border: 1px solid #DBDBDB40;
-        }
-          section.projects ul.project-details-items li:first-child .text{
-   border-top-right-radius:15px;
-        }    section.projects ul.project-details-items li:last-child .text{
-   border-bottom-right-radius:15px;
-        }
-              section.projects ul.project-details-items li .label{
 
-    border: 1px solid #DBDBDB40;
-        }
-        section.solutions .tab-content .tab-pane p{
-           line-height: 30px;
-    padding-right: 30px;
-        }
-        .owl-carousel .owl-stage-outer{    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;}
-    footer .social-links a
-    {
-        color: #fff;
-    margin-right: 10px;
-    }
-      footer .social-links a:hover
-    {
-        color: #c31a2b;
-
-    }
-
-  section.our-team{
-    padding: 40px 0 120px;
-
-}
-section.our-team-details{
-    margin-bottom: 70px;
-}
-section.our-team-details .value-card{
-      margin-bottom: 20px;
-    height: 330px;
-    padding: 15px;
-   /* margin-top: -80px;*/
-    background-color: #FCFCFC;
-    background-size: cover;
-    border: 1px solid #DBDBDB;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    text-align:center;
-}
-section.our-team-details .value-card .icon img{
-    height: 190px;
-   /* width:100%;*/
-    margin-bottom: 15px;
-}
-section.our-team-details .value-card h2{
-    text-align:center;
-    font-weight: 500;
-    font-size: 25px;
-    margin: 10px 0;
-}
-section.our-team-details .value-card p{
-       text-align:center;
-    font-weight: 500;
-    font-size: 15px;
-    color: #3A3C40;
-}
-section.our-team-details .value-card a{
-    font-weight: 400;
-    font-size: 15px;
-    color: #007133;
-    text-decoration: none;
-}
-section.our-team-details .value-card a img{
-    margin-left: 10px;
-}
-    </style>
 </head>
 
 <body>
@@ -128,16 +50,17 @@ section.our-team-details .value-card a img{
                                     <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"Active":"")" aria-current="page" href="@Url.Action("Index","Home")">Home</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"About":"")" aria-current="page" href="@Url.Action("About","Home")">About us</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Services"&&current_action=="Index"?"Active":"")" aria-current="page" href="@Url.Action("Index","Services")">Services</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Solutions"&&current_action=="Index"?"Active":"")" aria-current="page" href="@Url.Action("Index","Solutions")">Solutions</a>
                                 </li>
+                               
                                 <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"About":"")" aria-current="page" href="@Url.Action("About","Home")">About us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"Active":"")" aria-current="page" href="#">Projects</a>
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Projects"?"Active":"")" aria-current="page" href="#">Projects</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Home"&&current_action=="Industries"?"Active":"")" aria-current="page" href="@Url.Action("Industries","Home")">Industries</a>
@@ -246,6 +169,11 @@ section.our-team-details .value-card a img{
                                                 Services
                                             </a>
                                         </li>
+                                        <li>
+                                            <a href="#">
+                                                Career
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
@@ -257,7 +185,7 @@ section.our-team-details .value-card a img{
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                        <a href="@Url.Action("Projects","Home")">
                                                 Projects
                                             </a>
                                         </li>
@@ -266,6 +194,11 @@ section.our-team-details .value-card a img{
                                                 Solutions
                                             </a>
                                         </li>
+                                    <li>
+                                        <a href="#">
+                                            News
+                                        </a>
+                                    </li>
                                     </ul>
                                 </div>
                             </div>
