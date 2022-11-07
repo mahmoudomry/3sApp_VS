@@ -705,6 +705,7 @@ section.solutions-inner .solutions-inner-tabs{
     background-color: #1E1E1E;
 }
 section.solutions-inner .solutions-inner-tabs .nav-tabs .nav-link{
+    position: relative;
     color: var(--white) !important;
     display: flex;
     align-items: center;
@@ -713,6 +714,14 @@ section.solutions-inner .solutions-inner-tabs .nav-tabs .nav-link{
     border: 1px solid transparent;
     border-radius: 0;
     width: 100%;
+}
+section.solutions-inner .solutions-inner-tabs .nav-tabs .nav-link span{
+    position: absolute;
+    font-weight: 700;
+    font-size: 54px;
+    color: rgba(255, 255, 255, 0.1);
+    left: 20px;
+    top: 0;
 }
 section.solutions-inner .solutions-inner-tabs .nav-link:hover,
 section.solutions-inner .solutions-inner-tabs .nav-link.active{

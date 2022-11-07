@@ -1,9 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
-        var Solutions = ViewBag.Solutions as Solution;
-         var SolutionsIndex = 0;
-    var SolutionsIndex_tab= 0;
+    var Solutions = ViewBag.Solutions as Solution;
+    var SolutionsIndex = 0;
+    var SolutionsIndex_tab = 0;
 }
 
 @section HeaderTitle{
@@ -25,10 +25,10 @@
                         Solutions
                     </h3>
                     <h2>
-                      @Solutions.Title
+                        @Solutions.Title
                     </h2>
                     <p>
-                       @Html.Raw(Solutions.Describtion)
+                        @Html.Raw(Solutions.Describtion)
                     </p>
                 </div>
                 <div class="col-md-6 text-center solutions-about-img">
@@ -45,22 +45,22 @@
                         <div class="nav nav-tabs solutions-inner-carousel owl-carousel owl-theme" id="nav-tab"
                             role="tablist">
 
-                              @foreach (var item in Solutions.SubSolution)
-                                {
-                                    <button class="nav-link @(SolutionsIndex==0?"active":"")" id="@("nav-"+SolutionsIndex+"-solutions-tab")" data-bs-toggle="tab"
-                                        data-bs-target="@("#nav-"+SolutionsIndex+"-solutions")" type="button" role="tab"
-                                        aria-controls="nav-@SolutionsIndex-solutions" aria-selected="true">
-                                        @item.Title
+                            @foreach (var item in Solutions.SubSolution)
+                            {
+                                <button class="nav-link @(SolutionsIndex==0?"active":"")"
+                                id="@("nav-"+SolutionsIndex+"-solutions-tab")" data-bs-toggle="tab"
+                                data-bs-target="@("#nav-"+SolutionsIndex+"-solutions")" type="button" role="tab"
+                                aria-controls="nav-@SolutionsIndex-solutions" aria-selected="true">
+                                    <span>@((SolutionsIndex + 1).ToString("D2"))</span>
+                                    @item.Title
                                 </button>
 
                                 { SolutionsIndex = SolutionsIndex + 1; }
-
-                               
-                                }
-                           @* <button class="nav-link active" id="nav-ict-solutions-tab" data-bs-toggle="tab"
+                            }
+                            @* <button class="nav-link active" id="nav-ict-solutions-tab" data-bs-toggle="tab"
                                 data-bs-target="#nav-ict-solutions" type="button" role="tab"
                                 aria-controls="nav-ict-solutions" aria-selected="true">ICT solutions</button>*@
-                      
+
                         </div>
                     </nav>
                 </div>
@@ -69,35 +69,36 @@
         <div class="container">
             <div class="row">
                 <div class="tab-content" id="nav-tabContent">
-                   @* <div class="tab-pane fade show active" id="nav-ict-solutions" role="tabpanel"
+                    @* <div class="tab-pane fade show active" id="nav-ict-solutions" role="tabpanel"
                         aria-labelledby="nav-ict-solutions-tab" tabindex="0">
                         <div class="row">
-*@
-  @foreach (var item in Solutions.SubSolution)
-                            {
-                                <div class="tab-pane fade   @(SolutionsIndex_tab==0?"show active":"")" id="@("nav-"+SolutionsIndex_tab+"-solutions")" role="tabpanel"
-                                 aria-labelledby="@("nav-"+SolutionsIndex_tab+"-solutions-tab")" tabindex="@SolutionsIndex_tab">
-                                    <div class="row">
-                            <div class="col-md-4">
-                                <div class="solution-img">
-                                    <img src="~/assets/images/@item.CoverImage" alt="">
+                    *@
+                    @foreach (var item in Solutions.SubSolution)
+                    {
+                        <div class="tab-pane fade   @(SolutionsIndex_tab==0?"show active":"")"
+                        id="@("nav-"+SolutionsIndex_tab+"-solutions")" role="tabpanel"
+                        aria-labelledby="@("nav-"+SolutionsIndex_tab+"-solutions-tab")" tabindex="@SolutionsIndex_tab">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="solution-img">
+                                        <img src="~/assets/images/@item.CoverImage" alt="">
+                                    </div>
+                                    <h2>
+                                        @item.Title
+                                    </h2>
                                 </div>
-                                <h2>
-                                  @item.Title
-                                </h2>
+                                <div class="col-md-6">
+                                    <p>
+                                        @Html.Raw(item.Describtion)
+                                    </p>
+                                </div>
+
+
+
                             </div>
-                            <div class="col-md-6">
-                                <p>
-                                   @Html.Raw(item.Describtion)
-                                </p>
-                            </div>
-                             
-                                    
-                                    
                         </div>
-                    </div>  
-                    {SolutionsIndex_tab = SolutionsIndex_tab + 1;}
-                   }
+                        { SolutionsIndex_tab = SolutionsIndex_tab + 1; }
+                    }
                 </div>
             </div>
         </div>
