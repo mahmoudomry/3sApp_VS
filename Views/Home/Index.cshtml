@@ -13,10 +13,11 @@
     var ProjectIndex_img = 0;
     Layout = null;
 
-    var current_controller = ViewContext.RouteData.Values["Controller"].ToString();
-    var current_action = ViewContext.RouteData.Values["Action"].ToString();
-    var SolutionLinks = ViewBag.SolutionsLinks;
-    var IndustrialLinks = ViewBag.IndustrialLinks;
+    var current_controller = ViewBag.current_controller;// ViewContext.RouteData.Values["Controller"];
+    var current_action = ViewBag.current_action;// ViewContext.RouteData.Values["Action"];
+
+        var SolutionLinks = ViewBag.SolutionsLinks ;
+        var IndustrialLinks = ViewBag.IndustrialLinks ;
 
 }
 <!DOCTYPE html>
@@ -61,15 +62,15 @@
                     </button>
                     <div class="nav-center">
                         <div class="collapse navbar-collapse top-menu justify-content-center" id="navbarNavAltMarkup">
-                            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                              <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"Active":"")"
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"active":"")"
                                         aria-current="page" href="@Url.Action("Index","Home")">Home</a>
                                 </li>
-
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                        @(current_controller=="Home"&&current_action=="About"?"Active":"")
+                         
+                                   <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="@Url.Action("About","Home")" data-bs-toggle="dropdown"
+                                        @(current_controller=="Home"&&current_action=="About"?"active":"")
                                         data-bs-auto-close="outside">About</a>
                                     <ul class="dropdown-menu shadow">
                                         <li>
@@ -98,8 +99,8 @@
 
 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                        @(current_controller=="Services"&&current_action=="Index"?"Active":"")
+                                    <a class="nav-link dropdown-toggle" href="@Url.Action("Index","Services")" data-bs-toggle="dropdown"
+                                        @(current_controller=="Services"&&current_action=="Index"?"active":"")
                                         data-bs-auto-close="outside">Services</a>
                                     <ul class="dropdown-menu shadow">
                                         <li>
@@ -121,8 +122,8 @@
                                 </li>
 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                        @(current_controller=="Solutions"&&current_action=="Index"?"Active":"")
+                                    <a class="nav-link dropdown-toggle" href="@Url.Action("Index","Solutions")" data-bs-toggle="dropdown"
+                                        @(current_controller=="Solutions"&&current_action=="Index"?"active":"")
                                         data-bs-auto-close="outside">Solutions</a>
                                     <ul class="dropdown-menu shadow">
                                         @foreach (var itm in SolutionLinks)
@@ -138,14 +139,14 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Projects"?"Active":"")"
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Projects"?"active":"")"
                                         aria-current="page" href="@Url.Action("Projects","Home")">Projects</a>
                                 </li>
 
 
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                        @(current_controller=="Solutions"&&current_action=="Index"?"Active":"")
+                                        @(current_controller=="Home"&&current_action=="Industries"?"active":"")
                                         data-bs-auto-close="outside">Industries</a>
                                     <ul class="dropdown-menu shadow">
                                         @foreach (var itm in IndustrialLinks)
@@ -161,11 +162,11 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Partners"?"Active":"")"
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Partners"?"active":"")"
                                         aria-current="page" href="@Url.Action("Partners","Home")">Partners</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Contact"?"Active":"")"
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Contact"?"active":"")"
                                         aria-current="page" href="@Url.Action("Contact","Home")">Contact us</a>
                                 </li>
                             </ul>
@@ -292,7 +293,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 offset-md-3 text-center">
-                            <h3>
+                            <h3 class="home20">
                                 Services
                             </h3>
                             <h2>
@@ -338,7 +339,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 offset-md-3 text-center">
-                            <h3>
+                            <h3 class="home20">
                                 Solutions
                             </h3>
                             <h2>
@@ -419,7 +420,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 offset-md-3 text-center">
-                            <h3>
+                            <h3 class="home20">
                                 Projects
                             </h3>
                             <h2>
@@ -447,7 +448,7 @@
                                                         </div>
                                                         <div class="overley"></div>
                                                         <div class="logo">
-                                                            <img src="~/assets/images/sabek.png" alt="">
+                                                            <img src="~/assets/images/@item.ClientLogo" alt="">
                                                         </div>
                                                         <a href="#" class="btn btn-green">
                                                             Learn More
@@ -509,7 +510,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 offset-md-3 text-center">
-                            <h3>
+                            <h3 class="home20">
                                 Industries
                             </h3>
                             <h2>
@@ -547,7 +548,7 @@
             <section class="partners dark">
                 <div class="container">
                     <div class="row text-center">
-                        <h3>
+                        <h3 class="home20">
                             Partners
                         </h3>
                         <h2>
@@ -581,7 +582,7 @@
             <section class="clients dark">
                 <div class="container">
                     <div class="row text-center">
-                        <h3>
+                        <h3 class="home20">
                             Clients
                         </h3>
                         <h2>
@@ -662,7 +663,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 fast-links">
-                            <h2>
+                            <h2 >
                                 Our Link
                             </h2>
                             <div class="row">

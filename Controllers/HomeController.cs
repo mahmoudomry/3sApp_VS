@@ -32,10 +32,15 @@ namespace _3sApp.Controllers
             homeviwemodel.Clients = _context.Clients.ToList();
             ViewBag.SolutionsLinks = _context.Solutions.Select(x => new { x.Id, x.Title }).ToList();
             ViewBag.IndustrialLinks = _context.Industries.Select(x => new { x.Id, x.Title }).ToList();
+
+            ViewBag.current_controller = "Home";
+            ViewBag.current_action = "Index";
             return View(homeviwemodel);
         }
         public IActionResult Index2()
         {
+            ViewBag.current_controller = "Home";
+            ViewBag.current_action = "Index";
             ViewBag.Sliders = _context.Sliders.ToList();
             ViewBag.About = _context.Abouts.FirstOrDefault();
             ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();
@@ -62,6 +67,8 @@ namespace _3sApp.Controllers
         }
         public IActionResult Partners()
         {
+            ViewBag.current_controller = "Home";
+            ViewBag.current_action = "Partners";
             ViewBag.About = _context.Abouts.FirstOrDefault();
             ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();
             ViewBag.Contactitems = _context.Contactitems.ToList();
@@ -73,6 +80,8 @@ namespace _3sApp.Controllers
         }
         public IActionResult Industries(int?id)
         {
+            ViewBag.current_controller = "Home";
+            ViewBag.current_action = "Industries";
             ViewBag.About = _context.Abouts.FirstOrDefault();
             ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();
             ViewBag.Contactitems = _context.Contactitems.ToList();
@@ -84,7 +93,8 @@ namespace _3sApp.Controllers
         }
         public IActionResult Contact()
         {
-           
+            ViewBag.current_controller = "Home";
+            ViewBag.current_action = "Contact";
             ViewBag.About = _context.Abouts.FirstOrDefault();
             ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();
             ViewBag.Contactitems = _context.Contactitems.ToList();
@@ -96,6 +106,8 @@ namespace _3sApp.Controllers
         }
         public IActionResult About()
         {
+            ViewBag.current_controller = "Home";
+            ViewBag.current_action = "About";
             ViewBag.About = _context.Abouts.FirstOrDefault();
             ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();
             ViewBag.Contactitems = _context.Contactitems.ToList();
@@ -108,6 +120,8 @@ namespace _3sApp.Controllers
         }
         public IActionResult Projects()
         {
+            ViewBag.current_controller = "Home";
+            ViewBag.current_action = "Projects";
             ViewBag.Projects = _context.Projects.Include(x => x.Images.Where(x => x.CategoryId == 1)).ToList();
             ViewBag.About = _context.Abouts.FirstOrDefault();
             ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();

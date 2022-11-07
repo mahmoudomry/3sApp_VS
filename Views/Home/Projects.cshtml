@@ -34,22 +34,25 @@
                     <div class="item Project-item">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-5">
-                                    <div class="owl-carousel owl-theme project-inner-carousel">
-                                        @foreach (var images in item.Images)
-                                        {
-                                            <div class="item"
-                                         style="background-image: url('/assets/images/@images.FileName');">
-                                               @* <a href="#" class="btn btn-green">
-                                                    Learn More
-                                                    <img src="~/assets/images/launch-app.svg" alt="">
-                                                </a>*@
+                                   <div class="col-md-5">
+                                            <div class="owl-carousel owl-theme project-inner-carousel">
+                                                @foreach (var images in item.Images)
+                                                {
+                                                    <div class="item">
+                                                        <div class="bg"
+                                                    style="background-image: url('/assets/images/@images.FileName');">
+                                                        </div>
+                                                        <div class="overley"></div>
+                                                        <div class="logo">
+                                                            <img src="~/assets/images/@item.ClientLogo" alt="">
+                                                        </div>
+                                                     
+
+                                                    </div>
+                                                }
 
                                             </div>
-                                        }
-
-                                    </div>
-                                </div>
+                                        </div>
                                 <div class="col-md-7">
                                     <div class="row">
                                         <ul class="project-details-items">
