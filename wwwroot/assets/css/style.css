@@ -97,7 +97,8 @@ section.main-slider .carousel-item p{
     margin-bottom: 90px;
 }
 
-.main-slider .carousel-indicators{
+.main-slider .owl-dots{
+    position: absolute;
     left: auto;
     right: 150px;
     bottom: auto;
@@ -107,12 +108,47 @@ section.main-slider .carousel-item p{
     margin: 0 !important;
     transform: translateY(-50%);
 }
-.main-slider .carousel-indicators button{
+.main-slider .owl-dots button{
     text-indent: 0;
     height: auto;
     background-color: transparent;
     font-weight: 800;
     font-size: 15px;
+}
+.main-slider .owl-dots .owl-dot{
+    display: flex;
+}
+.main-slider .owl-dots::before{
+    content: '01';
+    color: var(--white);
+    font-weight: 700;
+    font-size: 14px;
+    transform: translateX(50%);
+    position: absolute;
+    right: 0;
+    top: -30px;
+}
+.main-slider .owl-dots::after{
+    content: '03';
+    color: var(--white);
+    font-weight: 700;
+    font-size: 14px;
+    transform: translateX(50%);
+    position: absolute;
+    right: 0;
+    bottom: -30px;
+}
+.main-slider .owl-dots .owl-dot span{
+    width: 20px;
+    height: 53px;
+    background-color: transparent !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0;
+    margin: 0;
+    
+}
+.main-slider .owl-dots .owl-dot.active span{
+    border-right: 1px solid var(--red);
 }
 .main-slider .carousel-indicators [data-bs-target]{
     box-sizing: border-box;
