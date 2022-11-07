@@ -526,6 +526,7 @@
                         {
                                 <div class="industry-item-card">
                                     <h2>
+                                       
                                         <span class="icon">
                                             <img src="~/assets/images/@item.Icon" alt="">
                                         </span>
@@ -847,12 +848,17 @@
 
                 slideSpeed: 300,
                 dots: false,
-
+                
                 items: 1,
                 itemsDesktop: false,
                 itemsDesktopSmall: false,
                 itemsTablet: false,
-                itemsMobile: false
+                itemsMobile: false,
+                loop:true,
+                autoPlay : 500,
+                autoplay:true,
+    autoplayTimeout:1000,
+    autoplayHoverPause:true,
             });
             $('section.solutions .nav-tabs .nav-link').on('click', function () {
                 var target = $(this).attr('aria-controls');

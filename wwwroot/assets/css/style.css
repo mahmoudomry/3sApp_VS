@@ -263,6 +263,14 @@ section.solutions nav .nav-tabs button.active{
     font-weight: 700;
     opacity: 1;
 }
+    section.solutions nav .nav-tabs button:hover {
+        border: none;
+        height: 55px;
+        background-color: #C31A2B;
+        color: var(--white);
+        font-weight: 700;
+        opacity: 1;
+    }
 section.solutions nav .nav-tabs button{
     color: var(--white);
     height: auto;
@@ -496,7 +504,7 @@ section.industries .industry-item-card p{
     font-weight: 400;
     font-size: 15px;
     color: #3A3C40;
-    text-align: justify;
+/*    text-align: justify;*/
     margin-bottom: 15px;
 }
 section.industries .industry-item-card a{
@@ -523,9 +531,10 @@ section.partners .owl-carousel-item{
     align-items: center;
     justify-content: center;
 }
-section.partners .owl-carousel-item img{
-    max-width: 130px;
-}
+    section.partners .owl-carousel-item img {
+        transition: transform .2s;
+        max-width: 130px;
+    }
 section.partners .owl-nav button:not(.disabled){
     background-color: #5B0C04;
     color: var(--white);
@@ -545,9 +554,10 @@ section.clients .owl-carousel-item{
     align-items: center;
     justify-content: center;
 }
-section.clients .owl-carousel-item img{
-    max-width: 130px;
-}
+    section.clients .owl-carousel-item img {
+        max-width: 130px;
+        transition: transform .2s;
+    }
 section.clients .owl-nav button:not(.disabled){
     background-color: #C31A2B;
     color: var(--white);
@@ -710,7 +720,7 @@ section.solutions-inner .solutions-inner-tabs .nav-tabs .nav-link{
     display: flex;
     align-items: start;
     justify-content: center;
-    height: 125px !important;
+    height: 128px !important;
     border: 1px solid transparent;
     border-radius: 0;
     width: 100%;
@@ -865,9 +875,10 @@ section.partners-inner .partner-item{
     height: 100px;;
     border-radius: 15px;
 }
-section.partners-inner .partner-item img{
-    max-width: 130px;
-}
+    section.partners-inner .partner-item img {
+        max-width: 130px;
+        transition: transform .2s;
+    }
 /* become-a-partner end */
 
 /* industries inner start */
@@ -937,7 +948,10 @@ section.industries-inner .industry-details p{
 }
 
 section.solutions-inner .solutions-inner-carousel{
-    height: 125px !important;
+    height: 129px !important;
+}
+section.solutions-inner nav {
+    height: 127px !important;
 }
 section.solutions-inner .solutions-inner-carousel > .owl-nav button.disabled,
 section.solutions-inner .solutions-inner-carousel > .owl-nav button{
@@ -1322,4 +1336,62 @@ font-weight:600;
 }
 .dropdown:hover .dropdown-menu {
     display: block;
+}
+.btn-green img {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+}
+.btn-green:hover {
+    background-color: var(--red);
+}
+section.services-details .service-card a:hover, section.industries .industry-item-card a:hover {
+    color: var(--red);
+}
+    section.services-details .service-card a:hover img, section.industries .industry-item-card a:hover img {
+        content: url(../images/launch-app-red.svg);
+    }
+section.solutions ul li a:hover img {
+height:30px;
+}
+section.solutions ul li a:hover {
+    height: 65px;
+    font-size: 16px;
+}
+footer .fast-links a:hover {
+    color: var(--red);
+}
+
+section.industries .industry-item-card:hover {
+cursor:pointer;
+background-color:black;
+}
+section.industries .industry-item-card:hover p{
+   
+    color: #fff;
+}
+section.industries .industry-item-card:hover .icon {
+  /*  background-color: #007133;*/
+}
+section.industries .industry-item-card:hover h2 {
+    color: #fff;
+}
+    section.industries .industry-item-card:hover a {
+        color: Var(--red);
+    }
+section.industries .industry-item-card a:hover {
+    color: Var(--red);
+}
+section.industries .industry-item-card:hover a img {
+    content: url(../images/launch-app-red.svg) !important;
+}
+section.partners .owl-carousel-item img:hover {
+    transform: scale(1.2);
+  
+}
+section.clients .owl-carousel-item img:hover {
+    transform: scale(1.2);
+}
+section.partners-inner .partner-item img:hover {
+    transform: scale(1.2);
 }
