@@ -1163,7 +1163,7 @@ section.solutions .tab-content .tab-pane p {
     padding-right: 30px;
 }
 
-.owl-carousel .owl-stage-outer {
+section.solutions .owl-carousel .owl-stage-outer {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
 }
