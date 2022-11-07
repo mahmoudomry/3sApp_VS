@@ -400,6 +400,7 @@ section.projects .project-inner-carousel .btn-green{
 section.projects .project-inner-carousel .btn-green img{
     width: 15px;
     height: 15px;
+    margin-left: 10px;
 }
 section.projects .project-inner-carousel .bg{
     position: absolute;
@@ -427,10 +428,17 @@ section.projects .project-inner-carousel .logo{
 section.projects .project-inner-carousel .owl-item:hover{
     cursor: pointer;
 }
+section.projects .project-inner-carousel .owl-item .logo,
+section.projects .project-inner-carousel .owl-item .bg{
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition-duration: .5s;  
+}
 section.projects .project-inner-carousel .owl-item:hover .logo,
 section.projects .project-inner-carousel .owl-item:hover .bg{
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
+    -webkit-filter: grayscale(0);
+    filter: none;
+    transition-duration: .5s;  
 }
 section.projects .project-inner-carousel .owl-item:hover .btn-green{
     -webkit-filter: grayscale(0);
