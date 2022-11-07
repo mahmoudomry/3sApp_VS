@@ -168,10 +168,10 @@ namespace _3sApp.Areas.Administrative.Controllers
             return View("Create", solution);
         }
 
-    
+
         // POST: Administrative/Solutions/Delete/5
-        [HttpPost, ActionName("Delete")]
-       
+        [ActionName("Delete")]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Solutions == null)

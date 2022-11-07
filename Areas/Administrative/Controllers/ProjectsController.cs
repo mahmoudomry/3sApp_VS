@@ -130,10 +130,9 @@ namespace _3sApp.Areas.Administrative.Controllers
         }
 
         // GET: Administrative/Projects/Delete/5
-    
+
         // POST: Administrative/Projects/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Projects == null)

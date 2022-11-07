@@ -127,11 +127,10 @@ namespace _3sApp.Controllers
        
         }
 
- 
+
 
         // POST: Industries/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int? id)
         {
             if (_context.Industries == null)

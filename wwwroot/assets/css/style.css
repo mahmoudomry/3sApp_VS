@@ -967,10 +967,10 @@ section.industries-inner .industry-details p{
 }
 
 section.solutions-inner .solutions-inner-carousel{
-    height: 129px !important;
+    height: 125px !important;
 }
 section.solutions-inner nav {
-    height: 127px !important;
+    height: 125px !important;
 }
 section.solutions-inner .solutions-inner-carousel > .owl-nav button.disabled,
 section.solutions-inner .solutions-inner-carousel > .owl-nav button{
