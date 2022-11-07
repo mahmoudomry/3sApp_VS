@@ -25,6 +25,7 @@ namespace _3sApp.Controllers
             ViewBag.Services = _context.Services.ToList();
             ViewBag.SolutionsLinks = _context.Solutions.Select(x => new { x.Id, x.Title }).ToList();
             ViewBag.IndustrialLinks = _context.Industries.Select(x => new { x.Id, x.Title }).ToList();
+            ViewBag.ServicesLinks = _context.Services.Select(x => new { x.Id, x.Name }).ToList();
             return View();
         }
 

@@ -18,6 +18,7 @@
 
     var SolutionLinks = ViewBag.SolutionsLinks;
     var IndustrialLinks = ViewBag.IndustrialLinks;
+     var ServicesLinks = ViewBag.ServicesLinks;
 
 }
 <!DOCTYPE html>
@@ -103,21 +104,15 @@
                                         @(current_controller=="Services"&&current_action=="Index"?"active":"")
                                         data-bs-auto-close="outside">Services</a>
                                     <ul class="dropdown-menu shadow">
-                                        <li>
-                                            <a class="dropdown-item" href="@Url.Action("Index","Services")">
-                                                Consulting Services
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="@Url.Action("Index","Services")">
-                                                Design and Engineering
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="@Url.Action("Index","Services")">
-                                                Consulting Services
-                                            </a>
-                                        </li>
+                                             @foreach (var itm in  ServicesLinks)
+                                        {
+                                                <li>
+                                                    <a class="dropdown-item"
+                                                href="@Url.Action("Index","Services",new{Id=itm.Id})">
+                                                    @itm.Name
+                                                    </a>
+                                                </li>
+                                        }
                                     </ul>
                                 </li>
 
