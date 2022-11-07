@@ -39,6 +39,9 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
+
     <link rel="stylesheet" href="~/assets/css/style.css" />
 
 </head>
@@ -306,8 +309,8 @@
                                                 <img src="~/assets/images/launch-app.svg" alt="">
                                             </a>
                                         </div>
-                                        <div class="col-md-5">
-                                            <ul class="list-unstyled">
+                                        <div class="col-md-5" style="position: relative;">
+                                            <ul class="list-unstyled solution-items-slider">
 
                                                 @foreach (var item_sub in item.SubSolution)
                                                 {
@@ -656,6 +659,9 @@
         </footer>
 
     </div>
+    @{
+        SolutionsIndex_tab = 0;
+    }
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
@@ -664,6 +670,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="~/assets/js/inlineSVG.min.js"></script>
     <script src="~/assets/js/main.js"></script>
     <script>
@@ -741,7 +748,20 @@
                 itemsTablet: false,
                 itemsMobile: false
             });
+            $('section.solutions .nav-tabs .nav-link').on('click', function () {
+                var target = $(this).attr('aria-controls');
+                tns({
+                    container: '#' + target + ' .solution-items-slider',
+                    items: 6,
+                    axis: 'vertical',
+                    autoplayButton: false,
+                    nav: false,
+                    controlsText: ['<i class="fa-sharp fa-solid fa-arrow-left"></i>', '<i class="fa-sharp fa-solid fa-arrow-right"></i>']
+                });
+            });
+            $('section.solutions .nav-tabs .nav-link.active').click();
         });
+
     </script>
 </body>
 
