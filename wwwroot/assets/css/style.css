@@ -716,6 +716,8 @@ section.solutions-inner .solutions-inner-tabs .nav-tabs .nav-link{
     width: 100%;
     text-align: left;
     padding-top: 40px;
+    font-weight: 700;
+    font-size: 15px;
 }
 section.solutions-inner .solutions-inner-tabs .nav-tabs .nav-link span{
     position: absolute;
