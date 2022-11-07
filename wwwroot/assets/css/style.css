@@ -212,6 +212,7 @@ section.services-details .service-card{
     justify-content: space-between;
 }
 section.services-details .service-card .icon img{
+    transition:.1s;
     height: 55px;
 }
 section.services-details .service-card h2{
@@ -1433,3 +1434,13 @@ section.services-items .service-item:hover{
     section.services-items .service-item:hover p {
         color: var(--white);
     }
+.btn-contact:hover svg path {
+    stroke: var(--white);
+}
+.btn-contact:hover  {
+    background:var(--red);
+    color:var(--white);
+}
+section.services-details .service-card:hover .icon img {
+    transform: scale3d(1.5, 1.5, 1.5);
+}
