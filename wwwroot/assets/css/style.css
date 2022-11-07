@@ -1286,3 +1286,13 @@ header .navbar-nav a {
     top: 50px;
     transform: rotate(90deg);
 }
+
+/*--------*/
+.home20 {
+font-size:20px;
+font-weight:600;
+}
+#mainSliderCarousel > .owl-stage-outer {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
