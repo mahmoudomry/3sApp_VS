@@ -136,7 +136,7 @@
                                        @foreach(var itm in IndustrialLinks)
                                        {
                                         <li>
-                                            <a class="dropdown-item" href="@Url.Action("Industries","Home")">
+                                            <a class="dropdown-item" href="@Url.Action("Industries","Home",new{Id=itm.Id})">
                                               @itm.Title
                                             </a>
                                         </li>

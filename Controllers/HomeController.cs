@@ -71,7 +71,7 @@ namespace _3sApp.Controllers
             ViewBag.IndustrialLinks = _context.Industries.Select(x => new { x.Id, x.Title }).ToList();
             return View();
         }
-        public IActionResult Industries()
+        public IActionResult Industries(int?id)
         {
             ViewBag.About = _context.Abouts.FirstOrDefault();
             ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();
