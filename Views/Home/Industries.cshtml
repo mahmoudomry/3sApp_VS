@@ -29,14 +29,14 @@
                         <div class="nav nav-tabs flex-column" id="nav-tab" role="tablist">
                             @foreach(var itm in Industries)
                             {
-                            <button class="nav-link @(SolutionsIndex==0?"show active":"")" id="@("nav-"+SolutionsIndex+"-solutions-tab")" data-bs-toggle="tab"
-                                data-bs-target="@("#nav-"+SolutionsIndex+"-solutions")" type="button" role="tab"
-                                aria-controls="@("nav-"+SolutionsIndex+"-solutions-tab")" aria-selected="true">
+                            <button class="nav-link @(SolutionsIndex==0&&ViewContext.RouteData.Values["Id"] ==null?"show active":"") @(ViewContext.RouteData.Values["Id"]!=null&&Convert.ToInt32(ViewContext.RouteData.Values["Id"]) ==itm.Id?"show active":"")" id="@("nav-"+itm.Id+"-solutions-tab")" data-bs-toggle="tab"
+                                data-bs-target="@("#nav-"+itm.Id+"-solutions")" type="button" role="tab"
+                                aria-controls="@("nav-"+itm.Id+"-solutions-tab")" aria-selected="true">
                                 <img src="~/assets/images/@itm.Icon" alt="Health Care" class="svg-inline">
                                 @itm.Title
                                  
                                 </button>
-                                { SolutionsIndex = SolutionsIndex + 1; }
+                              @*  { SolutionsIndex = SolutionsIndex + 1; }*@
 
                     }
                         </div>
@@ -46,8 +46,8 @@
                     <div class="tab-content" id="nav-tabContent">
                             @foreach(var itm in Industries)
                             {
-                                <div class="tab-pane fade   @(SolutionsIndex_tab==0?"show active":"")" id="@("nav-"+SolutionsIndex_tab+"-solutions")" role="tabpanel"
-                                 aria-labelledby="@("nav-"+SolutionsIndex_tab+"-solutions-tab")" tabindex="0">
+                                <div class="tab-pane fade   @(SolutionsIndex_tab==0&ViewContext.RouteData.Values["Id"] ==null?"show active":"") @(ViewContext.RouteData.Values["Id"]!=null&&Convert.ToInt32(ViewContext.RouteData.Values["Id"]) ==itm.Id?"show active":"")" id="@("nav-"+itm.Id+"-solutions")" role="tabpanel"
+                                 aria-labelledby="@("nav-"+itm.Id+"-solutions-tab")" tabindex="0">
                     @*    <div class="tab-pane fade show active" id="nav-ict-solutions" role="tabpanel"
                             aria-labelledby="nav-ict-solutions-tab" tabindex="0">*@
                             <div class="row">
