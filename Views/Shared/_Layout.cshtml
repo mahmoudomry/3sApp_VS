@@ -1,13 +1,13 @@
-﻿
-@{
+﻿@{
     var About = ViewBag.About as About;
     var SiteSettings = ViewBag.SiteSettings as SiteSetting;
     var Contactitems = ViewBag.Contactitems as List<Contactitem>;
     var SocialMedias = ViewBag.SocialMedias as List<SocialMedia>;
-    var current_controller=ViewContext.RouteData.Values["Controller"];
+    var current_controller = ViewContext.RouteData.Values["Controller"];
     var current_action = ViewContext.RouteData.Values["Action"];
 
-}<!doctype html>
+}
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -37,7 +37,8 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="~/Home/Index"><img src="~/assets/images/@SiteSettings.HeaderLogo" alt="logo"></a>
+                    <a class="navbar-brand" href="~/Home/Index"><img src="~/assets/images/@SiteSettings.HeaderLogo"
+                            alt="logo"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -46,30 +47,60 @@
                     <div class="nav-center">
                         <div class="collapse navbar-collapse top-menu justify-content-center" id="navbarNavAltMarkup">
                             <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-                                    <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"Active":"")" aria-current="page" href="@Url.Action("Index","Home")">Home</a>
+                                <li class="nav-item">
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"Active":"")"
+                                        aria-current="page" href="@Url.Action("Index","Home")">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"About":"")" aria-current="page" href="@Url.Action("About","Home")">About us</a>
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"About":"")"
+                                        aria-current="page" href="@Url.Action("About","Home")">About us</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Services"&&current_action=="Index"?"Active":"")" aria-current="page" href="@Url.Action("Index","Services")">Services</a>
+                                    <a class="nav-link @(current_controller=="Services"&&current_action=="Index"?"Active":"")"
+                                        aria-current="page" href="@Url.Action("Index","Services")">Services</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                        @(current_controller=="Services"&&current_action=="Index"?"Active":"")
+                                        data-bs-auto-close="outside">Services</a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li>
+                                            <a class="dropdown-item" href="btsi-strategy.html">
+                                                Implementation and Integration
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="btsi-org-structure.html">
+                                                Design and Engineering
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="btsi-org-structure.html">
+                                                Consulting Services
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Solutions"&&current_action=="Index"?"Active":"")" aria-current="page" href="@Url.Action("Index","Solutions")">Solutions</a>
+                                    <a class="nav-link @(current_controller=="Solutions"&&current_action=="Index"?"Active":"")"
+                                        aria-current="page" href="@Url.Action("Index","Solutions")">Solutions</a>
                                 </li>
-                               
+
                                 <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Projects"?"Active":"")" aria-current="page" href="#">Projects</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Industries"?"Active":"")" aria-current="page" href="@Url.Action("Industries","Home")">Industries</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Partners"?"Active":"")" aria-current="page" href="@Url.Action("Partners","Home")">Partners</a>
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Projects"?"Active":"")"
+                                        aria-current="page" href="#">Projects</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Contact"?"Active":"")" aria-current="page" href="@Url.Action("Contact","Home")">Contact us</a>
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Industries"?"Active":"")"
+                                        aria-current="page" href="@Url.Action("Industries","Home")">Industries</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Partners"?"Active":"")"
+                                        aria-current="page" href="@Url.Action("Partners","Home")">Partners</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Contact"?"Active":"")"
+                                        aria-current="page" href="@Url.Action("Contact","Home")">Contact us</a>
                                 </li>
                             </ul>
                         </div>
@@ -101,133 +132,133 @@
         @RenderBody()
     </main>
     <footer>
-            <section class="footer-newsletter">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-5 newsletter-label-container">
-                            <h4>
-                               @SiteSettings.SubscribeTitle
-                            </h4>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="subscribe">
-                                <input type="text" placeholder="Enter Your Email">
-                                <button type="button" class="subscribe-btn">Subscribe</button>
-                            </div>
+        <section class="footer-newsletter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 newsletter-label-container">
+                        <h4>
+                            @SiteSettings.SubscribeTitle
+                        </h4>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="subscribe">
+                            <input type="text" placeholder="Enter Your Email">
+                            <button type="button" class="subscribe-btn">Subscribe</button>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="footer-bottom">
-                <div class="container">
-                    <div class="row ">
-                        <div class="col-md-4">
-                            <div class="logo">
-                                <img src="~/assets/images/@SiteSettings.FooterLogo" alt="logo 1">
-                            </div>
-                            <p class="description">
-                                @SiteSettings.FooterDesc
-                            </p>
-                            <div class="social-links ">
-                                <ul class="list-unstyled list-group list-group-horizontal ">
-                                     @foreach(var item in SocialMedias)
-                                    {
+            </div>
+        </section>
+        <section class="footer-bottom">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-4">
+                        <div class="logo">
+                            <img src="~/assets/images/@SiteSettings.FooterLogo" alt="logo 1">
+                        </div>
+                        <p class="description">
+                            @SiteSettings.FooterDesc
+                        </p>
+                        <div class="social-links ">
+                            <ul class="list-unstyled list-group list-group-horizontal ">
+                                @foreach (var item in SocialMedias)
+                                {
                                     <li>
                                         <a href="@item.Link" class="@item.Icon">
                                             <i class="fa-brands fa-@item.Icon"></i>
                                         </a>
                                     </li>
-                                    }
-                             
+                                }
+
+                            </ul>
+                        </div>
+
+                        <div class="copyright">
+                            @SiteSettings.CopyRight
+                        </div>
+                    </div>
+                    <div class="col-md-4 fast-links">
+                        <h2>
+                            Our Link
+                        </h2>
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <ul class="list-unstyled list-group">
+                                    <li>
+                                        <a href="@Url.Action("Index","Home")">
+                                            Home Page
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("About","Home")">
+                                            About us
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index","Services")">
+                                            Services
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Career
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
+                            <div class="col-md-6">
 
-                            <div class="copyright">
-                                 @SiteSettings.CopyRight
-                            </div>
-                        </div>
-                        <div class="col-md-4 fast-links">
-                            <h2>
-                               Our Link
-                            </h2>
-                            <div class="row">
-                                   <div class="col-md-6">
-
-                                    <ul class="list-unstyled list-group">
-                                        <li>
-                                            <a href="@Url.Action("Index","Home")">
-                                                Home Page
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="@Url.Action("About","Home")">
-                                                About us
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="@Url.Action("Index","Services")">
-                                                Services
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Career
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6">
-
-                                    <ul class="list-unstyled list-group">
-                                        <li>
-                                            <a href="@Url.Action("Industries","Home")">
-                                                Industries
-                                            </a>
-                                        </li>
-                                        <li>
+                                <ul class="list-unstyled list-group">
+                                    <li>
+                                        <a href="@Url.Action("Industries","Home")">
+                                            Industries
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="@Url.Action("Projects","Home")">
-                                                Projects
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="@Url.Action("Index","Solutions") ">
-                                                Solutions
-                                            </a>
-                                        </li>
+                                            Projects
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index","Solutions") ">
+                                            Solutions
+                                        </a>
+                                    </li>
                                     <li>
                                         <a href="#">
                                             News
                                         </a>
                                     </li>
-                                    </ul>
-                                </div>
+                                </ul>
                             </div>
                         </div>
-                        <div class="col-md-4 contact-info">
-                            <h2>
-                              Our Address
-                            </h2>
-                            <div>
-                                  @foreach(var item in Contactitems)
-                                    {
+                    </div>
+                    <div class="col-md-4 contact-info">
+                        <h2>
+                            Our Address
+                        </h2>
+                        <div>
+                            @foreach (var item in Contactitems)
+                            {
                                 <div class="d-flex contact-info-item">
                                     <div class="icon">
                                         <img src="~/assets/images/@item.Icon" alt="@item.Title">
                                     </div>
                                     <div class="text">
-                                       @item.Value
+                                        @item.Value
                                     </div>
                                 </div>
-                                }
-               
-                            </div>
-             
+                            }
+
                         </div>
+
                     </div>
                 </div>
-            </section>
-        </footer>
-   
+            </div>
+        </section>
+    </footer>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>

@@ -71,21 +71,33 @@
                                     <a class="nav-link @(current_controller=="Services"&&current_action=="Index"?"Active":"")"
                                         aria-current="page" href="@Url.Action("Index","Services")">Services</a>
                                 </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                        @(current_controller=="Services"&&current_action=="Index"?"Active":"")
+                                        data-bs-auto-close="outside">Services</a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li>
+                                            <a class="dropdown-item" href="btsi-strategy.html">
+                                                Implementation and Integration
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="btsi-org-structure.html">
+                                                Design and Engineering
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="btsi-org-structure.html">
+                                                Consulting Services
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Solutions"&&current_action=="Index"?"Active":"")"
                                         aria-current="page" href="@Url.Action("Index","Solutions")">Solutions</a>
                                 </li>
 
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                        data-bs-auto-close="outside">About</a>
-                                    <ul class="dropdown-menu shadow">
-                                        <li><a class="dropdown-item" href="btsi-strategy.html">BTSI Strategy</a></li>
-                                        <li><a class="dropdown-item" href="btsi-org-structure.html">BTSI Org.
-                                                Structure</a>
-                                        </li>
-                                    </ul>
-                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Home"&&current_action=="Projects"?"Active":"")"
                                         aria-current="page" href="@Url.Action("Projects","Home")">Projects</a>
