@@ -439,7 +439,7 @@ section.projects .project-inner-carousel .owl-item .logo,
 section.projects .project-inner-carousel .owl-item .bg{
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-  transition-duration: .5s;  
+  transition-duration: .5s;
 }
 section.projects .project-inner-carousel .owl-item:hover .logo,
 section.projects .project-inner-carousel .owl-item:hover .bg{
@@ -708,16 +708,17 @@ section.solutions-inner .solutions-inner-tabs .nav-tabs .nav-link{
     position: relative;
     color: var(--white) !important;
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
     height: 125px !important;
-    border: 1px solid transparent;
+    border: transparent;
     border-radius: 0;
     width: 100%;
     text-align: left;
-    padding-top: 40px;
     font-weight: 700;
     font-size: 15px;
+    padding-top: 40px;
+    transition-duration: 0s;
 }
 section.solutions-inner .solutions-inner-tabs .nav-tabs .nav-link span{
     position: absolute;
@@ -725,11 +726,29 @@ section.solutions-inner .solutions-inner-tabs .nav-tabs .nav-link span{
     font-size: 54px;
     color: rgba(255, 255, 255, 0.1);
     left: 20px;
-    top: 0;
+    bottom: 45px;
 }
 section.solutions-inner .solutions-inner-tabs .nav-link:hover,
 section.solutions-inner .solutions-inner-tabs .nav-link.active{
     background-color: #C01522 !important;
+    
+}
+section.solutions-inner .solutions-inner-tabs .nav-link:hover::before,
+section.solutions-inner .solutions-inner-tabs .nav-link.active::before{
+    content: '';    
+    top: -15px;
+    background-color: #C01522 !important;
+    height: 15px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    /*
+    height: 140px !important;
+    margin-top: -15px;
+    padding-top: 55px;
+    animation-name: solution-inner-animation;
+    animation-duration: 4s;
+    */
 }
 section.solutions-inner .tab-pane{
     padding: 35px 0 150px;
@@ -1186,6 +1205,9 @@ section.solutions .tab-content .tab-pane p {
 section.solutions .owl-carousel .owl-stage-outer {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+}
+.solutions-inner-tabs .owl-carousel .owl-stage-outer{
+    overflow: visible !important;
 }
 
 footer .social-links a {
