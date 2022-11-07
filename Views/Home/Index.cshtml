@@ -13,8 +13,9 @@
     var ProjectIndex_img = 0;
     Layout = null;
 
-    var current_controller = ViewContext.RouteData.Values["Controller"].ToString();
-    var current_action = ViewContext.RouteData.Values["Action"].ToString();
+    var current_controller = ViewBag.current_controller;// ViewContext.RouteData.Values["Controller"];
+    var current_action = ViewBag.current_action;// ViewContext.RouteData.Values["Action"];
+
         var SolutionLinks = ViewBag.SolutionsLinks ;
         var IndustrialLinks = ViewBag.IndustrialLinks ;
 
@@ -62,15 +63,15 @@
                     </button>
                     <div class="nav-center">
                         <div class="collapse navbar-collapse top-menu justify-content-center" id="navbarNavAltMarkup">
-                           <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                              <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"Active":"")"
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"active":"")"
                                         aria-current="page" href="@Url.Action("Index","Home")">Home</a>
                                 </li>
                          
                                    <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                        @(current_controller=="Home"&&current_action=="About"?"Active":"")
+                                    <a class="nav-link dropdown-toggle" href="@Url.Action("About","Home")" data-bs-toggle="dropdown"
+                                        @(current_controller=="Home"&&current_action=="About"?"active":"")
                                         data-bs-auto-close="outside">About</a>
                                     <ul class="dropdown-menu shadow">
                                         <li>
@@ -99,8 +100,8 @@
 
 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                        @(current_controller=="Services"&&current_action=="Index"?"Active":"")
+                                    <a class="nav-link dropdown-toggle" href="@Url.Action("Index","Services")" data-bs-toggle="dropdown"
+                                        @(current_controller=="Services"&&current_action=="Index"?"active":"")
                                         data-bs-auto-close="outside">Services</a>
                                     <ul class="dropdown-menu shadow">
                                         <li>
@@ -122,8 +123,8 @@
                                 </li>
                             
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                        @(current_controller=="Solutions"&&current_action=="Index"?"Active":"")
+                                    <a class="nav-link dropdown-toggle" href="@Url.Action("Index","Solutions")" data-bs-toggle="dropdown"
+                                        @(current_controller=="Solutions"&&current_action=="Index"?"active":"")
                                         data-bs-auto-close="outside">Solutions</a>
                                     <ul class="dropdown-menu shadow">
                                        @foreach(var itm in SolutionLinks)
@@ -138,14 +139,14 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Projects"?"Active":"")"
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Projects"?"active":"")"
                                         aria-current="page" href="@Url.Action("Projects","Home")">Projects</a>
                                 </li>
                          
 
                                       <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                        @(current_controller=="Solutions"&&current_action=="Index"?"Active":"")
+                                        @(current_controller=="Home"&&current_action=="Industries"?"active":"")
                                         data-bs-auto-close="outside">Industries</a>
                                     <ul class="dropdown-menu shadow">
                                        @foreach(var itm in IndustrialLinks)
@@ -160,11 +161,11 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Partners"?"Active":"")"
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Partners"?"active":"")"
                                         aria-current="page" href="@Url.Action("Partners","Home")">Partners</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Contact"?"Active":"")"
+                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Contact"?"active":"")"
                                         aria-current="page" href="@Url.Action("Contact","Home")">Contact us</a>
                                 </li>
                             </ul>

@@ -19,6 +19,8 @@ namespace _3sApp.Controllers
 
         public IActionResult Index(int?id)
         {
+            ViewBag.current_controller = "Solutions";
+            ViewBag.current_action = "Index";
             ViewBag.About = _context.Abouts.FirstOrDefault();
             ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();
             ViewBag.Contactitems = _context.Contactitems.ToList();

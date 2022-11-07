@@ -66,9 +66,16 @@ body.home header .navbar-nav a {
     font-weight: 600;
     color: #D9D9D9;
 }
+body.home header .navbar-nav  a:hover,
+body.home header .navbar-nav  a:active {
+    color: var(--red)!important;
+}
+body.home header .navbar-nav .nav-link.active, .navbar-nav .show > .nav-link {
+    color: var(--red) !important;
+}
 /* Header end */
 /* main slider start */
-section.main-slider{
+section.main-slider {
     /* margin-top: -80px; */
     position: relative;
     /* z-index: -1; */
@@ -1201,7 +1208,7 @@ margin-top:30px
     background-size: cover;
     border: 1px solid #DBDBDB;
     border-radius: 15px;
-    height: 190px;
+    height: 290px;
     
 }
 .team-carousel .owl-carousel-item h4{
@@ -1216,6 +1223,7 @@ margin-top:30px
     font-weight: 400;
     font-size: 15px;
     text-align: center;
+    height:40px;
 }
 .team-carousel .owl-nav.disabled{
     display: flex;
@@ -1249,11 +1257,8 @@ margin-top:30px
     font-weight: 400 !important;
     font-size: 14px !important;
 }
-header .navbar-nav a:hover,
-header .navbar-nav a.active{
-    background-color: transparent;
-    color: var(--red);
-}
+
+
 header .navbar-nav a {
     text-decoration: none;
     font-size: 15px;
@@ -1263,6 +1268,12 @@ header .navbar-nav a {
     padding: 5px;
     font-weight: 600;
 }
+
+    header .navbar-nav a:hover,
+    header .navbar-nav a.active {
+        background-color: transparent;
+        color: var(--red);
+    }
 .tns-controls button{
     position: absolute;
     width: 45px;
@@ -1295,4 +1306,7 @@ font-weight:600;
 #mainSliderCarousel > .owl-stage-outer {
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
