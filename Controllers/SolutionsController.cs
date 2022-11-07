@@ -23,6 +23,8 @@ namespace _3sApp.Controllers
             ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();
             ViewBag.Contactitems = _context.Contactitems.ToList();
             ViewBag.SocialMedias = _context.SocialMedias.ToList();
+            ViewBag.SolutionsLinks = _context.Solutions.Select(x => new { x.Id, x.Title }).ToList();
+            ViewBag.IndustrialLinks = _context.Industries.Select(x => new { x.Id, x.Title }).ToList();
             if (id != null)
                 ViewBag.Solutions = _context.Solutions.Where(x=>x.Id==id.Value).Include(x => x.SubSolution).FirstOrDefault();
             else
