@@ -144,12 +144,13 @@
     </header>
     <div class="layout position-relative">
         <section class="main-slider">
-            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+
+            <div id="mainSliderCarousel" class="carousel carousel-dark slide" data-bs-ride="true">
                 <div class="carousel-indicators">
 
                     @foreach (var item in Model.Sliders)
                     {
-                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="@sliderIndex_pointer"
+                        <button type="button" data-bs-target="#mainSliderCarousel" data-bs-slide-to="@sliderIndex_pointer"
                         class="@(sliderIndex_pointer==0?"active":"")" aria-current="@(sliderIndex_pointer==0?"true":"")"
                         aria-label="Slide @sliderIndex_pointer"></button>
 
@@ -361,8 +362,14 @@
                                             <div class="owl-carousel owl-theme project-inner-carousel">
                                                 @foreach (var images in item.Images)
                                                 {
-                                                    <div class="item"
-                                                style="background-image: url('/assets/images/@images.FileName');">
+                                                    <div class="item">
+                                                        <div class="bg"
+                                                    style="background-image: url('/assets/images/@images.FileName');">
+                                                        </div>
+                                                        <div class="overley"></div>
+                                                        <div class="logo">
+                                                            <img src="~/assets/images/sabek.png" alt="">
+                                                        </div>
                                                         <a href="#" class="btn btn-green">
                                                             Learn More
                                                             <img src="~/assets/images/launch-app.svg" alt="">
@@ -676,6 +683,20 @@
     <script>
         $(document).ready(function () {
             /* Client */
+            $('#mainSliderCarousel').owlCarousel({
+
+                nav: true, // Show next and prev buttons
+                navText: ['<i class="fa-sharp fa-solid fa-arrow-left"></i>', '<i class="fa-sharp fa-solid fa-arrow-right"></i>'],
+
+                slideSpeed: 300,
+                dots: false,
+
+                items: 1,
+                itemsDesktop: false,
+                itemsDesktopSmall: false,
+                itemsTablet: false,
+                itemsMobile: false
+            });
             $('.partners-carousel').owlCarousel({
                 loop: true,
                 margin: 20,

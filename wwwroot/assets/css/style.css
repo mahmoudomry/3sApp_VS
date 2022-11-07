@@ -345,13 +345,14 @@ section.projects .project-inner-carousel .owl-nav button{
     position: absolute;
     background-color: transparent !important;
     color: var(--white);
-    bottom: 45px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 section.projects .project-inner-carousel .owl-nav .owl-prev{
-    right: 100px;
+    left: 0;
 }
 section.projects .project-inner-carousel .owl-nav .owl-next{
-    right: 50px;
+    right: 0;
 }
 section.projects .project-inner-carousel .btn-green{
     position: absolute;
@@ -361,6 +362,41 @@ section.projects .project-inner-carousel .btn-green{
 section.projects .project-inner-carousel .btn-green img{
     width: 15px;
     height: 15px;
+}
+section.projects .project-inner-carousel .bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+}
+section.projects .project-inner-carousel .overley{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 33.47%, #FFFFFF 100%);
+    filter: drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.04));
+    border-radius: 15px 0px 0px 15px;
+}
+section.projects .project-inner-carousel .logo{
+    position: absolute;
+    right: 35px;
+    bottom: 40px;
+}
+section.projects .project-inner-carousel .owl-item:hover{
+    cursor: pointer;
+}
+section.projects .project-inner-carousel .owl-item:hover .logo,
+section.projects .project-inner-carousel .owl-item:hover .bg{
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+section.projects .project-inner-carousel .owl-item:hover .btn-green{
+    -webkit-filter: grayscale(0);
+    filter: none;
 }
 /* projects end */
 /* Industries start */
@@ -1188,7 +1224,7 @@ header .navbar-nav a {
     border-radius: 50%;
     border: transparent;
     background-color: #DBDBDB;
-    color: #3A3C40;
+    color: var(--white);
 }
 .tns-controls button:hover{
     background-color: #007133;
