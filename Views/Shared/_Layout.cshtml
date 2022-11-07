@@ -5,7 +5,8 @@
     var SocialMedias = ViewBag.SocialMedias as List<SocialMedia>;
     var current_controller = ViewContext.RouteData.Values["Controller"];
     var current_action = ViewContext.RouteData.Values["Action"];
-
+    var SolutionLinks = ViewBag.SolutionsLinks ;
+        var IndustrialLinks = ViewBag.IndustrialLinks ;
 }
 <!doctype html>
 <html lang="en">
@@ -51,48 +52,97 @@
                                     <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"Active":"")"
                                         aria-current="page" href="@Url.Action("Index","Home")">Home</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"About":"")"
-                                        aria-current="page" href="@Url.Action("About","Home")">About us</a>
+                         
+                                   <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                        @(current_controller=="Home"&&current_action=="About"?"Active":"")
+                                        data-bs-auto-close="outside">About</a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("About","Home")">
+                                              About us
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("About","Home")">
+                                        CEO MESSAGE
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("About","Home")">
+                                         OUR VALUES
+                                            </a>
+                                        </li>
+                                             <li>
+                                            <a class="dropdown-item" href="@Url.Action("About","Home")">
+                                   OUR TEAM
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Services"&&current_action=="Index"?"Active":"")"
-                                        aria-current="page" href="@Url.Action("Index","Services")">Services</a>
-                                </li>
+
+
+
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                                         @(current_controller=="Services"&&current_action=="Index"?"Active":"")
                                         data-bs-auto-close="outside">Services</a>
                                     <ul class="dropdown-menu shadow">
                                         <li>
-                                            <a class="dropdown-item" href="btsi-strategy.html">
-                                                Implementation and Integration
+                                            <a class="dropdown-item" href="@Url.Action("Index","Services")">
+                                               Consulting Services
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="btsi-org-structure.html">
-                                                Design and Engineering
+                                            <a class="dropdown-item" href="@Url.Action("Index","Services")">
+                                         Design and Engineering
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="btsi-org-structure.html">
-                                                Consulting Services
+                                            <a class="dropdown-item" href="@Url.Action("Index","Services")">
+                                          Consulting Services
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Solutions"&&current_action=="Index"?"Active":"")"
-                                        aria-current="page" href="@Url.Action("Index","Solutions")">Solutions</a>
+                            
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                        @(current_controller=="Solutions"&&current_action=="Index"?"Active":"")
+                                        data-bs-auto-close="outside">Solutions</a>
+                                    <ul class="dropdown-menu shadow">
+                                       @foreach(var itm in SolutionLinks)
+                                       {
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("Index","Solutions",new{Id=itm.Id})">
+                                              @itm.Title
+                                            </a>
+                                        </li>
+                                       }
+                             
+                                    </ul>
                                 </li>
-
                                 <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Home"&&current_action=="Projects"?"Active":"")"
-                                        aria-current="page" href="#">Projects</a>
+                                        aria-current="page" href="@Url.Action("Projects","Home")">Projects</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link @(current_controller=="Home"&&current_action=="Industries"?"Active":"")"
-                                        aria-current="page" href="@Url.Action("Industries","Home")">Industries</a>
+                         
+
+                                      <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                        @(current_controller=="Solutions"&&current_action=="Index"?"Active":"")
+                                        data-bs-auto-close="outside">Industries</a>
+                                    <ul class="dropdown-menu shadow">
+                                       @foreach(var itm in IndustrialLinks)
+                                       {
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("Industries","Home")">
+                                              @itm.Title
+                                            </a>
+                                        </li>
+                                       }
+                             
+                                    </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Home"&&current_action=="Partners"?"Active":"")"

@@ -15,6 +15,7 @@ namespace _3sApp.Controllers
             ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();
             ViewBag.Contactitems = _context.Contactitems.ToList();
             ViewBag.SocialMedias = _context.SocialMedias.ToList();
+            ViewBag.SolutionsLinks = _context.Solutions.Select(x => new { x.Id, x.Title }).ToList();
         }
   
     }
