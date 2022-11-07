@@ -15,8 +15,8 @@
 
     var current_controller = ViewContext.RouteData.Values["Controller"].ToString();
     var current_action = ViewContext.RouteData.Values["Action"].ToString();
-        var SolutionLinks = ViewBag.SolutionsLinks ;
-        var IndustrialLinks = ViewBag.IndustrialLinks ;
+    var SolutionLinks = ViewBag.SolutionsLinks;
+    var IndustrialLinks = ViewBag.IndustrialLinks;
 
 }
 <!DOCTYPE html>
@@ -45,7 +45,6 @@
     <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
 
     <link rel="stylesheet" href="~/assets/css/style.css" />
-
 </head>
 
 <body class="home">
@@ -62,35 +61,35 @@
                     </button>
                     <div class="nav-center">
                         <div class="collapse navbar-collapse top-menu justify-content-center" id="navbarNavAltMarkup">
-                           <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"Active":"")"
                                         aria-current="page" href="@Url.Action("Index","Home")">Home</a>
                                 </li>
-                         
-                                   <li class="nav-item dropdown">
+
+                                <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                                         @(current_controller=="Home"&&current_action=="About"?"Active":"")
                                         data-bs-auto-close="outside">About</a>
                                     <ul class="dropdown-menu shadow">
                                         <li>
                                             <a class="dropdown-item" href="@Url.Action("About","Home")">
-                                              About us
+                                                About us
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="@Url.Action("About","Home")">
-                                        CEO MESSAGE
+                                                CEO MESSAGE
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="@Url.Action("About","Home")">
-                                         OUR VALUES
+                                                OUR VALUES
                                             </a>
                                         </li>
-                                             <li>
+                                        <li>
                                             <a class="dropdown-item" href="@Url.Action("About","Home")">
-                                   OUR TEAM
+                                                OUR TEAM
                                             </a>
                                         </li>
                                     </ul>
@@ -105,58 +104,60 @@
                                     <ul class="dropdown-menu shadow">
                                         <li>
                                             <a class="dropdown-item" href="@Url.Action("Index","Services")">
-                                               Consulting Services
+                                                Consulting Services
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="@Url.Action("Index","Services")">
-                                         Design and Engineering
+                                                Design and Engineering
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="@Url.Action("Index","Services")">
-                                          Consulting Services
+                                                Consulting Services
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                            
+
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                                         @(current_controller=="Solutions"&&current_action=="Index"?"Active":"")
                                         data-bs-auto-close="outside">Solutions</a>
                                     <ul class="dropdown-menu shadow">
-                                       @foreach(var itm in SolutionLinks)
-                                       {
-                                        <li>
-                                            <a class="dropdown-item" href="@Url.Action("Index","Solutions",new{Id=itm.Id})">
-                                              @itm.Title
-                                            </a>
-                                        </li>
-                                       }
-                             
+                                        @foreach (var itm in SolutionLinks)
+                                        {
+                                            <li>
+                                                <a class="dropdown-item"
+                                                href="@Url.Action("Index","Solutions",new{Id=itm.Id})">
+                                                    @itm.Title
+                                                </a>
+                                            </li>
+                                        }
+
                                     </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Home"&&current_action=="Projects"?"Active":"")"
                                         aria-current="page" href="@Url.Action("Projects","Home")">Projects</a>
                                 </li>
-                         
 
-                                      <li class="nav-item dropdown">
+
+                                <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                                         @(current_controller=="Solutions"&&current_action=="Index"?"Active":"")
                                         data-bs-auto-close="outside">Industries</a>
                                     <ul class="dropdown-menu shadow">
-                                       @foreach(var itm in IndustrialLinks)
-                                       {
-                                        <li>
-                                            <a class="dropdown-item" href="@Url.Action("Industries","Home",new{Id=itm.Id})">
-                                              @itm.Title
-                                            </a>
-                                        </li>
-                                       }
-                             
+                                        @foreach (var itm in IndustrialLinks)
+                                        {
+                                            <li>
+                                                <a class="dropdown-item"
+                                                href="@Url.Action("Industries","Home",new{Id=itm.Id})">
+                                                    @itm.Title
+                                                </a>
+                                            </li>
+                                        }
+
                                     </ul>
                                 </li>
                                 <li class="nav-item">
@@ -217,6 +218,9 @@
                     </div>
                 }
             </div>
+            <style id="main-slider-style">
+
+            </style>
             @if (false)
             {
                 <div id="mainSliderCarousel" class="carousel carousel-dark slide" data-bs-ride="true">
@@ -757,8 +761,11 @@
     <script src="~/assets/js/main.js"></script>
     <script>
         $(document).ready(function () {
+            function padWithZero(num, targetLength) {
+                return String(num).padStart(targetLength, '0');
+            }
             /* Client */
-            $('#mainSliderCarousel').owlCarousel({
+            var mainSlider = $('#mainSliderCarousel').owlCarousel({
                 slideSpeed: 300,
                 dots: true,
 
@@ -768,6 +775,12 @@
                 itemsTablet: false,
                 itemsMobile: false
             });
+            mainSlider.on('changed.owl.carousel', function (event) {
+                var num = event.item.index + 1;
+                var count = event.item.count;
+                $('#main-slider-style').text('.main-slider .owl-dots::before{content:"' + padWithZero(num, 2) + '";}.main-slider .owl-dots::after{content:"' + padWithZero(count, 2) + '";}');
+            });
+
             $('.partners-carousel').owlCarousel({
                 loop: true,
                 margin: 20,
