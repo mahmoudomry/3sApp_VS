@@ -4,6 +4,8 @@
 @{
     ViewData["Title"] = "Solutions - Sub Solution";
       ViewData["ActionTitle"] = @Model==null? "Create":"Edit";
+        ViewData["FormAction"] = @Model==null? "CreateSubSolutions":"EditSubSolutions";
+      ViewData["ButtonTitle"] = @Model==null? "Create":"Edit";
     Layout = "_AdminLayout";
 }
 
@@ -17,7 +19,7 @@
 												</h3>
 											</div>
 										</div>
-        <form asp-action="CreateSubSolutions" enctype="multipart/form-data" method="post" asp-area="Administrative" asp-controller="Solutions" class="kt-form">
+        <form asp-action="@ViewData["FormAction"]" enctype="multipart/form-data" method="post" asp-area="Administrative" asp-controller="Solutions" class="kt-form">
              @Html.AntiForgeryToken()	
             <div class="kt-portlet__body">
           @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -79,7 +81,7 @@
               
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="@ViewData["ButtonTitle"]" class="btn btn-primary" />
             </div>
             </div>
         </form>

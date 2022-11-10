@@ -63,18 +63,55 @@ namespace _3sApp.Areas.Administrative.Controllers
          ViewBag.Solutions = _context.Solutions.ToList();
             return View(sub);
         }
-        public IActionResult EditSubSolutions(int? Id)
+  
+        public IActionResult EditSubSolutions(int? id)
         {
-          
-                
-            if (Id == null)
-            {  return NotFound();
-                
+            //  UploadImage(sub);
+            if (id == null || _context.SubSolutions == null)
+            {
+                return NotFound();
+            }
+
+            var sub = _context.SubSolutions.Find(id);
+            if (sub == null)
+            {
+                return NotFound();
             }
             ViewBag.Solutions = _context.Solutions.ToList();
-          var sub = _context.SubSolutions.Find(Id.Value);
+            return View("CreateSubSolutions", sub);
+        }
+        [HttpPost]
+        public IActionResult EditSubSolutions(int? id,SubSolution sub)
+        {
 
-                return View(sub);
+            if (id != sub.Id)
+            {
+                return NotFound();
+            }
+            UploadSubIcon(sub);
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(sub);
+                    _context.SaveChanges();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!SolutionExists(sub.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(SubSolutions), new { id=sub.SolutionId});
+            }
+            return View("CreateSubSolutions", sub);
+
+           
         }
         // GET: Administrative/Solutions/Details/5
         public async Task<IActionResult> Details(int? id)

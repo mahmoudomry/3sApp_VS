@@ -91,7 +91,7 @@ namespace _3sApp.Areas.Administrative.Controllers
             {
                 return NotFound();
             }
-            return View(project);
+            return View("Create",project);
         }
 
         // POST: Administrative/Projects/Edit/5
