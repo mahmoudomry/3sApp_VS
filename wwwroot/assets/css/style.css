@@ -1627,6 +1627,15 @@ section.services-details .service-card:hover .icon img {
     section.ceo-message .security-solutions-text{
         margin-top: 60px;
     }
+    section.contact>.container>.row{
+        background: #2A2727;
+    }
+    section.contact .contact-form{
+        margin-bottom: 20px;
+    }
+    .empty{
+        height: auto !important;
+    }
 }
 @media only screen and (max-width: 600px) {
 }
