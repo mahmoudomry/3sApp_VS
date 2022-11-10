@@ -1544,6 +1544,12 @@ section.services-details .service-card:hover .icon img {
     .copyright{
         text-align: center;
     }
+    section.our-values{
+        padding: 20px 0 !important;
+    }
+    section.our-values-details .value-card{
+        margin: 20px 0;
+    }
 }
 @media only screen and (max-width: 768px) {
     .main-slider .owl-dots{
@@ -1591,6 +1597,35 @@ section.services-details .service-card:hover .icon img {
     }
     #tns2-ow{
         margin-right: 70px
+    }
+    section.about-inner{
+        background: var(--white);
+    }
+    .about-inner .container,
+    .security-solutions .container{
+        width: 100% !important;
+        max-width: none;
+    }
+    section.about-inner .about-title{
+        border-radius: 0;
+        padding: 30px 0;
+        text-align: center;
+    }
+    section.about-inner .about-summary{
+        padding: 30px 15px;
+        margin-top: 0;
+    }
+    section.security-solutions{
+        padding: 20px 0;
+    }
+    section.security-solutions h3{
+        margin: 0;
+    }
+    section.ceo-message{
+        padding: 20px ;
+    }
+    section.ceo-message .security-solutions-text{
+        margin-top: 60px;
     }
 }
 @media only screen and (max-width: 600px) {
