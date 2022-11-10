@@ -48,10 +48,10 @@ namespace _3sApp.Areas.Administrative.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult CreateSubSolutions(SubSolution sub)
+        public IActionResult CreateSubSolutions(SubSolution sub,IFormFile CoverImage,IFormFile Icon)
         {
-          //  UploadImage(sub);
-            UploadSubIcon(sub);
+            UploadImage(sub, CoverImage);
+            UploadSubIcon(sub, Icon);
             if (ModelState.IsValid)
             {sub.CoverImage = "";
                 _context.Add(sub);
@@ -81,14 +81,15 @@ namespace _3sApp.Areas.Administrative.Controllers
             return View("CreateSubSolutions", sub);
         }
         [HttpPost]
-        public IActionResult EditSubSolutions(int? id,SubSolution sub)
+        public IActionResult EditSubSolutions(int? id,SubSolution sub, IFormFile CoverImage, IFormFile Icon)
         {
 
             if (id != sub.Id)
             {
                 return NotFound();
             }
-            UploadSubIcon(sub);
+            UploadImage(sub, CoverImage);
+            UploadSubIcon(sub, Icon);
             if (ModelState.IsValid)
             {
                 try
@@ -269,14 +270,14 @@ namespace _3sApp.Areas.Administrative.Controllers
                 solution.CoverImage = solution.CoverImage;
             }
         }
-        private void UploadImage(SubSolution sub)
+        private void UploadImage(SubSolution sub,IFormFile formFile)
         {
-            var file = HttpContext.Request.Form.Files;
-            if (file.Count() > 0)
+           
+            if (formFile!=null)
             {
-                string ImageName = Guid.NewGuid().ToString() + Path.GetExtension(file[0].FileName);
+                string ImageName = Guid.NewGuid().ToString() + Path.GetExtension(formFile.FileName);
                 var filestream = new FileStream(Path.Combine(@"wwwroot/", "assets", "images", ImageName), FileMode.Create);
-                file[0].CopyTo(filestream);
+                formFile.CopyTo(filestream);
                 sub.CoverImage = ImageName;
             }
             else if (sub.CoverImage == null && sub.Id == null)
@@ -288,14 +289,14 @@ namespace _3sApp.Areas.Administrative.Controllers
                 sub.CoverImage = sub.CoverImage;
             }
         }
-        private void UploadSubIcon(SubSolution sub)
+        private void UploadSubIcon(SubSolution sub, IFormFile formFile)
         {
-            var file = HttpContext.Request.Form.Files;
-            if (file.Count() > 0)
+            
+            if (formFile!=null)
             {
-                string ImageName = Guid.NewGuid().ToString() + Path.GetExtension(file[0].FileName);
+                string ImageName = Guid.NewGuid().ToString() + Path.GetExtension(formFile.FileName);
                 var filestream = new FileStream(Path.Combine(@"wwwroot/", "assets", "images", ImageName), FileMode.Create);
-                file[0].CopyTo(filestream);
+                formFile.CopyTo(filestream);
                 sub.Icon = ImageName;
             }
             else if (sub.Icon == null && sub.Id == null)

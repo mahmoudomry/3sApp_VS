@@ -99,19 +99,24 @@ namespace _3sApp.Areas.Administrative.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Client,ClientLogo,Scope,IndustrialSolution,Describtion,CoverImage")] Project project)
+        public IActionResult Edit(int id, Project project, IFormFile? clientLogo, IFormFile? CoverImage, IFormFile[]? OtherImages)
         {
             if (id != project.Id)
             {
                 return NotFound();
             }
-
+            UploadImage(project, CoverImage);
+            UploadClientImage(project, clientLogo);
             if (ModelState.IsValid)
             {
                 try
                 {
                     _context.Update(project);
-                    await _context.SaveChangesAsync();
+                     _context.SaveChanges();
+                    if (OtherImages != null && OtherImages.Length > 0)
+                    {
+                        UploadImages(project.Id, OtherImages);
+                    }
                 }
                 catch (DbUpdateConcurrencyException)
                 {

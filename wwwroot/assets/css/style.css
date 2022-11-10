@@ -535,6 +535,7 @@ section.partners .owl-carousel-item{
     section.partners .owl-carousel-item img {
         transition: transform .2s;
         max-width: 130px;
+        max-height: 90px;
     }
 section.partners .owl-nav button:not(.disabled){
     background-color: #5B0C04;
@@ -556,6 +557,7 @@ section.clients .owl-carousel-item{
     justify-content: center;
 }
     section.clients .owl-carousel-item img {
+        max-height: 90px;
         max-width: 130px;
         transition: transform .2s;
     }
@@ -1417,7 +1419,7 @@ section.partners-inner .partner-item img:hover {
     transform: scale(1.2);
 }
 section.services-items .service-item{
-    background-image: url(../images/service-bg-1.svg);
+ /*   background-image: url(../images/service-bg-1.svg);*/
     background-color: var(--white);
 }
 
@@ -1427,7 +1429,7 @@ section.services-items .service-item{
 
 section.services-items .service-item:hover{
     color: var(--white);
-    background-image: url(../images/service-bg-2.svg);
+   /* background-image: url(../images/service-bg-2.svg);*/
     background-color: #3A3C40;
 }
 
