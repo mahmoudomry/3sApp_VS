@@ -780,13 +780,12 @@ section.become-a-partner p{
     opacity: 0.8;
 }
 /* become-a-partner end */
-section.contact{
-    background: linear-gradient(to right, #fff 30%, #2A2727 30%, #2A2727 100%);
-
+section.contact {
+    background: #2A2727; /*linear-gradient(to right, #fff 30%, #2A2727 30%, #2A2727 100%);*/
 }
-section.contact>.container>.row{
-    background: linear-gradient(to right, #fff 5%, #2A2727 5%, #2A2727 100%);
-}
+    section.contact > .container > .row {
+        background: #2A2727; /*linear-gradient(to right, #fff 5%, #2A2727 5%, #2A2727 100%);*/
+    }
 section.contact .dark{
     color: var(--white);
 }
@@ -862,8 +861,9 @@ section.contact .contact-item .contact-info .text a{
     color: var(--white);
     text-decoration: none;
 }
-section.empty{
+section.empty {
     height: 170px;
+    background: #2A2727;
 }
 /* become-a-partner start */
 /* become-a-partner end */
