@@ -212,6 +212,7 @@ section.services-details .service-card{
     justify-content: space-between;
 }
 section.services-details .service-card .icon img{
+    transition:.1s;
     height: 55px;
 }
 section.services-details .service-card h2{
@@ -647,23 +648,21 @@ section.services-items .service-item{
     padding: 0 100px;
     margin-bottom: 30px;
 }
-section.services-items .service-item:nth-child(odd){
+/*section.services-items .service-item:nth-child(odd){
     background-image: url(../images/service-bg-1.svg);
     background-color: var(--white);
+}
+section.services-items .service-item:nth-child(odd) p{
+    color: 3A3C40;
 }
 section.services-items .service-item:nth-child(even){
     color: var(--white);
     background-image: url(../images/service-bg-2.svg);
     background-color: #3A3C40;
 }
-
-section.services-items .service-item:nth-child(odd) p{
-    color: 3A3C40;
-}
-
 section.services-items .service-item:nth-child(even) p{
     color: var(--white);
-}
+}*/
 section.solutions-about{
     background-color: #1C1A1A;
     padding-bottom: 30px;
@@ -967,10 +966,10 @@ section.industries-inner .industry-details p{
 }
 
 section.solutions-inner .solutions-inner-carousel{
-    height: 129px !important;
+    height: 125px !important;
 }
 section.solutions-inner nav {
-    height: 127px !important;
+    height: 125px !important;
 }
 section.solutions-inner .solutions-inner-carousel > .owl-nav button.disabled,
 section.solutions-inner .solutions-inner-carousel > .owl-nav button{
@@ -1416,6 +1415,34 @@ section.clients .owl-carousel-item img:hover {
 }
 section.partners-inner .partner-item img:hover {
     transform: scale(1.2);
+}
+section.services-items .service-item{
+    background-image: url(../images/service-bg-1.svg);
+    background-color: var(--white);
+}
+
+    section.services-items .service-item p {
+        color: 3A3C40;
+    }
+
+section.services-items .service-item:hover{
+    color: var(--white);
+    background-image: url(../images/service-bg-2.svg);
+    background-color: #3A3C40;
+}
+
+    section.services-items .service-item:hover p {
+        color: var(--white);
+    }
+.btn-contact:hover svg path {
+    stroke: var(--white);
+}
+.btn-contact:hover  {
+    background:var(--red);
+    color:var(--white);
+}
+section.services-details .service-card:hover .icon img {
+    transform: scale3d(1.5, 1.5, 1.5);
 }
 
 .navbar-toggler-icon{

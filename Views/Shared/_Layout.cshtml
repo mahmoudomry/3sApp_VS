@@ -6,7 +6,8 @@
     var current_controller = ViewBag.current_controller;// ViewContext.RouteData.Values["Controller"];
     var current_action = ViewBag.current_action;// ViewContext.RouteData.Values["Action"];
     var SolutionLinks = ViewBag.SolutionsLinks ;
-        var IndustrialLinks = ViewBag.IndustrialLinks ;
+    var IndustrialLinks = ViewBag.IndustrialLinks ;
+    var ServicesLinks = ViewBag.ServicesLinks;
 }
 <!doctype html>
 <html lang="en">
@@ -88,21 +89,15 @@
                                         @(current_controller=="Services"&&current_action=="Index"?"active":"")
                                         data-bs-auto-close="outside">Services</a>
                                     <ul class="dropdown-menu shadow">
-                                        <li>
-                                            <a class="dropdown-item" href="@Url.Action("Index","Services")">
-                                               Consulting Services
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="@Url.Action("Index","Services")">
-                                         Design and Engineering
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="@Url.Action("Index","Services")">
-                                          Consulting Services
-                                            </a>
-                                        </li>
+                                          @foreach (var itm in  ServicesLinks)
+                                        {
+                                                <li>
+                                                    <a class="dropdown-item"
+                                                href="@Url.Action("Index","Services",new{Id=itm.Id})">
+                                                    @itm.Name
+                                                    </a>
+                                                </li>
+                                        }
                                     </ul>
                                 </li>
                             

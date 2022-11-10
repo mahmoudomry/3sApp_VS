@@ -27,6 +27,7 @@ namespace _3sApp.Controllers
             ViewBag.SocialMedias = _context.SocialMedias.ToList();
             ViewBag.SolutionsLinks = _context.Solutions.Select(x => new { x.Id, x.Title }).ToList();
             ViewBag.IndustrialLinks = _context.Industries.Select(x => new { x.Id, x.Title }).ToList();
+            ViewBag.ServicesLinks = _context.Services.Select(x => new { x.Id, x.Name }).ToList();
             if (id != null)
                 ViewBag.Solutions = _context.Solutions.Where(x=>x.Id==id.Value).Include(x => x.SubSolution).FirstOrDefault();
             else

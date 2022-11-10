@@ -125,8 +125,7 @@ namespace _3sApp.Areas.Administrative.Controllers
 
 
         // POST: Administrative/Clients/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Clients == null)

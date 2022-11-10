@@ -125,8 +125,7 @@ namespace _3sApp.Areas.Administrative.Controllers
 
 
         // POST: Administrative/SocialMedias/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.SocialMedias == null)

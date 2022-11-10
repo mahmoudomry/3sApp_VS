@@ -122,11 +122,10 @@ namespace _3sApp.Areas.Administrative.Controllers
             return View("Create", member);
         }
 
-       
+
 
         // POST: Administrative/Members/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Members == null)
