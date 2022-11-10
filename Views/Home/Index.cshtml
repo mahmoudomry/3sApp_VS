@@ -62,14 +62,15 @@
                     </button>
                     <div class="nav-center">
                         <div class="collapse navbar-collapse top-menu justify-content-center" id="navbarNavAltMarkup">
-                              <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
                                     <a class="nav-link @(current_controller=="Home"&&current_action=="Index"?"active":"")"
                                         aria-current="page" href="@Url.Action("Index","Home")">Home</a>
                                 </li>
 
-                                   <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="@Url.Action("About","Home")" data-bs-toggle="dropdown"
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="@Url.Action("About","Home")"
+                                        data-bs-toggle="dropdown"
                                         @(current_controller=="Home"&&current_action=="About"?"active":"")
                                         data-bs-auto-close="outside">About</a>
                                     <ul class="dropdown-menu shadow">
@@ -99,7 +100,8 @@
 
 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="@Url.Action("Index","Services")" data-bs-toggle="dropdown"
+                                    <a class="nav-link dropdown-toggle" href="@Url.Action("Index","Services")"
+                                        data-bs-toggle="dropdown"
                                         @(current_controller=="Services"&&current_action=="Index"?"active":"")
                                         data-bs-auto-close="outside">Services</a>
                                     <ul class="dropdown-menu shadow">
@@ -122,18 +124,19 @@
                                 </li>
 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="@Url.Action("Index","Solutions")" data-bs-toggle="dropdown"
+                                    <a class="nav-link dropdown-toggle" href="@Url.Action("Index","Solutions")"
+                                        data-bs-toggle="dropdown"
                                         @(current_controller=="Solutions"&&current_action=="Index"?"active":"")
                                         data-bs-auto-close="outside">Solutions</a>
                                     <ul class="dropdown-menu shadow">
                                         @foreach (var itm in SolutionLinks)
                                         {
-                                                <li>
-                                                    <a class="dropdown-item"
+                                            <li>
+                                                <a class="dropdown-item"
                                                 href="@Url.Action("Index","Solutions",new{Id=itm.Id})">
                                                     @itm.Title
-                                                    </a>
-                                                </li>
+                                                </a>
+                                            </li>
                                         }
 
                                     </ul>
@@ -151,12 +154,12 @@
                                     <ul class="dropdown-menu shadow">
                                         @foreach (var itm in IndustrialLinks)
                                         {
-                                                <li>
-                                                    <a class="dropdown-item"
+                                            <li>
+                                                <a class="dropdown-item"
                                                 href="@Url.Action("Industries","Home",new{Id=itm.Id})">
                                                     @itm.Title
-                                                    </a>
-                                                </li>
+                                                </a>
+                                            </li>
                                         }
 
                                     </ul>
@@ -172,7 +175,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div style="display: flex; align-items: fl;">
+                    <div class="search_btn_container">
                         <div class="search search_btn d-block">
                             <a href="javascript:;" onClick="openSearch()">
                                 <img src="~/assets/images/search-icon.svg">
@@ -200,23 +203,23 @@
             <div id="mainSliderCarousel" class="owl-carousel owl-theme">
                 @foreach (var item in Model.Sliders)
                 {
-                        <div class="carousel-item @(sliderIndex==0?"active":"")" data-bs-interval="10000"
+                    <div class="carousel-item @(sliderIndex==0?"active":"")" data-bs-interval="10000"
                     style="background-image: url('/assets/images/@item.CoverImage');">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <h2 class="white mb-3">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h2 class="white mb-3">
                                     @Html.Raw(item.Title)
-                                    </h2>
-                                    <p class="white">
+                                </h2>
+                                <p class="white">
                                     @Html.Raw(item.Description)
-                                    </p>
-                                    <a href="@item.Link" class="btn btn-green">
-                                        Learn More
-                                        <img src="~/assets/images/launch-app.svg" alt="">
-                                    </a>
-                                </div>
+                                </p>
+                                <a href="@item.Link" class="btn btn-green">
+                                    Learn More
+                                    <img src="~/assets/images/launch-app.svg" alt="">
+                                </a>
                             </div>
                         </div>
+                    </div>
                 }
             </div>
             <style id="main-slider-style">
@@ -224,43 +227,43 @@
             </style>
             @if (false)
             {
-                    <div id="mainSliderCarousel" class="carousel carousel-dark slide" data-bs-ride="true">
-                        <div class="carousel-indicators">
+                <div id="mainSliderCarousel" class="carousel carousel-dark slide" data-bs-ride="true">
+                    <div class="carousel-indicators">
 
                         @foreach (var item in Model.Sliders)
                         {
-                                    <button type="button" data-bs-target="#mainSliderCarousel" data-bs-slide-to="@sliderIndex_pointer"
+                            <button type="button" data-bs-target="#mainSliderCarousel" data-bs-slide-to="@sliderIndex_pointer"
                         class="@(sliderIndex_pointer==0?"active":"")" aria-current="@(sliderIndex_pointer==0?"true":"")"
                         aria-label="Slide @sliderIndex_pointer"></button>
 
                             @(sliderIndex_pointer=sliderIndex_pointer+1)
                         }
 
-                        </div>
-                        <div class="carousel-inner">
+                    </div>
+                    <div class="carousel-inner">
                         @foreach (var item in Model.Sliders)
                         {
-                                    <div class="carousel-item @(sliderIndex==0?"active":"")" data-bs-interval="10000"
+                            <div class="carousel-item @(sliderIndex==0?"active":"")" data-bs-interval="10000"
                         style="background-image: url('/assets/images/@item.CoverImage');">
-                                        <div class="row">
-                                            <div class="col-md-5">
-                                                <h2 class="white mb-3">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <h2 class="white mb-3">
                                             @Html.Raw(item.Title)
-                                                </h2>
-                                                <p class="white">
+                                        </h2>
+                                        <p class="white">
                                             @Html.Raw(item.Description)
-                                                </p>
-                                                <a href="@item.Link" class="btn btn-green">
-                                                    Learn More
-                                                    <img src="~/assets/images/launch-app.svg" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
+                                        </p>
+                                        <a href="@item.Link" class="btn btn-green">
+                                            Learn More
+                                            <img src="~/assets/images/launch-app.svg" alt="">
+                                        </a>
                                     </div>
+                                </div>
+                            </div>
                         }
 
-                        </div>
                     </div>
+                </div>
             }
         </section>
         <main>
@@ -309,29 +312,27 @@
             <section class="services-details">
                 <div class="container">
                     <div class="row">
-                        <div class="row">
-                            @foreach (var item in Model.Services)
-                            {
-                                    <div class="col-md-4">
-                                        <div class="service-card">
-                                            <div class="icon">
-                                                <img src="~/assets/images/@item.Icon" alt="">
-                                            </div>
-                                            <h2>
-                                            @item.Name
-                                            </h2>
-                                            <p>
-                                            @item.Describtion.Substring(0,item.Describtion.Length>100?100:item.Describtion.Length)
-                                            </p>
-                                            <a href="~/Services/Index">
-                                                Learn More
-                                                <img src="~/assets/images/launch-app-green.svg" alt="">
-                                            </a>
-                                        </div>
+                        @foreach (var item in Model.Services)
+                        {
+                            <div class="col-md-4">
+                                <div class="service-card">
+                                    <div class="icon">
+                                        <img src="~/assets/images/@item.Icon" alt="">
                                     </div>
-                            }
+                                    <h2>
+                                        @item.Name
+                                    </h2>
+                                    <p>
+                                        @item.Describtion.Substring(0,item.Describtion.Length>100?100:item.Describtion.Length)
+                                    </p>
+                                    <a href="~/Services/Index">
+                                        Learn More
+                                        <img src="~/assets/images/launch-app-green.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        }
 
-                        </div>
                     </div>
                 </div>
             </section>
@@ -352,15 +353,15 @@
                     </div>
                     <div class="row">
                         <nav>
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <div class="nav nav-tabs owl-carousel owl-theme" id="nav-tab" role="tablist">
                                 @foreach (var item in Model.Solutions)
                                 {
-                                        <button class="nav-link @(SolutionsIndex==0?"active":"")"
+                                    <button class="nav-link @(SolutionsIndex==0?"active":"")"
                                     id="@("nav-"+SolutionsIndex+"-solutions-tab")" data-bs-toggle="tab"
                                     data-bs-target="@("#nav-"+SolutionsIndex+"-solutions")" type="button" role="tab"
                                     aria-controls="nav-@SolutionsIndex-solutions" aria-selected="true">
                                         @item.Title
-                                        </button>
+                                    </button>
                                     {
                                         SolutionsIndex = SolutionsIndex + 1;
                                     }
@@ -372,44 +373,44 @@
                         <div class="tab-content" id="nav-tabContent">
                             @foreach (var item in Model.Solutions)
                             {
-                                    <div class="tab-pane fade   @(SolutionsIndex_tab==0?"show active":"")"
+                                <div class="tab-pane fade   @(SolutionsIndex_tab==0?"show active":"")"
                                 id="@("nav-"+SolutionsIndex_tab+"-solutions")" role="tabpanel"
                                 aria-labelledby="@("nav-"+SolutionsIndex_tab+"-solutions-tab")"
                                 tabindex="@SolutionsIndex_tab">
-                                        <div class="row">
+                                    <div class="row">
 
-                                            <div class="col-md-6">
-                                                <h3>
+                                        <div class="col-md-6">
+                                            <h3>
                                                 @item.Title
-                                                </h3>
-                                                <p>
+                                            </h3>
+                                            <p>
                                                 @Html.Raw(item.Describtion)
-                                                </p>
-                                                <a href="~/Solutions/Index/@item.Id" class="btn btn-green">
-                                                    Learn More
-                                                    <img src="~/assets/images/launch-app.svg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-5" style="position: relative;">
-                                                <ul class="list-unstyled solution-items-slider">
+                                            </p>
+                                            <a href="~/Solutions/Index/@item.Id" class="btn btn-green">
+                                                Learn More
+                                                <img src="~/assets/images/launch-app.svg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col-md-5" style="position: relative;">
+                                            <ul class="list-unstyled solution-items-slider">
 
                                                 @foreach (var item_sub in item.SubSolution)
                                                 {
-                                                            <li>
-                                                                <a href="~/Solutions/Index/@item.Id">
-                                                                    <img src="~/assets/images/@item_sub.Icon" alt="@item_sub.Title">
+                                                    <li>
+                                                        <a href="~/Solutions/Index/@item.Id">
+                                                            <img src="~/assets/images/@item_sub.Icon" alt="@item_sub.Title">
                                                             @item_sub.Title
-                                                                </a>
-                                                            </li>
+                                                        </a>
+                                                    </li>
                                                 }
                                                 @{
                                                     SolutionsIndex_tab = SolutionsIndex_tab + 1;
                                                 }
 
-                                                </ul>
-                                            </div>
+                                            </ul>
                                         </div>
                                     </div>
+                                </div>
                             }
 
                         </div>
@@ -435,72 +436,72 @@
 
                         @foreach (var item in Model.Projects)
                         {
-                                <div class="item">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-md-5">
-                                                <div class="owl-carousel owl-theme project-inner-carousel">
+                            <div class="item">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="owl-carousel owl-theme project-inner-carousel">
                                                 @foreach (var images in item.Images)
                                                 {
-                                                            <div class="item">
-                                                                <div class="bg"
+                                                    <div class="item">
+                                                        <div class="bg"
                                                     style="background-image: url('/assets/images/@images.FileName');">
-                                                                </div>
-                                                                <div class="overley"></div>
-                                                                <div class="logo">
-                                                                    <img src="~/assets/images/@item.ClientLogo" alt="">
-                                                                </div>
-                                                                <a href="#" class="btn btn-green">
-                                                                    Learn More
-                                                                    <img src="~/assets/images/launch-app.svg" alt="">
-                                                                </a>
+                                                        </div>
+                                                        <div class="overley"></div>
+                                                        <div class="logo">
+                                                            <img src="~/assets/images/@item.ClientLogo" alt="">
+                                                        </div>
+                                                        <a href="#" class="btn btn-green">
+                                                            Learn More
+                                                            <img src="~/assets/images/launch-app.svg" alt="">
+                                                        </a>
 
-                                                            </div>
+                                                    </div>
                                                 }
 
-                                                </div>
                                             </div>
-                                            <div class="col-md-7">
-                                                <div class="row">
-                                                    <ul class="project-details-items">
-                                                        <li>
-                                                            <div class="label">
-                                                                Project
-                                                            </div>
-                                                            <div class="text">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="row">
+                                                <ul class="project-details-items">
+                                                    <li>
+                                                        <div class="label">
+                                                            Project
+                                                        </div>
+                                                        <div class="text">
                                                             @item.Title
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="label">
-                                                                Client
-                                                            </div>
-                                                            <div class="text">
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="label">
+                                                            Client
+                                                        </div>
+                                                        <div class="text">
                                                             @item.Client
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="label">
-                                                                Scope
-                                                            </div>
-                                                            <div class="text">
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="label">
+                                                            Scope
+                                                        </div>
+                                                        <div class="text">
                                                             @item.Scope
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="label">
-                                                                Industrial Solution
-                                                            </div>
-                                                            <div class="text">
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="label">
+                                                            Industrial Solution
+                                                        </div>
+                                                        <div class="text">
                                                             @item.IndustrialSolution
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         }
 
                     </div>
@@ -524,22 +525,22 @@
                     <div class="industry-items">
                         @foreach (var item in Model.Industries)
                         {
-                                <div class="industry-item-card">
-                                    <h2>
-                                       
-                                        <span class="icon">
-                                            <img src="~/assets/images/@item.Icon" alt="">
-                                        </span>
+                            <div class="industry-item-card">
+                                <h2>
+
+                                    <span class="icon">
+                                        <img src="~/assets/images/@item.Icon" alt="">
+                                    </span>
                                     @item.Title
-                                    </h2>
-                                    <p>
+                                </h2>
+                                <p>
                                     @item.Describtion.Substring(0,item.Describtion.Length>100?100:item.Describtion.Length)
-                                    </p>
-                                    <a href="~/home/Industries">
-                                        Learn More
-                                        <img src="~/assets/images/launch-app-green.svg" alt="">
-                                    </a>
-                                </div>
+                                </p>
+                                <a href="~/home/Industries">
+                                    Learn More
+                                    <img src="~/assets/images/launch-app-green.svg" alt="">
+                                </a>
+                            </div>
                         }
 
                     </div>
@@ -568,11 +569,11 @@
 
                                     @foreach (var item in Model.Partners)
                                     {
-                                            <div class="owl-carousel-item">
-                                                <a href="@item.Link">
-                                                    <img src="~/assets/images/@item.Image" alt="@item.Title">
-                                                </a>
-                                            </div>
+                                        <div class="owl-carousel-item">
+                                            <a href="@item.Link">
+                                                <img src="~/assets/images/@item.Image" alt="@item.Title">
+                                            </a>
+                                        </div>
                                     }
                                 </div>
                             </div><!-- owl-carousel-line -->
@@ -602,11 +603,11 @@
 
                                     @foreach (var item in Model.Clients)
                                     {
-                                            <div class="owl-carousel-item">
-                                                <a href="@item.Link">
-                                                    <img src="~/assets/images/@item.Image" alt="@item.Title">
-                                                </a>
-                                            </div>
+                                        <div class="owl-carousel-item">
+                                            <a href="@item.Link">
+                                                <img src="~/assets/images/@item.Image" alt="@item.Title">
+                                            </a>
+                                        </div>
                                     }
 
                                 </div>
@@ -649,11 +650,11 @@
                                 <ul class="list-unstyled list-group list-group-horizontal ">
                                     @foreach (var item in Model.SocialMedias)
                                     {
-                                            <li>
-                                                <a href="@item.Link" class="@item.Icon">
-                                                    <i class="fa-brands fa-@item.Icon"></i>
-                                                </a>
-                                            </li>
+                                        <li>
+                                            <a href="@item.Link" class="@item.Icon">
+                                                <i class="fa-brands fa-@item.Icon"></i>
+                                            </a>
+                                        </li>
                                     }
 
                                 </ul>
@@ -664,11 +665,11 @@
                             </div>
                         </div>
                         <div class="col-md-4 fast-links">
-                            <h2 >
+                            <h2>
                                 Our Link
                             </h2>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-6">
 
                                     <ul class="list-unstyled list-group">
                                         <li>
@@ -694,7 +695,7 @@
                                     </ul>
 
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-6">
 
                                     <ul class="list-unstyled list-group">
                                         <li>
@@ -728,14 +729,14 @@
                             <div>
                                 @foreach (var item in Model.Contactitems)
                                 {
-                                        <div class="d-flex contact-info-item">
-                                            <div class="icon">
-                                                <img src="~/assets/images/@item.Icon" alt="@item.Title">
-                                            </div>
-                                            <div class="text">
-                                            @item.Value
-                                            </div>
+                                    <div class="d-flex contact-info-item">
+                                        <div class="icon">
+                                            <img src="~/assets/images/@item.Icon" alt="@item.Title">
                                         </div>
+                                        <div class="text">
+                                            @item.Value
+                                        </div>
+                                    </div>
                                 }
 
                             </div>
@@ -848,17 +849,17 @@
 
                 slideSpeed: 300,
                 dots: false,
-                
+
                 items: 1,
                 itemsDesktop: false,
                 itemsDesktopSmall: false,
                 itemsTablet: false,
                 itemsMobile: false,
-                loop:true,
-                autoPlay : 500,
-                autoplay:true,
-    autoplayTimeout:1000,
-    autoplayHoverPause:true,
+                loop: true,
+                autoPlay: 500,
+                autoplay: true,
+                autoplayTimeout: 1000,
+                autoplayHoverPause: true,
             });
             $('section.solutions .nav-tabs .nav-link').on('click', function () {
                 var target = $(this).attr('aria-controls');
@@ -872,6 +873,29 @@
                 });
             });
             $('section.solutions .nav-tabs .nav-link.active').click();
+
+            $('section.solutions .nav-tabs').owlCarousel({
+                loop: true,
+                responsiveClass: true,
+                nav: true,
+                dots: false,
+                navText: ['<i class="fa-sharp fa-solid fa-arrow-left"></i>', '<i class="fa-sharp fa-solid fa-arrow-right"></i>'],
+                responsive: {
+                    0: {
+                        items: 3,
+                        nav: true
+                    },
+                    600: {
+                        items: 3,
+                        nav: false
+                    },
+                    1000: {
+                        items: 6,
+                        nav: true,
+                        loop: false
+                    }
+                }
+            });
         });
 
     </script>

@@ -1417,3 +1417,154 @@ section.clients .owl-carousel-item img:hover {
 section.partners-inner .partner-item img:hover {
     transform: scale(1.2);
 }
+
+.navbar-toggler-icon{
+    background-image: url('../images/menu.svg') !important;
+    width: 24px;
+}
+.search_btn_container{
+    display: flex;
+}
+@media screen and (max-width: 1399px) {
+}
+@media only screen and (max-width: 1280px) {
+    section.projects .project-carousel > .owl-nav button{
+        margin-top: 20px;
+        position: relative !important;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .search_btn_container{
+        display: none !important;
+    }
+    header .container-fluid{
+        display: block !important;
+    }
+    header .navbar-toggler{
+        float: right;
+    }
+    section.about-us{
+        background: var(--white);
+        padding: 30px 0;
+        height: auto;
+    }
+    section.services{
+        padding: 30px 0;
+    }
+    section.services-details{
+        background-color: #EEF8F2;
+    }
+    section.services-details .service-card{
+        margin: 0 0 30px;
+    }
+    section.solutions nav{
+        height: 70px;
+    }
+    section.solutions nav .nav-tabs button{
+        display: flex;
+        align-items: center;
+        height: 70px;
+    }
+    section.solutions nav .nav-tabs button.active,
+    section.solutions nav .nav-tabs button:hover{
+        height: 70px;
+        font-weight: 500;
+    }
+    section.solutions .btn-green{
+        margin-bottom: 30px;
+    }
+    section.industries{
+        padding: 30px 0
+    }
+    section.industries .industry-item-card{
+        flex: 1 1 90%
+    }
+    .fast-links h2{
+        margin: 20px 0;
+    }
+    .contact-info h2{
+        margin-bottom: 20px;
+    }
+    footer .fast-links,
+    footer .contact-info{
+        padding: 0 15px;
+    }
+    footer{
+        padding: 30px 0;
+    }
+    footer .footer-newsletter .container{
+        height:auto;
+        padding: 20px 10px;
+    }
+    footer .footer-newsletter .newsletter-label-container{
+        height: 60px;
+    }
+    footer .footer-newsletter .subscribe{
+        height: 50px;
+    }
+    footer .footer-newsletter .subscribe input{
+        height: 50px;
+    }
+    footer .footer-newsletter .subscribe-btn{
+        height: 42px;
+    }
+    footer .footer-bottom{
+        margin-top: 30px;
+    }
+    footer .footer-newsletter h4{
+        margin-bottom: 20px;
+    }
+    .copyright{
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .main-slider .owl-dots{
+        right: 22px;
+    }
+    section.main-slider .carousel-item h2{
+        font-weight: 700;
+        font-size: 28px;
+        margin-left: 25px;
+    }
+    section.main-slider .carousel-item p{
+        font-weight: 400;
+        font-size: 13px;
+        margin-right: 30px;
+        margin-left: 25px;
+    }
+    .btn-green{
+        margin-left: 25px;
+    }
+    section.projects .project-inner-carousel .overley{
+        border-radius: 0;
+    }
+    section.projects ul.project-details-items{
+        padding: 0 13px !important;
+    }
+    section.projects ul.project-details-items li:first-child .text,
+    section.projects ul.project-details-items li:last-child .text{
+        border-radius: 0;
+    }
+    section.projects .item .col-md-5,
+    section.projects .item .col-md-7{
+        padding: 0 !important;
+    }
+    section.projects ul.project-details-items li .label{
+        font-size: 20px;
+        flex: 0 0 50%;
+    }
+    section.projects ul.project-details-items li .text{
+        font-size: 16px;
+        flex: 0 0 50%;
+    }
+    .tns-controls button:first-child,
+    .tns-controls button:last-child{
+        right: 20px
+    }
+    #tns2-ow{
+        margin-right: 70px
+    }
+}
+@media only screen and (max-width: 600px) {
+}
