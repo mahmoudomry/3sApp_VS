@@ -1650,6 +1650,9 @@ section.services-details .service-card:hover .icon img {
         color: #2A2727;
         margin-bottom: 20px
     }
+    section.partners-inner .partner-item{
+        flex: 0 0 calc(50% - 16.66px);
+    }
 }
 @media only screen and (max-width: 600px) {
 }
