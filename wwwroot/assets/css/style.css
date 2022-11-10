@@ -1636,6 +1636,20 @@ section.services-details .service-card:hover .icon img {
     .empty{
         height: auto !important;
     }
+    section.industries-inner .dark{
+        padding: 20px 15px;
+        background-color: #2A2727;
+    }
+    section.industries-inner .white{
+        background-color: var(--white);
+    }
+    section.industries-inner .industry-details{
+        margin-top: 20px;
+    }
+    section.industries-inner .industry-details h2{
+        color: #2A2727;
+        margin-bottom: 20px
+    }
 }
 @media only screen and (max-width: 600px) {
 }
