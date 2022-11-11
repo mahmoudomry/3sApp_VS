@@ -10,7 +10,7 @@ namespace _3sApp.Controllers
     {
         //private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDBContext _context;
-//ILogger<HomeController> logger, 
+        //ILogger<HomeController> logger, 
         public HomeController(ApplicationDBContext context) : base(context)
         {
             //_logger = logger;
@@ -20,13 +20,13 @@ namespace _3sApp.Controllers
         {
             HomeViewModel homeviwemodel = new HomeViewModel();
             homeviwemodel.Sliders = _context.Sliders.OrderBy(x => x.Order).ToList();
-            homeviwemodel.About= _context.Abouts.FirstOrDefault();
+            homeviwemodel.About = _context.Abouts.FirstOrDefault();
             homeviwemodel.SiteSettings = _context.SiteSettings.FirstOrDefault();
             homeviwemodel.Contactitems = _context.Contactitems.OrderBy(x => x.Order).ToList();
             homeviwemodel.SocialMedias = _context.SocialMedias.OrderBy(x => x.Order).ToList();
             homeviwemodel.Services = _context.Services.ToList();
-            homeviwemodel.Solutions = _context.Solutions.Include(x=>x.SubSolution).ToList();
-            homeviwemodel.Projects = _context.Projects.Include(x => x.Images.Where(x=>x.CategoryId==1)).ToList();
+            homeviwemodel.Solutions = _context.Solutions.Include(x => x.SubSolution).ToList();
+            homeviwemodel.Projects = _context.Projects.Include(x => x.Images.Where(x => x.CategoryId == 1)).ToList();
             homeviwemodel.Industries = _context.Industries.ToList();
             homeviwemodel.Partners = _context.Partners.ToList();
             homeviwemodel.Clients = _context.Clients.ToList();
@@ -53,18 +53,18 @@ namespace _3sApp.Controllers
             ViewBag.Industries = _context.Industries.ToList();
             ViewBag.Partners = _context.Partners.ToList();
             ViewBag.Clients = _context.Clients.ToList();
-            ViewBag.SolutionsLinks = _context.Solutions.Select(x=> new { x.Id, x.Title }).ToList();
+            ViewBag.SolutionsLinks = _context.Solutions.Select(x => new { x.Id, x.Title }).ToList();
             ViewBag.IndustrialLinks = _context.Industries.Select(x => new { x.Id, x.Title }).ToList();
             ViewBag.ServicesLinks = _context.Services.Select(x => new { x.Id, x.Name }).ToList();
             return View();
         }
-        public IActionResult Indexhtml ()
+        public IActionResult Indexhtml()
         {
             return View();
         }
 
-            public IActionResult Solutions()
-        {  
+        public IActionResult Solutions()
+        {
             return View();
         }
         public IActionResult Partners()
@@ -81,7 +81,7 @@ namespace _3sApp.Controllers
             ViewBag.ServicesLinks = _context.Services.Select(x => new { x.Id, x.Name }).ToList();
             return View();
         }
-        public IActionResult Industries(int?id)
+        public IActionResult Industries(int? id)
         {
             ViewBag.current_controller = "Home";
             ViewBag.current_action = "Industries";
@@ -102,7 +102,7 @@ namespace _3sApp.Controllers
             ViewBag.About = _context.Abouts.FirstOrDefault();
             ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();
             ViewBag.Contactitems = _context.Contactitems.ToList();
-            ViewBag.ContactitemsPage = _context.Contactitems.Where(x=> x.Title== "Phone"|| x.Title == "Fax"|| x.Title == "Mail us" || x.Title == "P.O. Box").ToList();
+            ViewBag.ContactitemsPage = _context.Contactitems.Where(x => x.Title == "Phone" || x.Title == "Fax" || x.Title == "Mail us" || x.Title == "P.O. Box").ToList();
             ViewBag.SocialMedias = _context.SocialMedias.ToList();
             ViewBag.SolutionsLinks = _context.Solutions.Select(x => new { x.Id, x.Title }).ToList();
             ViewBag.IndustrialLinks = _context.Industries.Select(x => new { x.Id, x.Title }).ToList();
@@ -111,14 +111,14 @@ namespace _3sApp.Controllers
         }
         public IActionResult About()
         {
-            ViewBag.current_controller = "Home";
+            ViewBag.current_controller = "About";
             ViewBag.current_action = "About";
             ViewBag.About = _context.Abouts.FirstOrDefault();
             ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();
             ViewBag.Contactitems = _context.Contactitems.ToList();
             ViewBag.SocialMedias = _context.SocialMedias.ToList();
             ViewBag.OurValues = _context.OurValues.ToList();
-            ViewBag.Members = _context.Members.OrderByDescending(x=>x.Order).ToList();
+            ViewBag.Members = _context.Members.OrderByDescending(x => x.Order).ToList();
             ViewBag.SolutionsLinks = _context.Solutions.Select(x => new { x.Id, x.Title }).ToList();
             ViewBag.IndustrialLinks = _context.Industries.Select(x => new { x.Id, x.Title }).ToList();
             ViewBag.ServicesLinks = _context.Services.Select(x => new { x.Id, x.Name }).ToList();
@@ -126,7 +126,7 @@ namespace _3sApp.Controllers
         }
         public IActionResult Projects()
         {
-            ViewBag.current_controller = "Home";
+            ViewBag.current_controller = "Projects";
             ViewBag.current_action = "Projects";
             ViewBag.Projects = _context.Projects.Include(x => x.Images.Where(x => x.CategoryId == 1)).ToList();
             ViewBag.About = _context.Abouts.FirstOrDefault();
@@ -139,6 +139,20 @@ namespace _3sApp.Controllers
 
             return View();
         }
+        public IActionResult Careers()
+        {
+            ViewBag.current_controller = "Careers";
+            ViewBag.current_action = "Partners";
+            ViewBag.About = _context.Abouts.FirstOrDefault();
+            ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();
+            ViewBag.Contactitems = _context.Contactitems.ToList();
+            ViewBag.SocialMedias = _context.SocialMedias.ToList();
+            ViewBag.Partners = _context.Partners.ToList();
+            ViewBag.SolutionsLinks = _context.Solutions.Select(x => new { x.Id, x.Title }).ToList();
+            ViewBag.IndustrialLinks = _context.Industries.Select(x => new { x.Id, x.Title }).ToList();
+            ViewBag.ServicesLinks = _context.Services.Select(x => new { x.Id, x.Name }).ToList();
+            return View();
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -148,5 +162,5 @@ namespace _3sApp.Controllers
         }
     }
 
-   
+
 }

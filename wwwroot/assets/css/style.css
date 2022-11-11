@@ -1454,6 +1454,36 @@ section.services-details .service-card:hover .icon img {
 .search_btn_container{
     display: flex;
 }
+section.careers .tags{
+    padding: 0 20px;
+    background-color: #3A3C40;
+    border-radius: 12px;
+    color: var(--white);
+    height: 34px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+section.careers h3{
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--black);
+}
+section.careers p{
+    font-weight: 400;
+    font-size: 14px;
+    color: #3A3C40;
+}
+section.careers .time{
+    font-weight: 400;
+    font-size: 13px;
+    color: #3A3C40;
+    display: flex;
+    align-items: center;
+}
+section.careers .time img{
+    margin-right: 10px;
+}
 @media screen and (max-width: 1399px) {
 }
 @media only screen and (max-width: 1280px) {
@@ -1676,6 +1706,10 @@ section.services-details .service-card:hover .icon img {
     }
     section.services-items .service-item  h2{
         margin: 20px 0;
+    }
+    section.careers .accordion-flush .accordion-item .accordion-button{
+        flex-direction: column;
+        align-items: start;
     }
 }
 @media only screen and (max-width: 600px) {
