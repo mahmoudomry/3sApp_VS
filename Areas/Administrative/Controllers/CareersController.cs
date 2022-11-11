@@ -27,7 +27,22 @@ namespace _3sApp.Areas.Administrative.Controllers
         {
               return View(await _context.Careers.ToListAsync());
         }
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null || _context.Careers == null)
+            {
+                return NotFound();
+            }
 
+            var career = await _context.Careers
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (career == null)
+            {
+                return NotFound();
+            }
+
+            return View("Create",career);
+        }
         // GET: Administrative/Careers/Details/5
         public async Task<IActionResult> Details(int? id)
         {

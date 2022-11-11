@@ -1,7 +1,8 @@
-﻿@{
+﻿@model List<Career>
+@{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var Services = ViewBag.Services as List<Service>;
+  
 
 }
 
@@ -18,23 +19,25 @@
     <section class="careers">
         <div class="container">
             <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                @foreach(var item in Model)
+                {
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingOne">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                             <div class="tags">
-                                Full time
+                               @item.Type
                             </div>
                             <h3>
-                                Network Implementation Engineer
+                               @item.Title
                             </h3>
                             <p>
-                                Set up and maintain wide area networks for organizations that need these networks to
-                                operate regularly.
+                              @item.Description
                             </p>
                             <div class="time">
                                 <img src="~/assets/images/calendar.svg" alt="Date">
-                                22 Oct 2022
+                               @item.ClosedDate
                             </div>
                         </button>
                     </h2>
@@ -45,59 +48,19 @@
                                 Responsibilities
                             </h2>
                             <ul>
-                                <li>
-                                    Set up and maintain wide area networks for organizations that need these networks to
-                                    operate regularly.
-                                </li>
-                                <li>
-                                    Analyzing, testing and evaluating networks to make sure that they run properly and
-                                    have the resources necessary for smooth functioning.
-                                </li>
-                                <li>
-                                    Check WAN performance, capacity, security settings, approvals and network flow
-                                    maintenance.
-                                </li>
-                                <li>
-                                    Instruct/educate people on the usage of networks.
-                                </li>
-                                <li>
-                                    Implement wide space networks, network servers, hubs, routers, and various computer
-                                    peripherals.
-                                </li>
-                                <li>
-                                    Check WAN performance and fix any problems.
-                                </li>
-                                <li>
-                                    Document network configuration and hardware/software-related operating procedures.
-                                </li>
-                                <li>
-                                    Back up network-based data.
-                                </li>
+                      @item.Responsibilities
                             </ul>
                             <h2>
                                 Requirements
                             </h2>
                             <ul>
-                                <li>
-                                    Set up and maintain wide area networks for organizations that need these networks to
-                                    operate regularly.
-                                </li>
-                                <li>
-                                    Analyzing, testing and evaluating networks to make sure that they run properly and
-                                    have the resources necessary for smooth functioning.
-                                </li>
-                                <li>
-                                    Check WAN performance, capacity, security settings, approvals and network flow
-                                    maintenance.
-                                </li>
-                                <li>
-                                    Instruct/educate people on the usage of networks.
-                                </li>
+                             @item.Requirements
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                }
+            @*    <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
@@ -126,7 +89,7 @@
                             space to make it look, at least at first glance, a bit more representative of how this would
                             look in a real-world application.</div>
                     </div>
-                </div>
+                </div>*@
             </div>
         </div>
     </section>
