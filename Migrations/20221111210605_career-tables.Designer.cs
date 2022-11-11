@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _3sApp.Areas.Identity.Data;
 
@@ -10,9 +11,10 @@ using _3sApp.Areas.Identity.Data;
 namespace _3sApp.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20221111210605_career-tables")]
+    partial class careertables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -377,16 +379,10 @@ namespace _3sApp.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<int?>("NewsId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Order")
                         .HasColumnType("int");
 
                     b.Property<int>("PostId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ProjectId")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -398,9 +394,7 @@ namespace _3sApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("NewsId");
-
-                    b.HasIndex("ProjectId");
+                    b.HasIndex("PostId");
 
                     b.ToTable("Media", (string)null);
                 });
@@ -427,46 +421,6 @@ namespace _3sApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Member", (string)null);
-                });
-
-            modelBuilder.Entity("_3sApp.Models.News", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("CoverImage")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<DateTime?>("Createdon")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Industrialsolution")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<bool?>("IsActive")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("KeyWords")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Scope")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("News", (string)null);
                 });
 
             modelBuilder.Entity("_3sApp.Models.OurValue", b =>
@@ -957,13 +911,11 @@ namespace _3sApp.Migrations
 
             modelBuilder.Entity("_3sApp.Models.Media", b =>
                 {
-                    b.HasOne("_3sApp.Models.News", null)
-                        .WithMany("media")
-                        .HasForeignKey("NewsId");
-
                     b.HasOne("_3sApp.Models.Project", null)
                         .WithMany("Images")
-                        .HasForeignKey("ProjectId");
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("_3sApp.Models.Slider", b =>
@@ -1040,11 +992,6 @@ namespace _3sApp.Migrations
             modelBuilder.Entity("_3sApp.Models.Career", b =>
                 {
                     b.Navigation("careerApplications");
-                });
-
-            modelBuilder.Entity("_3sApp.Models.News", b =>
-                {
-                    b.Navigation("media");
                 });
 
             modelBuilder.Entity("_3sApp.Models.Project", b =>

@@ -38,6 +38,9 @@ public class ApplicationDBContext : IdentityDbContext<ApplicationUser>
         builder.Entity<Contactitem>().ToTable("Contactitem");
         builder.Entity<Member>().ToTable("Member");
         builder.Entity<SocialMedia>().ToTable("SocialMedia");
+        builder.Entity<Career>().ToTable("Career");
+        builder.Entity<CareerApplication>().ToTable("CareerApplication");
+        builder.Entity<News>().ToTable("News");
     }
     public DbSet<About> Abouts { get; set; }
     public DbSet<Client> Clients { get; set; }
@@ -56,6 +59,9 @@ public class ApplicationDBContext : IdentityDbContext<ApplicationUser>
     public DbSet<_3sApp.Models.Contactitem> Contactitems { get; set; }
     public DbSet<_3sApp.Models.Member> Members { get; set; }
     public DbSet<_3sApp.Models.SocialMedia> SocialMedias { get; set; }
+    public DbSet<Career> Careers { get; set; }
+    public DbSet<CareerApplication> CareerApplications { get; set; }
+    public DbSet<News> News { get; set; }
 }
 
 internal class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<ApplicationUser>

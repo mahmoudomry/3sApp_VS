@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _3sApp.Areas.Identity.Data;
 
@@ -10,9 +11,10 @@ using _3sApp.Areas.Identity.Data;
 namespace _3sApp.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20221111211328_News-table")]
+    partial class Newstable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -386,9 +388,6 @@ namespace _3sApp.Migrations
                     b.Property<int>("PostId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ProjectId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -400,7 +399,7 @@ namespace _3sApp.Migrations
 
                     b.HasIndex("NewsId");
 
-                    b.HasIndex("ProjectId");
+                    b.HasIndex("PostId");
 
                     b.ToTable("Media", (string)null);
                 });
@@ -963,7 +962,9 @@ namespace _3sApp.Migrations
 
                     b.HasOne("_3sApp.Models.Project", null)
                         .WithMany("Images")
-                        .HasForeignKey("ProjectId");
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("_3sApp.Models.Slider", b =>

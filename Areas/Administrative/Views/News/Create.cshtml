@@ -1,0 +1,98 @@
+﻿@model _3sApp.Models.News
+
+@{
+   
+    ViewData["Title"] = "News";
+      ViewData["ActionTitle"] = @Model==null? "Create":"Edit";
+    Layout = "_AdminLayout";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        	<div class="kt-portlet">
+										<div class="kt-portlet__head">
+											<div class="kt-portlet__head-label">
+												<h3 class="kt-portlet__head-title">
+													@ViewData["ActionTitle"]
+												</h3>
+											</div>
+										</div>        <div class="kt-portlet__body">
+        <form asp-action="@ViewData["ActionTitle"]" enctype="multipart/form-data" method="post" asp-area="Administrative" asp-controller="News" class="kt-form">
+             @Html.AntiForgeryToken()
+       
+           
+                  <input type="hidden" name="Id" value="@(Model is null?0:Model.Id)"/>
+                  <input type="hidden" name="CoverImage" value="@(Model is null?"main-slider-01.jpg":Model.CoverImage)"/>
+                       <input type="hidden" name="Createdon" value="@(Model is null?DateTime.Now:Model.Createdon)"/>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.Title, new { @class = "col-md-2 control-label" })
+               @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
+              
+            </div>
+          
+            <div class="form-group">
+                  @Html.LabelFor(m => m.Description, new { @class = "col-md-2 control-label" })
+               @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+             
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.Scope, new { @class = "col-md-2 control-label" })
+               @Html.TextBoxFor(m => m.Scope, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Scope, "", new { @class = "text-danger" })
+               
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.Industrialsolution, new { @class = "col-md-2 control-label" })
+               @Html.TextBoxFor(m => m.Industrialsolution, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Industrialsolution, "", new { @class = "text-danger" })
+               
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.KeyWords, new { @class = "col-md-2 control-label" })
+               @Html.TextBoxFor(m => m.KeyWords, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.KeyWords, "", new { @class = "text-danger" })
+               
+            </div>
+            <div class="form-group">
+                  @Html.LabelFor(m => m.IsActive, new { @class = "col-md-2 control-label" })
+               @Html.CheckBox("IsActive", new { @class = "checkbox" })
+                        @Html.ValidationMessageFor(m => m.IsActive, "", new { @class = "text-danger" })
+              
+            </div>
+        
+
+                    <div class="form-group">
+                @if(Model!=null&&Model.CoverImage!=null)
+                        {
+                    <img src="~/assets/images/@Model.CoverImage" width="100px" />        
+                        }
+                        @Html.LabelFor(m => m.CoverImage, new { @class = "col-md-2 control-label" })
+              <input  name="CoverImage" type="file" class="form-control" />
+                        @Html.ValidationMessageFor(m => m.CoverImage, "", new { @class = "text-danger" })
+               
+            </div>
+
+             <div class="form-group">
+        
+                        @Html.Label("OtherImages","OtherImages", new { @class = "col-md-2 control-label" })
+              <input  name="OtherImages" type="file" multiple class="form-control" />
+                        
+               
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>  </form>
+    <a asp-action="Index">Back to List</a>
+</div>
+      
+    </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

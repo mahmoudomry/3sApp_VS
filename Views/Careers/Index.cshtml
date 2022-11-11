@@ -1,8 +1,8 @@
-﻿@model IEnumerable<_3sApp.Models.News>
+﻿@model IEnumerable<_3sApp.Models.Career>
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h1>Index</h1>
@@ -14,7 +14,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CoverImage)
+                @Html.DisplayNameFor(model => model.Type)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Title)
@@ -23,19 +23,19 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Scope)
+                @Html.DisplayNameFor(model => model.Responsibilities)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Industrialsolution)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.KeyWords)
+                @Html.DisplayNameFor(model => model.Requirements)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.IsActive)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Createdon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClosedDate)
             </th>
             <th></th>
         </tr>
@@ -44,7 +44,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.CoverImage)
+                @Html.DisplayFor(modelItem => item.Type)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
@@ -53,19 +53,19 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Scope)
+                @Html.DisplayFor(modelItem => item.Responsibilities)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Industrialsolution)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KeyWords)
+                @Html.DisplayFor(modelItem => item.Requirements)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IsActive)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Createdon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClosedDate)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
