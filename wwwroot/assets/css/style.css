@@ -1667,6 +1667,16 @@ section.services-details .service-card:hover .icon img {
         display: none !important;
         visibility: hidden !important;
     }
+    section.solutions-about .solutions-about-text{
+        padding: 20px 15px;
+    }
+    section.services-items .service-item{
+        padding: 30px;
+        height: auto;
+    }
+    section.services-items .service-item  h2{
+        margin: 20px 0;
+    }
 }
 @media only screen and (max-width: 600px) {
   
