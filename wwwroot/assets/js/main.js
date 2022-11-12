@@ -7,3 +7,4 @@ inlineSVG.init(
     console.log("All SVGs inlined");
   }
 );
+AOS.init();
