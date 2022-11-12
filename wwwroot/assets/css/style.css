@@ -1594,7 +1594,7 @@ section.news .news-item a{
     font-size: 15px;
 }
 .news-details{
-    padding: 50px 100px;
+    padding: 50px 0 100px;
 }
 .news-details h1{
     font-weight: 600;
@@ -1640,6 +1640,27 @@ section.news .news-item a{
     font-weight: 600;
     font-size: 20px;
 }
+.news-details .title{
+    display: flex;
+    justify-content: space-between;
+}
+.news-details .social-share{
+    display: flex;
+}
+.news-details .social-share label{
+    margin-right: 10px;
+    font-weight: 500;
+    font-size: 16px;
+}
+.news-details .social-share a{
+    margin-left: 5px;
+}
+.news-details .social-share .facebook a{
+    color: #1877F2;
+}
+.news-details .social-share .twitter a{
+    color: #69ACE0;
+}
 img{
     max-width: 100%;
 }
@@ -1656,6 +1677,20 @@ img{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.related-news-carousel .owl-nav .disabled,
+.related-news-carousel .owl-nav:disabled{
+    display: flex !important;
+}
+.related-news-carousel .owl-nav button{
+    width: 45px;
+    height: 45px;
+    background-color: #DBDBDB !important;
+    color: #3A3C40 !important;
+}
+.related-news-carousel .owl-nav button:hover{
+    background-color: #007133 !important;
+    color: var(--white) !important;
 }
 
 @media screen and (max-width: 1399px) {
@@ -1880,6 +1915,9 @@ img{
     }
     section.services-items .service-item  h2{
         margin: 20px 0;
+    }
+    section.news-details .related-news-carousel .news-item .text{
+        padding: 20px;
     }
 }
 @media only screen and (max-width: 600px) {

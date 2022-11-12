@@ -18,17 +18,31 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
-                    <img src="~/assets/images/@Model.CoverImage" alt="@Model.Title" width="200px" />
+                    <img src="~/assets/images/@Model.CoverImage" alt="@Model.Title" />
                 </div>
                 <div class="col-md-7">
-                    <div class="row">
+                    <div class="title">
                         <div>
                             <h1>
                                 @Model.Title
                             </h1>
                         </div>
-                        <div>
-
+                        <div class="social-share">
+                            <label>
+                                Share
+                            </label>
+                            <ul class="list-unstyled list-group list-group-horizontal ">
+                                <li class="facebook">
+                                    <a href="#" class="facebook">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="twitter">
+                                    <a href="#" class="twitter">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div class="time">
@@ -65,7 +79,7 @@
                 <div class="owl-carousel related-news-carousel">
                     @for (int i = 0; i < 5; i++)
                     {
-                        <div class="news-item owl-carousel-item">
+                        <div class="news-item owl-carousel-item item-@i">
                             <div class="row">
                                 <div class="col-md-4 image"
                                 style="background-image: url('/assets/images/@Model.CoverImage');">
@@ -90,7 +104,6 @@
 
 @section Scripts{
 <script>
-
     $('.related-news-carousel').owlCarousel({
         margin: 20,
         responsiveClass: true,
@@ -102,6 +115,10 @@
                 nav: true
             },
             600: {
+                items: 1,
+                nav: false
+            },
+            1000: {
                 items: 2,
                 nav: false
             }
