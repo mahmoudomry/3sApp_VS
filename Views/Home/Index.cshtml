@@ -279,7 +279,7 @@
                     <div class="row">
                         @foreach (var item in Model.Services)
                         {
-                            <div class="col-md-4">
+                            <div class="col-md-4" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000">
                                 <div class="service-card">
                                     <div class="icon">
                                         <img src="~/assets/images/@item.Icon" alt="">
@@ -301,10 +301,10 @@
                     </div>
                 </div>
             </section>
-            <section class="solutions">
+            <section class="solutions" >
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6 offset-md-3 text-center">
+                        <div class="col-md-6 offset-md-3 text-center" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000">
                             <h3 class="home20">
                                 Solutions
                             </h3>
@@ -316,7 +316,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000">
                         <nav>
                             <div class="nav nav-tabs owl-carousel owl-theme" id="nav-tab" role="tablist">
                                 @foreach (var item in Model.Solutions)
@@ -382,22 +382,22 @@
                     </div>
                 </div>
             </section>
-            <section class="projects dark">
+            <section class="projects dark" >
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6 offset-md-3 text-center">
-                            <h3 class="home20">
+                        <div class="col-md-6 offset-md-3 text-center" >
+                            <h3 class="home20" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                                 Projects
                             </h3>
-                            <h2>
+                            <h2 data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                                 @Model.SiteSettings.ProjectsTitle
                             </h2>
-                            <p>
+                            <p data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                                 @Model.SiteSettings.ProjectsDesc
                             </p>
                         </div>
                     </div>
-                    <div class="owl-carousel owl-theme project-carousel">
+                    <div class="owl-carousel owl-theme project-carousel" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
 
                         @foreach (var item in Model.Projects)
                         {
@@ -476,21 +476,21 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 offset-md-3 text-center">
-                            <h3 class="home20">
+                            <h3 class="home20" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                                 Industries
                             </h3>
-                            <h2>
+                            <h2 data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                                 @Model.SiteSettings.IndustriesTitle
                             </h2>
-                            <p>
+                            <p data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                                 @Model.SiteSettings.IndustriesDesc
                             </p>
                         </div>
                     </div>
-                    <div class="industry-items">
+                    <div class="industry-items" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                         @foreach (var item in Model.Industries)
                         {
-                            <div class="industry-item-card">
+                            <div class="industry-item-card" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                                 <h2>
 
                                     <span class="icon">
@@ -514,14 +514,14 @@
 
             <section class="partners dark">
                 <div class="container">
-                    <div class="row text-center">
-                        <h3 class="home20">
+                    <div class="row text-center" >
+                        <h3 class="home20" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                             Partners
                         </h3>
-                        <h2>
+                        <h2 data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                             @Model.SiteSettings.PartnersTitle
                         </h2>
-                        <p>
+                        <p data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                             @Model.SiteSettings.PartnersDesc
                         </p>
                     </div>
@@ -547,15 +547,15 @@
                 </div> <!-- container -->
             </section><!-- partners -->
             <section class="clients dark">
-                <div class="container">
-                    <div class="row text-center">
-                        <h3 class="home20">
+                <div class="container" >
+                    <div class="row text-center" >
+                        <h3 class="home20" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                             Clients
                         </h3>
-                        <h2>
+                        <h2 data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                             @Model.SiteSettings.ClientTitle
                         </h2>
-                        <p>
+                        <p data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                             @Model.SiteSettings.ClientDesc
                         </p>
                     </div>
@@ -583,10 +583,10 @@
             </section><!-- clients -->
 
         </main>
-        <footer>
+        <footer >
             <section class="footer-newsletter">
                 <div class="container">
-                    <div class="row">
+                    <div class="row" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                         <div class="col-md-5 newsletter-label-container">
                             <h4>
                                 @Model.SiteSettings.SubscribeTitle
@@ -605,13 +605,13 @@
                 <div class="container">
                     <div class="row ">
                         <div class="col-md-4">
-                            <div class="logo">
+                            <div class="logo" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                                 <img src="~/assets/images/@Model.SiteSettings.FooterLogo" alt="logo 1">
                             </div>
-                            <p class="description">
+                            <p class="description" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                                 @Model.SiteSettings.FooterDesc
                             </p>
-                            <div class="social-links ">
+                            <div class="social-links " data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                                 <ul class="list-unstyled list-group list-group-horizontal ">
                                     @foreach (var item in Model.SocialMedias)
                                     {
@@ -625,11 +625,11 @@
                                 </ul>
                             </div>
 
-                            <div class="copyright">
+                            <div class="copyright" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                                 @Model.SiteSettings.CopyRight
                             </div>
                         </div>
-                        <div class="col-md-4 fast-links">
+                        <div class="col-md-4 fast-links" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                             <h2>
                                 Our Link
                             </h2>
@@ -660,7 +660,7 @@
                                     </ul>
 
                                 </div>
-                                <div class="col-6">
+                                <div class="col-6" >
 
                                     <ul class="list-unstyled list-group">
                                         <li>
@@ -687,7 +687,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 contact-info">
+                        <div class="col-md-4 contact-info" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                             <h2>
                                 Our Address
                             </h2>
