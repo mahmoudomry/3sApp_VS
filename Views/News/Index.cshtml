@@ -5,74 +5,39 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CoverImage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Scope)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Industrialsolution)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.KeyWords)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsActive)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Createdon)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CoverImage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Scope)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Industrialsolution)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KeyWords)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsActive)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Createdon)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+@section HeaderTitle{
+<div class="top-title">
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li>News</li>
+    </ul>
+</div>
 }
-    </tbody>
-</table>
+<div class="layout position-relative">
+    <section class="news">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-6">
+                        <div class="news-item">
+                            <div class="row">
+                                <div class="col-md-4 image"
+                                style="background-image: url('/assets/images/@item.CoverImage');">
+                                </div>
+                                <div class="col-md-8 text">
+                                    <h4>
+                                        @item.Title
+                                    </h4>
+                                    <p>
+                                        @item.Title
+                                    </p>
+                                    <a asp-action="Details" asp-route-id="@item.Id">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+    </section>
+</div>
