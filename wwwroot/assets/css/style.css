@@ -1595,6 +1595,9 @@ section.news .news-item a{
     font-weight: 400;
     font-size: 15px;
 }
+section.news .news-item .row{
+    margin: 0 !important;
+}
 .news-details{
     padding: 50px 0 100px;
 }
@@ -1670,15 +1673,24 @@ img{
     background-color: #FCFCFC;
     border: 1px solid #DBDBDB;
     border-radius: 15px;
+    display: flex;
 }
 .related-news-carousel .owl-item .image{
     height: 150px;
     border-radius: 15px 0px 0px 15px !important;
+    flex: 0 0 31.36%;
 }
 .related-news-carousel .owl-item .text{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: 20px;
+}
+.related-news-carousel .owl-item .text a{
+    color: #007133;
+    text-decoration-line: underline;
+    font-weight: 400;
+    font-size: 15px;
 }
 .related-news-carousel .owl-nav .disabled,
 .related-news-carousel .owl-nav:disabled{

@@ -76,23 +76,20 @@
                 <h4 class="text-center">
                     Related news
                 </h4>
-                <div class="owl-carousel related-news-carousel">
+                <div class="owl-carousel owl-theme related-news-carousel">
                     @for (int i = 0; i < 5; i++)
                     {
-                        <div class="news-item owl-carousel-item item-@i">
-                            <div class="row">
-                                <div class="col-md-4 image"
-                                style="background-image: url('/assets/images/@Model.CoverImage');">
-                                </div>
-                                <div class="col-md-8 text">
-                                    <h4>
-                                        @Model.Title
-                                    </h4>
-                                    <p>
-                                        @Model.Title
-                                    </p>
-                                    <a asp-action="Details" asp-route-id="@Model.Id">Read more</a>
-                                </div>
+                        <div class="news-item owl-carousel-item">
+                            <div class="image" style="background-image: url('/assets/images/@Model.CoverImage');">
+                            </div>
+                            <div class="text">
+                                <h4>
+                                    @Model.Title
+                                </h4>
+                                <p>
+                                    @Model.Title
+                                </p>
+                                <a asp-action="Details" asp-route-id="@Model.Id">Read more</a>
                             </div>
                         </div>
                     }
