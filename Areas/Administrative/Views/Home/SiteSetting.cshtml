@@ -183,6 +183,18 @@
                         @Html.ValidationMessageFor(m => m.ContactTitle2, "", new { @class = "text-danger" })
             
             </div>
+                <div class="form-group">
+                  @Html.LabelFor(m => m.MemberTitle, new { @class = "col-md-2 control-label" })
+                        @Html.TextBoxFor(m => m.MemberTitle, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.MemberTitle, "", new { @class = "text-danger" })
+            
+            </div>
+                <div class="form-group">
+                  @Html.LabelFor(m => m.MemberDesc, new { @class = "col-md-2 control-label" })
+                        @Html.TextBoxFor(m => m.MemberDesc, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.MemberDesc, "", new { @class = "text-danger" })
+            
+            </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

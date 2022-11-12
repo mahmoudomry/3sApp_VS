@@ -75,9 +75,9 @@ namespace _3sApp.Models
 
         [Required, Display(Name = "Contact Title2")]
         public string ContactTitle2 { get; set; }
-        [Required, Display(Name = "Members Title")]
+        [ Display(Name = "Members Title")]
         public string MemberTitle { get; set; }
-        [Required, Display(Name = "Member Desc")]
+        [ Display(Name = "Member Desc")]
         public string MemberDesc { get; set; }
 
     }

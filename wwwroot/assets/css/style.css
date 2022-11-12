@@ -1449,11 +1449,18 @@ section.services-items .service-item:hover{
 section.services-details .service-card:hover .icon img {
     transform: scale3d(1.5, 1.5, 1.5);
 }
-
-.navbar-toggler-icon{
+.navbar-toggler-icon {
+    background-image: url('../images/menu-blak.svg') !important;
+    width: 24px;
+}
+button.navbar-toggler {
+    padding: 5px 7px
+}
+.home .navbar-toggler-icon {
     background-image: url('../images/menu.svg') !important;
     width: 24px;
 }
+
 .search_btn_container{
     display: flex;
 }
@@ -1936,6 +1943,15 @@ img{
     }
     section.news-details .related-news-carousel .news-item .text{
         padding: 20px;
+    }
+    section.about-us p {
+    text-align:justify;
+    }
+    p {
+        text-align: justify;
+    }
+    section.security-solutions .security-solutions-text {
+    margin-right:15px;
     }
 }
 @media only screen and (max-width: 600px) {
