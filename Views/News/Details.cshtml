@@ -4,6 +4,115 @@
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section HeaderTitle{
+<div class="top-title">
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li>@Model.Title</li>
+    </ul>
+</div>
+}
+<div class="layout position-relative">
+    <section class="news-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="~/assets/images/@Model.CoverImage" alt="@Model.Title" width="200px" />
+                </div>
+                <div class="col-md-7">
+                    <div class="row">
+                        <div>
+                            <h1>
+                                @Model.Title
+                            </h1>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                    <div class="time">
+                        <img src="~/assets/images/calendar.svg" alt="Date">
+                        @Model.Createdon
+                    </div>
+                    <p>
+                        @Model.Description
+                    </p>
+                    <div class="properties">
+                        <div class="property-item">
+                            <h5>
+                                Scope
+                            </h5>
+                            <h6>
+                                ICT, ELV, ISP, Security System
+                            </h6>
+                        </div>
+                        <div class="property-item">
+                            <h5>
+                                Industrial solution
+                            </h5>
+                            <h6>
+                                Residential
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h4 class="text-center">
+                    Related news
+                </h4>
+                <div class="owl-carousel team-carousel">
+                    @for (int i = 0; i < 5; i++)
+                    {
+                        <div class="news-item owl-carousel-item">
+                            <div class="row">
+                                <div class="col-md-4 image"
+                                style="background-image: url('/assets/images/@Model.CoverImage');">
+                                </div>
+                                <div class="col-md-8 text">
+                                    <h4>
+                                        @Model.Title
+                                    </h4>
+                                    <p>
+                                        @Model.Title
+                                    </p>
+                                    <a asp-action="Details" asp-route-id="@Model.Id">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@section Scripts{
+<script>
+
+    $('.related-news-carousel').owlCarousel({
+        margin: 20,
+        responsiveClass: true,
+        nav: true,
+        navText: ['<i class="fa-sharp fa-solid fa-arrow-left"></i>', '<i class="fa-sharp fa-solid fa-arrow-right"></i>'],
+        responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            600: {
+                items: 2,
+                nav: false
+            },
+            1000: {
+                items: 4,
+                nav: false
+            }
+        }
+    });
+</script>
+}
 
 <h1>Details</h1>
 
@@ -11,61 +120,61 @@
     <h4>News</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.CoverImage)
         </dt>
-        <dd class = "col-sm-10">
-         <img src="~/assets/images/@Model.CoverImage" alt="@Model.Title" width="200px"/>
+        <dd class="col-sm-10">
+            <img src="~/assets/images/@Model.CoverImage" alt="@Model.Title" width="200px" />
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Title)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Title)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Description)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Description)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Scope)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Scope)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Industrialsolution)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Industrialsolution)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.KeyWords)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.KeyWords)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.IsActive)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.IsActive)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Createdon)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Createdon)
         </dd>
-         <dd class = "col-sm-10">
-               @foreach(var m in Model.media)
-                {
-                    <div class="col-md-3">
-                        <img src="~/assets/images/@m.FileName" alt="@m.Title" width="100%"/>
-                        </div>
-                }
+        <dd class="col-sm-10">
+            @foreach (var m in Model.media)
+            {
+                <div class="col-md-3">
+                    <img src="~/assets/images/@m.FileName" alt="@m.Title" width="100%" />
+                </div>
+            }
         </dd>
     </dl>
 </div>
