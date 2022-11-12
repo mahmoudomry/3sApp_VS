@@ -18,7 +18,7 @@
 
     var SolutionLinks = ViewBag.SolutionsLinks;
     var IndustrialLinks = ViewBag.IndustrialLinks;
-     var ServicesLinks = ViewBag.ServicesLinks;
+    var ServicesLinks = ViewBag.ServicesLinks;
 
 }
 <!DOCTYPE html>
@@ -52,7 +52,7 @@
 <body class="home">
     <header>
         <div class="container">
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-lg" data-aos="fade-up" data-aos-duration="3000">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="~/Home/Index"><img
                             src="~/assets/images/@Model.SiteSettings.HomeHeaderLogo" alt="logo"></a>
@@ -106,14 +106,14 @@
                                         @(current_controller=="Services"&&current_action=="Index"?"active":"")
                                         data-bs-auto-close="outside">Services</a>
                                     <ul class="dropdown-menu shadow">
-                                             @foreach (var itm in  ServicesLinks)
+                                        @foreach (var itm in ServicesLinks)
                                         {
-                                                <li>
-                                                    <a class="dropdown-item"
+                                            <li>
+                                                <a class="dropdown-item"
                                                 href="@Url.Action("Index","Services",new{Id=itm.Id})">
                                                     @itm.Name
-                                                    </a>
-                                                </li>
+                                                </a>
+                                            </li>
                                         }
                                     </ul>
                                 </li>
@@ -193,7 +193,7 @@
         </div>
     </header>
     <div class="layout position-relative">
-        <section class="main-slider">
+        <section class="main-slider" data-aos="fade-up" data-aos-duration="3000">
 
             <div id="mainSliderCarousel" class="owl-carousel owl-theme">
                 @foreach (var item in Model.Sliders)
@@ -220,61 +220,21 @@
             <style id="main-slider-style">
 
             </style>
-            @if (false)
-            {
-                <div id="mainSliderCarousel" class="carousel carousel-dark slide" data-bs-ride="true">
-                    <div class="carousel-indicators">
-
-                        @foreach (var item in Model.Sliders)
-                        {
-                            <button type="button" data-bs-target="#mainSliderCarousel" data-bs-slide-to="@sliderIndex_pointer"
-                        class="@(sliderIndex_pointer==0?"active":"")" aria-current="@(sliderIndex_pointer==0?"true":"")"
-                        aria-label="Slide @sliderIndex_pointer"></button>
-
-                            @(sliderIndex_pointer=sliderIndex_pointer+1)
-                        }
-
-                    </div>
-                    <div class="carousel-inner">
-                        @foreach (var item in Model.Sliders)
-                        {
-                            <div class="carousel-item @(sliderIndex==0?"active":"")" data-bs-interval="10000"
-                        style="background-image: url('/assets/images/@item.CoverImage');">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <h2 class="white mb-3">
-                                            @Html.Raw(item.Title)
-                                        </h2>
-                                        <p class="white">
-                                            @Html.Raw(item.Description)
-                                        </p>
-                                        <a href="@item.Link" class="btn btn-green">
-                                            Learn More
-                                            <img src="~/assets/images/launch-app.svg" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-
-                    </div>
-                </div>
-            }
         </section>
         <main>
             <section class="about-us">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 offset-md-6">
-                            <h3>
+                            <h3 data-aos="fade-up" data-aos-duration="3000">
                                 About us
 
                             </h3>
-                            <h2>
+                            <h2 data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000">
                                 @Model.About.SecondTitle
 
                             </h2>
-                            <p>
+                            <p data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                                 @Html.Raw(Model.About.HomeDesc)
                             </p>
 
@@ -291,13 +251,13 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 offset-md-3 text-center">
-                            <h3 class="home20">
+                            <h3 class="home20" data-aos="fade-up" data-aos-duration="3000">
                                 Services
                             </h3>
-                            <h2>
+                            <h2 data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000">
                                 @Model.SiteSettings.ServiceTitle
                             </h2>
-                            <p>
+                            <p data-aos="fade-up" data-aos-duration="3000" data-aos-delay="2000">
                                 @Model.SiteSettings.ServiceDesc
                             </p>
                         </div>
