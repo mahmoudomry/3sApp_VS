@@ -1295,8 +1295,9 @@ margin-top:30px
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.04);
 }
-.home .dropdown-menu{
-    background-color: rgba(255, 255, 255, 0.15);
+.home .dropdown-menu {
+    /*background-color: rgba(255, 255, 255, 0.15);*/
+    background-color: rgb(14 4 4 / 80%);
 }
 .dropdown-menu li{
     padding: 5px 20px;
