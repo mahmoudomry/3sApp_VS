@@ -1454,6 +1454,14 @@ section.services-details .service-card:hover .icon img {
 .search_btn_container{
     display: flex;
 }
+
+section.careers{
+    padding: 35px 0 100px;
+}
+section.careers .accordion-flush .accordion-item .accordion-button{
+    flex-direction: column;
+    align-items: start;
+}
 section.careers .tags{
     padding: 0 20px;
     background-color: #3A3C40;
@@ -1472,7 +1480,6 @@ section.careers h3{
 section.careers p{
     font-weight: 400;
     font-size: 14px;
-    color: #3A3C40;
 }
 section.careers .time{
     font-weight: 400;
@@ -1483,6 +1490,77 @@ section.careers .time{
 }
 section.careers .time img{
     margin-right: 10px;
+}
+section.careers h4{
+    font-weight: 700;
+    font-size: 16px;
+    position: relative;
+}
+section.careers .separator{
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 1px;
+    width: 100%;
+    margin: 20px 0;
+}
+section.careers ul li{
+    font-weight: 400;
+    font-size: 13px;
+    color: #3A3C40;
+    margin-bottom: 15px;
+}
+section.careers ul li::marker{
+    color: #C31A2B;
+}
+section.careers .accordion-item{
+    margin-bottom: 15px;
+    border: 1px solid #DDDDDD !important;
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.04);
+    border-radius: 15px;
+}
+section.careers .accordion-item .accordion-header{
+    border-bottom: 1px solid transparent;
+}
+section.careers .accordion-item .accordion-button{
+    border-radius: 15px;
+    padding: 20px;
+}
+section.careers .accordion-button:not(.collapsed){
+    background-color: var(--white);
+    box-shadow:none;
+}
+.accordion-button::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 35px;
+    width: 27px;
+    height: 27px;
+    background-image: url(../images//arrow-top.svg) !important;
+    border-radius: 50%;
+    background: rgba(21, 21, 21, 0.1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-50%);
+}
+.accordion-footer h4{
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.btn-red{
+    background: #C31A2B;
+    border-radius: 15px;
+    color: var(--white);
+    height: 60px;
+    width: 335px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-container {
+    display: flex;
+    justify-content: end;
 }
 @media screen and (max-width: 1399px) {
 }
@@ -1706,10 +1784,6 @@ section.careers .time img{
     }
     section.services-items .service-item  h2{
         margin: 20px 0;
-    }
-    section.careers .accordion-flush .accordion-item .accordion-button{
-        flex-direction: column;
-        align-items: start;
     }
 }
 @media only screen and (max-width: 600px) {
