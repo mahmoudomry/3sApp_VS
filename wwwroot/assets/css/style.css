@@ -1637,8 +1637,27 @@ section.news .news-item a{
     font-weight: 400;
     font-size: 15px;
 }
+.news-details h4{
+    margin: 20px 0;
+    font-weight: 600;
+    font-size: 20px;
+}
 img{
     max-width: 100%;
+}
+.related-news-carousel .news-item{
+    background-color: #FCFCFC;
+    border: 1px solid #DBDBDB;
+    border-radius: 15px;
+}
+.related-news-carousel .owl-item .image{
+    height: 150px;
+    border-radius: 15px 0px 0px 15px !important;
+}
+.related-news-carousel .owl-item .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 @media screen and (max-width: 1399px) {
