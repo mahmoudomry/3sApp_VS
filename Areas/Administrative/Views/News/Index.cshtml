@@ -1,0 +1,92 @@
+﻿@model IEnumerable<_3sApp.Models.News>
+
+@{
+    ViewData["Title"] = "News";	
+    ViewData["ActionTitle"]="List";
+    Layout = "_AdminLayout";
+
+}
+
+
+<div class="row">
+    <div class="col-md-12 ">
+        	<div class="kt-portlet">
+										<div class="kt-portlet__head">
+											<div class="kt-portlet__head-label">
+												<h3 class="kt-portlet__head-title pull-left">
+													@ViewData["ActionTitle"]
+												</h3>
+                                             
+											</div>
+
+                                               <a  class="btn btn-primary pull-right create-btn" href="@Url.Action("Create","News",new{area="Administrative"})" >Create New</a>
+                                                
+										</div>
+<table class="table">
+    <thead>
+        <tr>
+          
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+        
+            <th>
+                @Html.DisplayNameFor(model => model.Scope)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Industrialsolution)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KeyWords)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Createdon)
+            </th>  
+            <th>
+                @Html.DisplayNameFor(model => model.CoverImage)
+            </th>
+            <th>Events</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.Scope)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Industrialsolution)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KeyWords)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Createdon)
+            </td>
+            <td>
+                 <img src="~/assets/images/@item.CoverImage" class="img-thumbnail" width="100px" alt="">
+             
+            </td>
+            <td>
+             <a  class="btn btn-outline-success"  href="@Url.Action("Edit","News",new{area="Administrative",Id=item.Id})" ><i class="fa fa-edit  "></i> Edit </a> 
+                <a  class="btn btn-outline-brand"  href="@Url.Action("Details","News",new{area="Administrative",Id=item.Id})" ><i class="fa fa-edit  "></i> Details </a> 
+                <a class="btn btn-outline-danger"  href="@Url.Action("Delete","News",new{area="Administrative",Id=item.Id})"   asp-route-id="@item.Id" onclick="return confirm('Are you sure From Deleted?')" > <i class="fa fa-trash "></i> Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+</div>
+</div>

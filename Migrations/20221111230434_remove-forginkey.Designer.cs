@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _3sApp.Areas.Identity.Data;
 
@@ -10,9 +11,10 @@ using _3sApp.Areas.Identity.Data;
 namespace _3sApp.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20221111230434_remove-forginkey")]
+    partial class removeforginkey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -377,9 +379,6 @@ namespace _3sApp.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<int?>("NewsId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Order")
                         .HasColumnType("int");
 
@@ -397,8 +396,6 @@ namespace _3sApp.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("NewsId");
 
                     b.HasIndex("ProjectId");
 
@@ -957,10 +954,6 @@ namespace _3sApp.Migrations
 
             modelBuilder.Entity("_3sApp.Models.Media", b =>
                 {
-                    b.HasOne("_3sApp.Models.News", null)
-                        .WithMany("media")
-                        .HasForeignKey("NewsId");
-
                     b.HasOne("_3sApp.Models.Project", null)
                         .WithMany("Images")
                         .HasForeignKey("ProjectId");
@@ -1040,11 +1033,6 @@ namespace _3sApp.Migrations
             modelBuilder.Entity("_3sApp.Models.Career", b =>
                 {
                     b.Navigation("careerApplications");
-                });
-
-            modelBuilder.Entity("_3sApp.Models.News", b =>
-                {
-                    b.Navigation("media");
                 });
 
             modelBuilder.Entity("_3sApp.Models.Project", b =>

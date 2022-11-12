@@ -25,7 +25,7 @@ namespace _3sApp.Models
 
         [ Display(Name = "Image")]
         public string CoverImage { get; set; }
-        [ForeignKey("PostId")]
+     
         public List<Media>? Images { get; set; }
 
     }

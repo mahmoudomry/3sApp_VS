@@ -26,7 +26,13 @@ namespace _3sApp.Controllers
             homeviwemodel.SocialMedias = _context.SocialMedias.OrderBy(x => x.Order).ToList();
             homeviwemodel.Services = _context.Services.ToList();
             homeviwemodel.Solutions = _context.Solutions.Include(x => x.SubSolution).ToList();
-            homeviwemodel.Projects = _context.Projects.Include(x => x.Images.Where(x => x.CategoryId == 1)).ToList();
+            List<Media> m = _context.Medias.Where(a => a.CategoryId == 1).ToList();
+            List<Project> projects = _context.Projects.ToList();
+            foreach (var p in projects)
+            {
+                p.Images = m.Where(a => a.PostId == p.Id).ToList();
+            }
+            homeviwemodel.Projects = projects;
             homeviwemodel.Industries = _context.Industries.ToList();
             homeviwemodel.Partners = _context.Partners.ToList();
             homeviwemodel.Clients = _context.Clients.ToList();
@@ -49,7 +55,14 @@ namespace _3sApp.Controllers
             ViewBag.SocialMedias = _context.SocialMedias.ToList();
             ViewBag.Services = _context.Services.ToList();
             ViewBag.Solutions = _context.Solutions.Include(x => x.SubSolution).ToList();
-            ViewBag.Projects = _context.Projects.Include(x => x.Images.Where(x => x.CategoryId == 1)).ToList();
+            // ViewBag.Projects = _context.Projects.Include(x => x.Images.Where(x => x.CategoryId == 1)).ToList();
+            List<Media> m = _context.Medias.Where(a => a.CategoryId == 1).ToList();
+            List<Project> projects = _context.Projects.ToList();
+            foreach (var p in projects)
+            {
+                p.Images = m.Where(a => a.PostId == p.Id).ToList();
+            }
+            ViewBag.Projects = projects;
             ViewBag.Industries = _context.Industries.ToList();
             ViewBag.Partners = _context.Partners.ToList();
             ViewBag.Clients = _context.Clients.ToList();
@@ -128,7 +141,7 @@ namespace _3sApp.Controllers
         {
             ViewBag.current_controller = "Projects";
             ViewBag.current_action = "Projects";
-            ViewBag.Projects = _context.Projects.Include(x => x.Images.Where(x => x.CategoryId == 1)).ToList();
+           // ViewBag.Projects = _context.Projects.Include(x => x.Images.Where(x => x.CategoryId == 1)).ToList();
             ViewBag.About = _context.Abouts.FirstOrDefault();
             ViewBag.SiteSettings = _context.SiteSettings.FirstOrDefault();
             ViewBag.Contactitems = _context.Contactitems.ToList();
@@ -136,6 +149,14 @@ namespace _3sApp.Controllers
             ViewBag.SolutionsLinks = _context.Solutions.Select(x => new { x.Id, x.Title }).ToList();
             ViewBag.IndustrialLinks = _context.Industries.Select(x => new { x.Id, x.Title }).ToList();
             ViewBag.ServicesLinks = _context.Services.Select(x => new { x.Id, x.Name }).ToList();
+
+            List<Media> m = _context.Medias.Where(a => a.CategoryId == 1).ToList();
+            List<Project> projects = _context.Projects.ToList();
+            foreach (var p in projects)
+            {
+                p.Images = m.Where(a => a.PostId == p.Id).ToList();
+            }
+            ViewBag.Projects = projects;
 
             return View();
         }
@@ -151,7 +172,7 @@ namespace _3sApp.Controllers
             ViewBag.SolutionsLinks = _context.Solutions.Select(x => new { x.Id, x.Title }).ToList();
             ViewBag.IndustrialLinks = _context.Industries.Select(x => new { x.Id, x.Title }).ToList();
             ViewBag.ServicesLinks = _context.Services.Select(x => new { x.Id, x.Name }).ToList();
-            return View();
+            return View( _context.Careers.ToList());
         }
 
 
