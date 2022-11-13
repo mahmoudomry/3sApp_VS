@@ -122,9 +122,9 @@
                     {
                         <div class="col-md-4">
                             <div class="value-card">
-                                <div class="icon">
-                                    <img src="~/assets/images/@item.Icon" alt="">
-                                </div>
+                               <h2> <span class="icon">
+                                     <img src="~/assets/images/@item.Icon" alt="">
+                                </span> @item.Title </h2>
                                 <p>
                                     @item.Desc
                                 </p>
@@ -142,10 +142,10 @@
             <div class="row">
                 <div class="col-md-6 offset-md-3 text-center">
                     <h3>
-                        OUr team
+                       @SiteSettings.MemberTitle
                     </h3>
                     <h2>
-                        The best Way to Reach your Goal
+                      @SiteSettings.MemberDesc   
                     </h2>
 
                 </div>
